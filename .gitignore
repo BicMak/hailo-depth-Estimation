@@ -1,0 +1,15 @@
+# hailo_header and lib
+hailort/
+hailo-rpi5-examples/
+
+#build file
+build/
+
+# IDE
+.vscode/
+
+# Images (너무 큰 파일들)
+Images/
+
+
+

@@ -1,0 +1,1400 @@
+<!DOCTYPE html>
+	<html lang="en-US">
+	<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Log In &bull; Hailo</title>
+	<meta name='robots' content='noindex, follow' />
+<script type="text/javascript" src="https://hailo.ai/wp-includes/js/jquery/jquery.min.js?ver=3.7.1" id="jquery-core-js"></script>
+<script type="text/javascript" src="https://hailo.ai/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1" id="jquery-migrate-js"></script>
+<script type="text/javascript" id="wordfence-ls-login-js-extra">
+/* <![CDATA[ */
+var WFLS_LOGIN_TRANSLATIONS = {"Message to Support":"Message to Support","Send":"Send","An error was encountered while trying to send the message. Please try again.":"An error was encountered while trying to send the message. Please try again.","<strong>ERROR<\/strong>: An error was encountered while trying to send the message. Please try again.":"<strong>ERROR<\/strong>: An error was encountered while trying to send the message. Please try again.","Login failed with status code 403. Please contact the site administrator.":"Login failed with status code 403. Please contact the site administrator.","<strong>ERROR<\/strong>: Login failed with status code 403. Please contact the site administrator.":"<strong>ERROR<\/strong>: Login failed with status code 403. Please contact the site administrator.","Login failed with status code 503. Please contact the site administrator.":"Login failed with status code 503. Please contact the site administrator.","<strong>ERROR<\/strong>: Login failed with status code 503. Please contact the site administrator.":"<strong>ERROR<\/strong>: Login failed with status code 503. Please contact the site administrator.","Wordfence 2FA Code":"Wordfence 2FA Code","Remember for 30 days":"Remember for 30 days","Log In":"Log In","<strong>ERROR<\/strong>: An error was encountered while trying to authenticate. Please try again.":"<strong>ERROR<\/strong>: An error was encountered while trying to authenticate. Please try again.","The Wordfence 2FA Code can be found within the authenticator app you used when first activating two-factor authentication. You may also use one of your recovery codes.":"The Wordfence 2FA Code can be found within the authenticator app you used when first activating two-factor authentication. You may also use one of your recovery codes."};
+var WFLSVars = {"ajaxurl":"\/wp-admin\/admin-ajax.php","nonce":"2c8911cbb8","recaptchasitekey":"","useCAPTCHA":"","allowremember":"","verification":null};
+/* ]]> */
+</script>
+<script type="text/javascript" src="https://hailo.ai/wp-content/plugins/wordfence/modules/login-security/js/login.1756145765.js?ver=1.1.15" id="wordfence-ls-login-js"></script>
+<script type="text/javascript" src="https://hailo.ai/wp-content/mu-plugins/force-strong-passwords/force-zxcvbn.min.js?ver=1.8.0" id="slt-fsp-force-zxcvbn-js"></script>
+<script type="text/javascript" src="https://hailo.ai/wp-content/mu-plugins/force-strong-passwords/js-admin.min.js?ver=1.8.0" id="slt-fsp-admin-js-js"></script>
+<link rel='stylesheet' id='wordfence-ls-login-css' href='https://hailo.ai/wp-content/plugins/wordfence/modules/login-security/css/login.1756145765.css?ver=1.1.15' type='text/css' media='all' />
+<link rel='stylesheet' id='theme-login-css-bundle-css' href='https://hailo.ai/wp-content/themes/airfleet/dist/styles/login.css?ver=1762768810' type='text/css' media='all' />
+<link rel='stylesheet' id='theme-css-bundle-css' href='https://hailo.ai/wp-content/themes/airfleet/dist/styles/theme.css?ver=1763651690' type='text/css' media='all' />
+<link rel='stylesheet' id='theme-styles-css' href='https://hailo.ai/wp-content/themes/airfleet/theme/style.css?ver=1748342454' type='text/css' media='all' />
+	<meta name='referrer' content='strict-origin-when-cross-origin' />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="icon" href="https://hailo.ai/wp-content/uploads/2023/10/cropped-favicon-32x32.png" sizes="32x32" />
+<link rel="icon" href="https://hailo.ai/wp-content/uploads/2023/10/cropped-favicon-192x192.png" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://hailo.ai/wp-content/uploads/2023/10/cropped-favicon-180x180.png" />
+<meta name="msapplication-TileImage" content="https://hailo.ai/wp-content/uploads/2023/10/cropped-favicon-270x270.png" />
+	</head>
+	<body class="login no-js login-action-login wp-core-ui  locale-en-us">
+	<script type="text/javascript">
+/* <![CDATA[ */
+document.body.className = document.body.className.replace('no-js','js');
+/* ]]> */
+</script>
+
+	<header class="header header--main c-header "
+			>
+		<div class="container">
+			<div class="header__body">
+									<div class="header__logo">
+						<a class="logo logo-main" href="https://hailo.ai/" aria-label="Main logo">
+							<img width="424" height="222" src="https://hailo.ai/wp-content/uploads/2023/08/Hailo.png" class="c-image header__logo-image" alt="Hailo AI - Edge AI Accelerators &amp; Vision Processing Provider Logo" decoding="async" srcset="https://hailo.ai/wp-content/uploads/2023/08/Hailo.png 424w, https://hailo.ai/wp-content/uploads/2023/08/Hailo-300x157.png 300w" sizes="(max-width: 424px) 100vw, 424px" />
+						</a>
+					</div>
+				
+				<div class="header__menu" id="navbarSupportedContent">
+					<ul id="menu-main-menu" class="nav nav-main container"><li id="menu-item-150" class="menu-item menu-item-type-post_type menu-item-object-af_nav_mega_menu menu-item-150 menu-item--mega-menu menu-item-has-children"><a>Products</a><div class="sub-menu sub-menu--mega-menu"><section class="c-block c-margin c-margin--bottom-default c-padding--top-default c-padding--bottom-default c-border c-border--bottom-default c-block b-mega-menu b-mega-menu--page-  align b-mega-menu-layout-default b-mega-menu-style-default" id="b-mega-menu-1">
+	<div class="c-background c-background--container">
+    
+    
+    <div class="c-background__content">
+		<div class="b-mega-menu__container container">
+			<div class="b-mega-menu__tab-headers">
+									<div class="b-mega-menu__tab-header">
+													<div class="b-mega-menu__tab-header-title b-mega-menu__tab-header-title--selected">
+								AI Accelerators
+							</div>
+											</div>
+									<div class="b-mega-menu__tab-header">
+													<div class="b-mega-menu__tab-header-title ">
+								AI Vision Processors
+							</div>
+											</div>
+									<div class="b-mega-menu__tab-header">
+													<div class="b-mega-menu__tab-header-title ">
+								Software
+							</div>
+											</div>
+									<div class="b-mega-menu__tab-header">
+													<a class="b-mega-menu__tab-header-title " href="https://hailo.ai/products/technology/">
+								Technology
+							</a>
+											</div>
+									<div class="b-mega-menu__tab-header">
+													<a class="b-mega-menu__tab-header-title " href="https://hailo.ai/products/quality-and-reliability">
+								Quality
+							</a>
+											</div>
+									<div class="b-mega-menu__tab-header">
+													<a class="b-mega-menu__tab-header-title " href="https://hailo.ai/products/partners-ecosystem/">
+								Partners Ecosystem
+							</a>
+											</div>
+							</div>
+			<div class="b-mega-menu__tabs">
+									<div class="b-mega-menu__tab b-mega-menu__tab--selected">
+													<div class="b-mega-menu__tab-label">
+								AI Accelerators
+							</div>
+												<div class="b-mega-menu__tab-columns b-mega-menu__tab-columns--separators">
+															<div class="b-mega-menu__tab-column">
+																																																		
+																			<div class="b-mega-menu__tab-column-items b-mega-menu__tab-column-items--links">
+																																																																				<a aria-label="Hailo-10H AI Accelerator" href="https://hailo.ai/products/ai-accelerators/hailo-10h-ai-accelerator/" class="c-link to-next-col b-mega-menu__tab-column-item-link b-mega-menu__tab-column-item-link--style-default" data-image="https://hailo.ai/wp-content/uploads/2023/08/Nav_Hailo-10H.jpg">
+<span data-content="Hailo-10H AI Accelerator">Hailo-10H AI Accelerator</span>
+</a>
+
+																															<div class="b-mega-menu__tab-column-item-subitems">
+																																																						<a aria-label="Hailo-10H AI Accelerators" href="/products/ai-accelerators/hailo-10h-ai-accelerator/" class="c-link b-mega-menu__tab-column-item-subitem-link" data-image="https://hailo.ai/wp-content/uploads/2023/08/Nav_Hailo-10H.jpg">
+<span data-content="Hailo-10H AI Accelerators">Hailo-10H AI Accelerators</span>
+</a>
+																																																																								<a aria-label="Hailo-10H M.2 AI Acceleration Module" href="/products/ai-accelerators/hailo-10h-m-2-ai-acceleration-module/" class="c-link b-mega-menu__tab-column-item-subitem-link" data-image="https://hailo.ai/wp-content/uploads/2023/08/Nav_Hailo-10H.jpg">
+<span data-content="Hailo-10H M.2 AI Acceleration Module">Hailo-10H M.2 AI Acceleration Module</span>
+</a>
+																																																			</div>
+															
+																																																																																						<a aria-label="Hailo-8 AI Accelerator" href="https://hailo.ai/products/ai-accelerators/hailo-8-ai-accelerator/" class="c-link to-next-col b-mega-menu__tab-column-item-link b-mega-menu__tab-column-item-link--style-default" data-image="https://hailo.ai/wp-content/uploads/2023/10/Hailo-8_Hailo-10_Menu.jpg">
+<span data-content="Hailo-8 AI Accelerator">Hailo-8 AI Accelerator</span>
+</a>
+
+																															<div class="b-mega-menu__tab-column-item-subitems">
+																																																						<a aria-label="Hailo-8 AI Accelerator" href="/products/ai-accelerators/hailo-8-ai-accelerator/" class="c-link b-mega-menu__tab-column-item-subitem-link" data-image="https://hailo.ai/wp-content/uploads/2023/10/Hailo-8_Hailo-10_Menu.jpg">
+<span data-content="Hailo-8 AI Accelerator">Hailo-8 AI Accelerator</span>
+</a>
+																																																																								<a aria-label="Hailo-8 M.2 AI Acceleration Module" href="/products/ai-accelerators/hailo-8-m2-ai-acceleration-module/" class="c-link b-mega-menu__tab-column-item-subitem-link" data-image="https://hailo.ai/wp-content/uploads/2023/10/Hailo-8_Hailo-10_Menu.jpg">
+<span data-content="Hailo-8 M.2 AI Acceleration Module">Hailo-8 M.2 AI Acceleration Module</span>
+</a>
+																																																																								<a aria-label=" Hailo-8R mPCIe AI Acceleration Module" href="/products/ai-accelerators/hailo-8r-mpcie-ai-acceleration-module/" class="c-link b-mega-menu__tab-column-item-subitem-link" data-image="https://hailo.ai/wp-content/uploads/2023/10/Hailo-8_Hailo-10_Menu.jpg">
+<span data-content=" Hailo-8R mPCIe AI Acceleration Module"> Hailo-8R mPCIe AI Acceleration Module</span>
+</a>
+																																																																								<a aria-label="Hailo-8 Century High Performance PCIe Card" href="/products/ai-accelerators/hailo-8-century-high-performance-pcie-card/" class="c-link b-mega-menu__tab-column-item-subitem-link" data-image="https://hailo.ai/wp-content/uploads/2023/10/Hailo-8_Hailo-10_Menu.jpg">
+<span data-content="Hailo-8 Century High Performance PCIe Card">Hailo-8 Century High Performance PCIe Card</span>
+</a>
+																																																			</div>
+															
+																																																																																						<a aria-label="Hailo-8L Entry-Level AI Accelerator" href="https://hailo.ai/products/ai-accelerators/hailo-8l-ai-accelerator-for-ai-light-applications/" class="c-link to-next-col b-mega-menu__tab-column-item-link b-mega-menu__tab-column-item-link--style-default" data-image="https://hailo.ai/wp-content/uploads/2023/08/Nav_Hailo-8L.jpg">
+<span data-content="Hailo-8L Entry-Level AI Accelerator">Hailo-8L Entry-Level AI Accelerator</span>
+</a>
+
+																															<div class="b-mega-menu__tab-column-item-subitems">
+																																																						<a aria-label="Hailo-8L Entry-Level AI Accelerator" href="/products/ai-accelerators/hailo-8l-ai-accelerator-for-ai-light-applications/" class="c-link b-mega-menu__tab-column-item-subitem-link" data-image="https://hailo.ai/wp-content/uploads/2023/08/Nav_Hailo-8L.jpg">
+<span data-content="Hailo-8L Entry-Level AI Accelerator">Hailo-8L Entry-Level AI Accelerator</span>
+</a>
+																																																																								<a aria-label=" Hailo-8L M.2 Entry-Level Acceleration Module" href="/products/ai-accelerators/hailo-8l-m-2-ai-acceleration-module-for-ai-light-applications/" class="c-link b-mega-menu__tab-column-item-subitem-link" data-image="https://hailo.ai/wp-content/uploads/2023/08/Nav_Hailo-8L.jpg">
+<span data-content=" Hailo-8L M.2 Entry-Level Acceleration Module"> Hailo-8L M.2 Entry-Level Acceleration Module</span>
+</a>
+																																																			</div>
+															
+																																																																	</div>
+									
+																			<div class="b-mega-menu__tab-column-items b-mega-menu__tab-column-items--image">
+																							<div class="b-mega-menu__tab-column-item-image " style="background-image: url(https://hailo.ai/wp-content/uploads/2023/08/Nav_Hailo-10H.jpg)"></div>
+																					</div>
+																	</div>
+															<div class="b-mega-menu__tab-column">
+																																					
+																			<div class="b-mega-menu__tab-column-items b-mega-menu__tab-column-items--sublinks">
+																																																																					<div class="b-mega-menu__tab-column-subtab">
+
+																																			<div class="b-mega-menu__tab-column-item-subitems">
+																																																												<a aria-label="Hailo-10H AI Accelerators" href="/products/ai-accelerators/hailo-10h-ai-accelerator/" class="c-link b-mega-menu__tab-column-item-subitem-link" data-image="https://hailo.ai/wp-content/uploads/2023/08/Hailo-10H-M.2.jpg">
+<span data-content="Hailo-10H AI Accelerators">Hailo-10H AI Accelerators</span>
+</a>
+																																																																																<a aria-label="Hailo-10H M.2 AI Acceleration Module" href="/products/ai-accelerators/hailo-10h-m-2-ai-acceleration-module/" class="c-link b-mega-menu__tab-column-item-subitem-link" data-image="https://hailo.ai/wp-content/uploads/2023/08/Hailo-10H-M.2-1.jpg">
+<span data-content="Hailo-10H M.2 AI Acceleration Module">Hailo-10H M.2 AI Acceleration Module</span>
+</a>
+																																																									</div>
+																																	</div>
+
+																																																																												<div class="b-mega-menu__tab-column-subtab">
+
+																																			<div class="b-mega-menu__tab-column-item-subitems">
+																																																												<a aria-label="Hailo-8 AI Accelerator" href="/products/ai-accelerators/hailo-8-ai-accelerator/" class="c-link b-mega-menu__tab-column-item-subitem-link" data-image="https://hailo.ai/wp-content/uploads/2023/08/Hailo-8-M.2-AI-Acceleration-Module-Product-Brief-1.jpg">
+<span data-content="Hailo-8 AI Accelerator">Hailo-8 AI Accelerator</span>
+</a>
+																																																																																<a aria-label="Hailo-8 M.2 AI Acceleration Module" href="/products/ai-accelerators/hailo-8-m2-ai-acceleration-module/" class="c-link b-mega-menu__tab-column-item-subitem-link" data-image="https://hailo.ai/wp-content/uploads/2023/08/Hailo-8-M.2-Starter-Kit-Product-Brief.jpg">
+<span data-content="Hailo-8 M.2 AI Acceleration Module">Hailo-8 M.2 AI Acceleration Module</span>
+</a>
+																																																																																<a aria-label=" Hailo-8R mPCIe AI Acceleration Module" href="/products/ai-accelerators/hailo-8r-mpcie-ai-acceleration-module/" class="c-link b-mega-menu__tab-column-item-subitem-link" data-image="https://hailo.ai/wp-content/uploads/2023/08/Hailo-8R-Mini-PCIe-Module.jpg">
+<span data-content=" Hailo-8R mPCIe AI Acceleration Module"> Hailo-8R mPCIe AI Acceleration Module</span>
+</a>
+																																																																																<a aria-label="Hailo-8 Century High Performance PCIe Card" href="/products/ai-accelerators/hailo-8-century-high-performance-pcie-card/" class="c-link b-mega-menu__tab-column-item-subitem-link" data-image="https://hailo.ai/wp-content/uploads/2023/08/Hailo-8-Century-High-Performance-PCIe-Cards.jpg">
+<span data-content="Hailo-8 Century High Performance PCIe Card">Hailo-8 Century High Performance PCIe Card</span>
+</a>
+																																																									</div>
+																																	</div>
+
+																																																																												<div class="b-mega-menu__tab-column-subtab">
+
+																																			<div class="b-mega-menu__tab-column-item-subitems">
+																																																												<a aria-label="Hailo-8L Entry-Level AI Accelerator" href="/products/ai-accelerators/hailo-8l-ai-accelerator-for-ai-light-applications/" class="c-link b-mega-menu__tab-column-item-subitem-link" data-image="https://hailo.ai/wp-content/uploads/2023/08/Hailo-8L.jpg">
+<span data-content="Hailo-8L Entry-Level AI Accelerator">Hailo-8L Entry-Level AI Accelerator</span>
+</a>
+																																																																																<a aria-label=" Hailo-8L M.2 Entry-Level Acceleration Module" href="/products/ai-accelerators/hailo-8l-m-2-ai-acceleration-module-for-ai-light-applications/" class="c-link b-mega-menu__tab-column-item-subitem-link" data-image="https://hailo.ai/wp-content/uploads/2023/08/Hailo-8L-M.2-Extended-Temperature-Product-Brief.jpg">
+<span data-content=" Hailo-8L M.2 Entry-Level Acceleration Module"> Hailo-8L M.2 Entry-Level Acceleration Module</span>
+</a>
+																																																									</div>
+																																	</div>
+
+																																																																																	</div>
+									
+																			<div class="b-mega-menu__tab-column-items b-mega-menu__tab-column-items--image">
+																							<div class="b-mega-menu__tab-column-item-image " style="background-image: url(https://hailo.ai/wp-content/uploads/2023/08/Hailo-10H-M.2-1.jpg)"></div>
+																					</div>
+																	</div>
+													</div>
+						<div class="b-mega-menu__tab-cta">
+																																			<div class="b-mega-menu__tab-cta-posts">
+			<div class="b-mega-menu__tab-cta-posts-title">
+			Recommended blog post
+		</div>
+		<div class="b-mega-menu__tab-cta-posts-list">
+					<div class="b-mega-menu__tab-cta-post b-mega-menu__tab-cta-post--big">
+				<div class="b-mega-menu__tab-cta-post-image">
+					<img src="https://hailo.ai/wp-content/uploads/2025/07/Blog-Bringing-Generative-AI-to-the-Edge-LLM-on-Hailo-10H-Example.jpeg" class="c-image" alt="">
+				</div>
+								<div class="b-mega-menu__tab-cta-post-body">
+					<a href="https://hailo.ai/blog/bringing-generative-ai-to-the-edge-llm-on-hailo-10h/" class="b-mega-menu__tab-cta-post-title ">
+						Bringing Generative AI to the Edge: LLM on Hailo-10H
+					</a>
+
+											<div class="b-mega-menu__tab-cta-post-date">
+							29 July 2025
+						</div>
+										<a href="https://hailo.ai/blog/bringing-generative-ai-to-the-edge-llm-on-hailo-10h/" class="b-mega-menu__tab-cta-post-link" aria-label="Bringing Generative AI to the Edge: LLM on Hailo-10H"></a>
+				</div>
+			</div>
+			</div>
+</div>
+																																</div>
+					</div>
+									<div class="b-mega-menu__tab ">
+													<div class="b-mega-menu__tab-label">
+								AI Vision Processors
+							</div>
+												<div class="b-mega-menu__tab-columns b-mega-menu__tab-columns--separators">
+															<div class="b-mega-menu__tab-column">
+																																																		
+																			<div class="b-mega-menu__tab-column-items b-mega-menu__tab-column-items--links">
+																																																																				<a aria-label="Hailo-15 AI Vision Processor" href="https://hailo.ai/products/ai-vision-processors/hailo-15-ai-vision-processor/" class="c-link  b-mega-menu__tab-column-item-link b-mega-menu__tab-column-item-link--style-default" data-image="https://hailo.ai/wp-content/uploads/2023/08/Hailo_15_Menu.jpg">
+<span data-content="Hailo-15 AI Vision Processor">Hailo-15 AI Vision Processor</span>
+</a>
+
+															
+																																																																	</div>
+									
+																			<div class="b-mega-menu__tab-column-items b-mega-menu__tab-column-items--image">
+																							<div class="b-mega-menu__tab-column-item-image " style="background-image: url(https://hailo.ai/wp-content/uploads/2023/08/Hailo_15_Menu.jpg)"></div>
+																					</div>
+																	</div>
+															<div class="b-mega-menu__tab-column">
+																																					
+																			<div class="b-mega-menu__tab-column-items b-mega-menu__tab-column-items--sublinks">
+																																																																																																							</div>
+									
+																			<div class="b-mega-menu__tab-column-items b-mega-menu__tab-column-items--image">
+																					</div>
+																	</div>
+													</div>
+						<div class="b-mega-menu__tab-cta">
+																																			<div class="b-mega-menu__tab-cta-posts">
+			<div class="b-mega-menu__tab-cta-posts-title">
+			Recommended blog post
+		</div>
+		<div class="b-mega-menu__tab-cta-posts-list">
+					<div class="b-mega-menu__tab-cta-post b-mega-menu__tab-cta-post--big">
+				<div class="b-mega-menu__tab-cta-post-image">
+					<img src="https://hailo.ai/wp-content/uploads/2023/10/Blogs-TN.png" class="c-image" alt="">
+				</div>
+								<div class="b-mega-menu__tab-cta-post-body">
+					<a href="https://hailo.ai/blog/ai-cameras-from-vision-to-insights/" class="b-mega-menu__tab-cta-post-title ">
+						AI Smart Cameras: From Vision to Insights
+					</a>
+
+											<div class="b-mega-menu__tab-cta-post-date">
+							9 November 2024
+						</div>
+										<a href="https://hailo.ai/blog/ai-cameras-from-vision-to-insights/" class="b-mega-menu__tab-cta-post-link" aria-label="AI Smart Cameras: From Vision to Insights"></a>
+				</div>
+			</div>
+			</div>
+</div>
+																																</div>
+					</div>
+									<div class="b-mega-menu__tab ">
+													<div class="b-mega-menu__tab-label">
+								Software
+							</div>
+												<div class="b-mega-menu__tab-columns b-mega-menu__tab-columns--separators">
+															<div class="b-mega-menu__tab-column">
+																																																		
+																			<div class="b-mega-menu__tab-column-items b-mega-menu__tab-column-items--links">
+																																																																				<a aria-label="Hailo AI Software Suite" href="https://hailo.ai/products/hailo-software/hailo-ai-software-suite/" class="c-link  b-mega-menu__tab-column-item-link b-mega-menu__tab-column-item-link--style-main">
+<span data-content="Hailo AI Software Suite">Hailo AI Software Suite<div class="b-mega-menu__tab-column-item-link-arrow"></div></span>
+</a>
+
+															
+																																																																																						<a aria-label="Dataflow Complier" href="https://hailo.ai/products/hailo-software/hailo-ai-software-suite/#sw-dc" class="c-link  b-mega-menu__tab-column-item-link b-mega-menu__tab-column-item-link--style-default">
+<span data-content="Dataflow Complier">Dataflow Complier</span>
+</a>
+
+															
+																																																																																						<a aria-label="HailoRT" href="https://hailo.ai/products/hailo-software/hailo-ai-software-suite/#sw-hailort" class="c-link  b-mega-menu__tab-column-item-link b-mega-menu__tab-column-item-link--style-default">
+<span data-content="HailoRT">HailoRT</span>
+</a>
+
+															
+																																																																																						<a aria-label="Model Zoo" href="https://hailo.ai/products/hailo-software/hailo-ai-software-suite/#sw-modelzoo" class="c-link  b-mega-menu__tab-column-item-link b-mega-menu__tab-column-item-link--style-default">
+<span data-content="Model Zoo">Model Zoo</span>
+</a>
+
+																															<div class="b-mega-menu__tab-column-item-subitems">
+																																																						<a aria-label="Model Explorer Vision" href="https://hailo.ai/products/hailo-software/model-explorer-vision/" class="c-link b-mega-menu__tab-column-item-subitem-link">
+<span data-content="Model Explorer Vision">Model Explorer Vision</span>
+</a>
+																																																																								<a aria-label="Model Explorer GenAI " href="https://hailo.ai/products/hailo-software/model-explorer/generative-ai/" class="c-link b-mega-menu__tab-column-item-subitem-link">
+<span data-content="Model Explorer GenAI ">Model Explorer GenAI </span>
+</a>
+																																																			</div>
+															
+																																																																																						<a aria-label="Example Applications " href="https://hailo.ai/products/hailo-software/hailo-ai-software-suite/#example-applications" class="c-link  b-mega-menu__tab-column-item-link b-mega-menu__tab-column-item-link--style-default">
+<span data-content="Example Applications ">Example Applications </span>
+</a>
+
+															
+																																																																	</div>
+									
+																			<div class="b-mega-menu__tab-column-items b-mega-menu__tab-column-items--image">
+																					</div>
+																	</div>
+															<div class="b-mega-menu__tab-column">
+																																																		
+																			<div class="b-mega-menu__tab-column-items b-mega-menu__tab-column-items--links">
+																																																																				<a aria-label="Vision Processor Software  Package" href="https://hailo.ai/products/hailo-software/vision-processor-software-package/" class="c-link  b-mega-menu__tab-column-item-link b-mega-menu__tab-column-item-link--style-main">
+<span data-content="Vision Processor Software  Package">Vision Processor Software  Package<div class="b-mega-menu__tab-column-item-link-arrow"></div></span>
+</a>
+
+															
+																																																																																						<a aria-label="Hailo OS" href="https://hailo.ai/products/hailo-software/vision-processor-software-package/#hailo-linux" class="c-link  b-mega-menu__tab-column-item-link b-mega-menu__tab-column-item-link--style-default">
+<span data-content="Hailo OS">Hailo OS</span>
+</a>
+
+															
+																																																																																						<a aria-label="Hailo Media Library" href="https://hailo.ai/products/hailo-software/vision-processor-software-package/#hailo-media-library" class="c-link  b-mega-menu__tab-column-item-link b-mega-menu__tab-column-item-link--style-default">
+<span data-content="Hailo Media Library">Hailo Media Library</span>
+</a>
+
+															
+																																																																																						<a aria-label="Hailo Imaging" href="https://hailo.ai/products/hailo-software/vision-processor-software-package/#hailo-imaging" class="c-link  b-mega-menu__tab-column-item-link b-mega-menu__tab-column-item-link--style-default">
+<span data-content="Hailo Imaging">Hailo Imaging</span>
+</a>
+
+															
+																																																																																						<a aria-label="HailoDSP" href="https://hailo.ai/products/hailo-software/vision-processor-software-package/#hailodsp" class="c-link  b-mega-menu__tab-column-item-link b-mega-menu__tab-column-item-link--style-default">
+<span data-content="HailoDSP">HailoDSP</span>
+</a>
+
+															
+																																																																																						<a aria-label="Hailo Camera Applications" href="https://hailo.ai/products/hailo-software/vision-processor-software-package/#hailo-camera-applications" class="c-link  b-mega-menu__tab-column-item-link b-mega-menu__tab-column-item-link--style-default">
+<span data-content="Hailo Camera Applications">Hailo Camera Applications</span>
+</a>
+
+															
+																																																																	</div>
+									
+																			<div class="b-mega-menu__tab-column-items b-mega-menu__tab-column-items--image">
+																					</div>
+																	</div>
+													</div>
+						<div class="b-mega-menu__tab-cta">
+																																			<div class="b-mega-menu__tab-cta-card">
+												<img src="https://hailo.ai/wp-content/uploads/2023/08/Model_Explorer_Menu_GenAIandVision.jpg" class="c-image b-mega-menu__tab-cta-card-image" alt="">
+																									<h2 class="c-el c-title b-mega-menu__tab-cta-card-title has-line-breaks default">Choose the best model for your AI application</h2>
+																																					<a aria-label="Model Explorer" href="https://hailo.ai/products/hailo-software/model-explorer/" class="c-link b-mega-menu__tab-cta-card-link">
+<span data-content="Model Explorer">Model Explorer</span>
+</a>
+													<a href="https://hailo.ai/products/hailo-software/model-explorer/" class="c-link b-mega-menu__tab-cta-card-link-over">
+<span data-content=""></span>
+</a>
+																							</div>
+																																</div>
+					</div>
+									<div class="b-mega-menu__tab ">
+													<a class="b-mega-menu__tab-label" href="https://hailo.ai/products/technology/">
+								Technology
+							</a>
+												<div class="b-mega-menu__tab-columns ">
+													</div>
+						<div class="b-mega-menu__tab-cta">
+																																			<div class="b-mega-menu__tab-cta-card">
+												<img src="https://hailo.ai/wp-content/uploads/2023/08/Group-6248830.svg" class="c-image b-mega-menu__tab-cta-card-image" alt="">
+																									<h2 class="c-el c-title b-mega-menu__tab-cta-card-title has-line-breaks default">Discover the technology behind the Hailo chip</h2>
+																																					<a aria-label="Explore tech" href="https://hailo.ai/products/technology/" class="c-link b-mega-menu__tab-cta-card-link">
+<span data-content="Explore tech">Explore tech</span>
+</a>
+													<a href="https://hailo.ai/products/technology/" class="c-link b-mega-menu__tab-cta-card-link-over">
+<span data-content=""></span>
+</a>
+																							</div>
+																																</div>
+					</div>
+									<div class="b-mega-menu__tab ">
+													<a class="b-mega-menu__tab-label" href="https://hailo.ai/products/quality-and-reliability">
+								Quality
+							</a>
+												<div class="b-mega-menu__tab-columns ">
+													</div>
+						<div class="b-mega-menu__tab-cta">
+																																			<div class="b-mega-menu__tab-cta-card">
+												<img src="https://hailo.ai/wp-content/uploads/2023/08/Quality_megamenu_TN.jpg" class="c-image b-mega-menu__tab-cta-card-image" alt="">
+																									<h2 class="c-el c-title b-mega-menu__tab-cta-card-title has-line-breaks default">Committed to Quality Excellence</h2>
+																																					<a aria-label=" Explore more" href="https://hailo.ai/products/quality-and-reliability/" class="c-link b-mega-menu__tab-cta-card-link">
+<span data-content=" Explore more"> Explore more</span>
+</a>
+													<a href="https://hailo.ai/products/quality-and-reliability/" class="c-link b-mega-menu__tab-cta-card-link-over">
+<span data-content=""></span>
+</a>
+																							</div>
+																																</div>
+					</div>
+									<div class="b-mega-menu__tab ">
+													<a class="b-mega-menu__tab-label" href="https://hailo.ai/products/partners-ecosystem/">
+								Partners Ecosystem
+							</a>
+												<div class="b-mega-menu__tab-columns ">
+													</div>
+						<div class="b-mega-menu__tab-cta">
+																																			<div class="b-mega-menu__tab-cta-card">
+												<img src="https://hailo.ai/wp-content/uploads/2023/08/Partners_Ecosystem_Megamenu-1.jpg" class="c-image b-mega-menu__tab-cta-card-image" alt="">
+																									<h2 class="c-el c-title b-mega-menu__tab-cta-card-title has-line-breaks default">A wide ecosystem of partners to help you design a complete AI solution</h2>
+																																					<a aria-label="Explore partners" href="https://hailo.ai/products/partners-ecosystem/" class="c-link b-mega-menu__tab-cta-card-link">
+<span data-content="Explore partners">Explore partners</span>
+</a>
+													<a href="https://hailo.ai/products/partners-ecosystem/" class="c-link b-mega-menu__tab-cta-card-link-over">
+<span data-content=""></span>
+</a>
+																							</div>
+																																</div>
+					</div>
+							</div>
+		</div>
+	</div>
+</div>
+</section>
+</div></li>
+<li id="menu-item-196" class="menu-item menu-item-type-post_type menu-item-object-af_nav_mega_menu menu-item-196 menu-item--mega-menu menu-item-has-children"><a>Applications</a><div class="sub-menu sub-menu--mega-menu"><section class="c-block c-margin c-margin--bottom-default c-padding--top-default c-padding--bottom-default c-border c-border--bottom-default c-block b-mega-menu b-mega-menu--page-  align b-mega-menu-layout-default b-mega-menu-style-default" id="b-mega-menu-2">
+	<div class="c-background c-background--container">
+    
+    
+    <div class="c-background__content">
+		<div class="b-mega-menu__container container">
+			<div class="b-mega-menu__tab-headers">
+									<div class="b-mega-menu__tab-header">
+													<div class="b-mega-menu__tab-header-title b-mega-menu__tab-header-title--selected">
+								Automotive
+							</div>
+											</div>
+									<div class="b-mega-menu__tab-header">
+													<div class="b-mega-menu__tab-header-title ">
+								Security
+							</div>
+											</div>
+									<div class="b-mega-menu__tab-header">
+													<div class="b-mega-menu__tab-header-title ">
+								Industrial Automation
+							</div>
+											</div>
+									<div class="b-mega-menu__tab-header">
+													<div class="b-mega-menu__tab-header-title ">
+								Retail
+							</div>
+											</div>
+									<div class="b-mega-menu__tab-header">
+													<div class="b-mega-menu__tab-header-title ">
+								Personal Compute
+							</div>
+											</div>
+							</div>
+			<div class="b-mega-menu__tabs">
+									<div class="b-mega-menu__tab b-mega-menu__tab--selected">
+													<div class="b-mega-menu__tab-label">
+								Automotive
+							</div>
+												<div class="b-mega-menu__tab-columns ">
+															<div class="b-mega-menu__tab-column">
+																																																		
+																			<div class="b-mega-menu__tab-column-items b-mega-menu__tab-column-items--links">
+																																																																				<a aria-label="ADAS &amp; AD" href="https://hailo.ai/applications/automotive/adas-and-ad/" class="c-link  b-mega-menu__tab-column-item-link b-mega-menu__tab-column-item-link--style-main">
+<span data-content="ADAS &amp; AD">ADAS & AD<div class="b-mega-menu__tab-column-item-link-arrow"></div></span>
+</a>
+
+															
+																																																																																						<a aria-label="ADAS" href="https://hailo.ai/applications/automotive/adas-and-ad/#adas" class="c-link  b-mega-menu__tab-column-item-link b-mega-menu__tab-column-item-link--style-default">
+<span data-content="ADAS">ADAS</span>
+</a>
+
+															
+																																																																																						<a aria-label="Autonomous Driving" href="https://hailo.ai/applications/automotive/adas-and-ad/#ad" class="c-link  b-mega-menu__tab-column-item-link b-mega-menu__tab-column-item-link--style-default">
+<span data-content="Autonomous Driving">Autonomous Driving</span>
+</a>
+
+															
+																																																																	</div>
+																			<div class="b-mega-menu__tab-column-items b-mega-menu__tab-column-items--links">
+																																																																				<a aria-label="Generative AI" href="https://hailo.ai/applications/automotive/hailo-generative-ai-processors-for-automotive/" class="c-link  b-mega-menu__tab-column-item-link b-mega-menu__tab-column-item-link--style-main">
+<span data-content="Generative AI">Generative AI<div class="b-mega-menu__tab-column-item-link-arrow"></div></span>
+</a>
+
+															
+																																																																																						<a aria-label="Generative AI for smart cockpit / IVI" href="https://hailo.ai/applications/automotive/hailo-generative-ai-processors-for-automotive/#Generative%20AI%20for%20smart%20cockpit%20/%20IVI" class="c-link  b-mega-menu__tab-column-item-link b-mega-menu__tab-column-item-link--style-default">
+<span data-content="Generative AI for smart cockpit / IVI">Generative AI for smart cockpit / IVI</span>
+</a>
+
+															
+																																																																																						<a aria-label="Generative AI on the edge" href="https://hailo.ai/applications/automotive/hailo-generative-ai-processors-for-automotive/#Generative%20AI%20on%20the%20edge" class="c-link  b-mega-menu__tab-column-item-link b-mega-menu__tab-column-item-link--style-default">
+<span data-content="Generative AI on the edge">Generative AI on the edge</span>
+</a>
+
+															
+																																																																	</div>
+									
+																			<div class="b-mega-menu__tab-column-items b-mega-menu__tab-column-items--image">
+																					</div>
+																	</div>
+													</div>
+						<div class="b-mega-menu__tab-cta">
+																																			<div class="b-mega-menu__tab-cta-posts">
+			<div class="b-mega-menu__tab-cta-posts-title">
+			Recommended blog posts
+		</div>
+		<div class="b-mega-menu__tab-cta-posts-list">
+					<div class="b-mega-menu__tab-cta-post b-mega-menu__tab-cta-post--big">
+				<div class="b-mega-menu__tab-cta-post-image">
+					<img src="https://hailo.ai/wp-content/uploads/2023/07/Leveraging_Vendor_Partnerships_for_ADAS_Success__LeddarTech_and_Hailo.jpg" class="c-image" alt="">
+				</div>
+								<div class="b-mega-menu__tab-cta-post-body">
+					<a href="https://hailo.ai/blog/leveraging-vendor-partnerships-for-adas-success-leddartech-and-hailo/" class="b-mega-menu__tab-cta-post-title ">
+						Leveraging Vendor Partnerships for ADAS Success: LeddarTech and Hailo
+					</a>
+
+											<div class="b-mega-menu__tab-cta-post-date">
+							24 July 2023
+						</div>
+										<a href="https://hailo.ai/blog/leveraging-vendor-partnerships-for-adas-success-leddartech-and-hailo/" class="b-mega-menu__tab-cta-post-link" aria-label="Leveraging Vendor Partnerships for ADAS Success: LeddarTech and Hailo"></a>
+				</div>
+			</div>
+			</div>
+</div>
+																																</div>
+					</div>
+									<div class="b-mega-menu__tab ">
+													<div class="b-mega-menu__tab-label">
+								Security
+							</div>
+												<div class="b-mega-menu__tab-columns ">
+															<div class="b-mega-menu__tab-column">
+																																																		
+																			<div class="b-mega-menu__tab-column-items b-mega-menu__tab-column-items--links">
+																																																																				<a aria-label="Intelligent Transportation" href="https://hailo.ai/applications/security/intelligent-transportation/" class="c-link  b-mega-menu__tab-column-item-link b-mega-menu__tab-column-item-link--style-main">
+<span data-content="Intelligent Transportation">Intelligent Transportation<div class="b-mega-menu__tab-column-item-link-arrow"></div></span>
+</a>
+
+															
+																																																																																						<a aria-label="Traffic Control" href="https://hailo.ai/applications/security/intelligent-transportation/#Traffic_Control" class="c-link  b-mega-menu__tab-column-item-link b-mega-menu__tab-column-item-link--style-default">
+<span data-content="Traffic Control">Traffic Control</span>
+</a>
+
+															
+																																																																																						<a aria-label="Tolling" href="https://hailo.ai/applications/security/intelligent-transportation/#Tolling" class="c-link  b-mega-menu__tab-column-item-link b-mega-menu__tab-column-item-link--style-default">
+<span data-content="Tolling">Tolling</span>
+</a>
+
+															
+																																																																																						<a aria-label="Law Enforcement" href="https://hailo.ai/applications/security/intelligent-transportation/#Law_Enforcement" class="c-link  b-mega-menu__tab-column-item-link b-mega-menu__tab-column-item-link--style-default">
+<span data-content="Law Enforcement">Law Enforcement</span>
+</a>
+
+															
+																																																																																						<a aria-label="Smart Parking" href="https://hailo.ai/applications/security/intelligent-transportation/#Smart_Parking" class="c-link  b-mega-menu__tab-column-item-link b-mega-menu__tab-column-item-link--style-default">
+<span data-content="Smart Parking">Smart Parking</span>
+</a>
+
+															
+																																																																	</div>
+																			<div class="b-mega-menu__tab-column-items b-mega-menu__tab-column-items--links">
+																																																																				<a aria-label="Perimeter Protection" href="https://hailo.ai/applications/security/perimeter-protection/" class="c-link  b-mega-menu__tab-column-item-link b-mega-menu__tab-column-item-link--style-main">
+<span data-content="Perimeter Protection">Perimeter Protection<div class="b-mega-menu__tab-column-item-link-arrow"></div></span>
+</a>
+
+															
+																																																																																						<a aria-label="Multi Camera ReID" href="https://hailo.ai/applications/security/perimeter-protection/#Multi_Camera_Re-Identification" class="c-link  b-mega-menu__tab-column-item-link b-mega-menu__tab-column-item-link--style-default">
+<span data-content="Multi Camera ReID">Multi Camera ReID</span>
+</a>
+
+															
+																																																																																						<a aria-label="Video Metadata" href="https://hailo.ai/applications/security/perimeter-protection/#Video_Metadata" class="c-link  b-mega-menu__tab-column-item-link b-mega-menu__tab-column-item-link--style-default">
+<span data-content="Video Metadata">Video Metadata</span>
+</a>
+
+															
+																																																																	</div>
+																			<div class="b-mega-menu__tab-column-items b-mega-menu__tab-column-items--links">
+																																																																				<a aria-label="Access Control" href="https://hailo.ai/applications/security/access-control/" class="c-link  b-mega-menu__tab-column-item-link b-mega-menu__tab-column-item-link--style-main">
+<span data-content="Access Control">Access Control<div class="b-mega-menu__tab-column-item-link-arrow"></div></span>
+</a>
+
+															
+																																																																																						<a aria-label="Vehicle Access Control" href="https://hailo.ai/applications/security/access-control/#Vehicle_Access_Control" class="c-link  b-mega-menu__tab-column-item-link b-mega-menu__tab-column-item-link--style-default">
+<span data-content="Vehicle Access Control">Vehicle Access Control</span>
+</a>
+
+															
+																																																																																						<a aria-label="Human Access Control" href="https://hailo.ai/applications/security/access-control/#Human_Access_Control" class="c-link  b-mega-menu__tab-column-item-link b-mega-menu__tab-column-item-link--style-default">
+<span data-content="Human Access Control">Human Access Control</span>
+</a>
+
+															
+																																																																	</div>
+									
+																			<div class="b-mega-menu__tab-column-items b-mega-menu__tab-column-items--image">
+																					</div>
+																	</div>
+													</div>
+						<div class="b-mega-menu__tab-cta">
+																																			<div class="b-mega-menu__tab-cta-posts">
+			<div class="b-mega-menu__tab-cta-posts-title">
+			Download our e-Books
+		</div>
+		<div class="b-mega-menu__tab-cta-posts-list">
+					<div class="b-mega-menu__tab-cta-post b-mega-menu__tab-cta-post--big">
+				<div class="b-mega-menu__tab-cta-post-image">
+					<img src="https://hailo.ai/wp-content/uploads/2025/03/Ebook__Powerful_Edge_AI_to_Empower_Intelligent_Transportation_System.jpg" class="c-image" alt="">
+				</div>
+								<div class="b-mega-menu__tab-cta-post-body">
+					<a href="https://hailo.ai/resources/industries/security/ebook-powerful-edge-ai-to-empower-intelligent-transportation-system/" class="b-mega-menu__tab-cta-post-title ">
+						Ebook: Powerful Edge AI to Empower Intelligent Transportation System
+					</a>
+
+											<div class="b-mega-menu__tab-cta-post-date">
+							2 March 2025
+						</div>
+										<a href="https://hailo.ai/resources/industries/security/ebook-powerful-edge-ai-to-empower-intelligent-transportation-system/" class="b-mega-menu__tab-cta-post-link" aria-label="Ebook: Powerful Edge AI to Empower Intelligent Transportation System"></a>
+				</div>
+			</div>
+					<div class="b-mega-menu__tab-cta-post b-mega-menu__tab-cta-post--big">
+				<div class="b-mega-menu__tab-cta-post-image">
+					<img src="https://hailo.ai/wp-content/uploads/2023/10/Ebook_-Powerful-Video-Analytics-at-Scale.jpg" class="c-image" alt="">
+				</div>
+								<div class="b-mega-menu__tab-cta-post-body">
+					<a href="https://hailo.ai/resources/industries/industrial-automation/ebook-powerful-video-analytics-at-scale/" class="b-mega-menu__tab-cta-post-title ">
+						Ebook: Powerful Video Analytics at Scale
+					</a>
+
+											<div class="b-mega-menu__tab-cta-post-date">
+							3 October 2023
+						</div>
+										<a href="https://hailo.ai/resources/industries/industrial-automation/ebook-powerful-video-analytics-at-scale/" class="b-mega-menu__tab-cta-post-link" aria-label="Ebook: Powerful Video Analytics at Scale"></a>
+				</div>
+			</div>
+			</div>
+</div>
+																																</div>
+					</div>
+									<div class="b-mega-menu__tab ">
+													<div class="b-mega-menu__tab-label">
+								Industrial Automation
+							</div>
+												<div class="b-mega-menu__tab-columns ">
+															<div class="b-mega-menu__tab-column">
+																																																		
+																			<div class="b-mega-menu__tab-column-items b-mega-menu__tab-column-items--links">
+																																																																				<a aria-label="Automatic Optical Inspection" href="https://hailo.ai/applications/industrial-automation/automatic-optical-inspection/" class="c-link  b-mega-menu__tab-column-item-link b-mega-menu__tab-column-item-link--style-main">
+<span data-content="Automatic Optical Inspection">Automatic Optical Inspection<div class="b-mega-menu__tab-column-item-link-arrow"></div></span>
+</a>
+
+															
+																																																																																						<a aria-label="Anomaly Detection" href="https://hailo.ai/applications/industrial-automation/automatic-optical-inspection/#Anomaly_Detection" class="c-link  b-mega-menu__tab-column-item-link b-mega-menu__tab-column-item-link--style-default">
+<span data-content="Anomaly Detection">Anomaly Detection</span>
+</a>
+
+															
+																																																																																						<a aria-label="Sorting" href="https://hailo.ai/applications/industrial-automation/automatic-optical-inspection/#Sorting" class="c-link  b-mega-menu__tab-column-item-link b-mega-menu__tab-column-item-link--style-default">
+<span data-content="Sorting">Sorting</span>
+</a>
+
+															
+																																																																																						<a aria-label="OCR" href="https://hailo.ai/applications/industrial-automation/automatic-optical-inspection/#OCR" class="c-link  b-mega-menu__tab-column-item-link b-mega-menu__tab-column-item-link--style-default">
+<span data-content="OCR">OCR</span>
+</a>
+
+															
+																																																																																						<a aria-label="Pick &amp; Place" href="https://hailo.ai/applications/industrial-automation/automatic-optical-inspection/#Pick_Place" class="c-link  b-mega-menu__tab-column-item-link b-mega-menu__tab-column-item-link--style-default">
+<span data-content="Pick &amp; Place">Pick & Place</span>
+</a>
+
+															
+																																																																	</div>
+									
+																			<div class="b-mega-menu__tab-column-items b-mega-menu__tab-column-items--image">
+																					</div>
+																	</div>
+													</div>
+						<div class="b-mega-menu__tab-cta">
+																																			<div class="b-mega-menu__tab-cta-posts">
+			<div class="b-mega-menu__tab-cta-posts-title">
+			Customer story
+		</div>
+		<div class="b-mega-menu__tab-cta-posts-list">
+					<div class="b-mega-menu__tab-cta-post b-mega-menu__tab-cta-post--big">
+				<div class="b-mega-menu__tab-cta-post-image">
+					<img src="https://hailo.ai/wp-content/uploads/2023/05/Embedded-camera-thumbnail-1024x535.png" class="c-image" alt="">
+				</div>
+								<div class="b-mega-menu__tab-cta-post-body">
+					<a href="https://hailo.ai/resources/industries/industrial-automation/qtechnology-embedded-industrial-camera/" class="b-mega-menu__tab-cta-post-title ">
+						Qtechnology: Embedded Industrial Camera
+					</a>
+
+											<div class="b-mega-menu__tab-cta-post-date">
+							7 May 2023
+						</div>
+										<a href="https://hailo.ai/resources/industries/industrial-automation/qtechnology-embedded-industrial-camera/" class="b-mega-menu__tab-cta-post-link" aria-label="Qtechnology: Embedded Industrial Camera"></a>
+				</div>
+			</div>
+			</div>
+</div>
+																																</div>
+					</div>
+									<div class="b-mega-menu__tab ">
+													<div class="b-mega-menu__tab-label">
+								Retail
+							</div>
+												<div class="b-mega-menu__tab-columns ">
+															<div class="b-mega-menu__tab-column">
+																																																		
+																			<div class="b-mega-menu__tab-column-items b-mega-menu__tab-column-items--links">
+																																																																				<a aria-label="Smart Retail" href="https://hailo.ai/applications/retail/smart-retail/" class="c-link  b-mega-menu__tab-column-item-link b-mega-menu__tab-column-item-link--style-main">
+<span data-content="Smart Retail">Smart Retail<div class="b-mega-menu__tab-column-item-link-arrow"></div></span>
+</a>
+
+															
+																																																																																						<a aria-label="Point of Sale" href="https://hailo.ai/applications/retail/smart-retail/#pos" class="c-link  b-mega-menu__tab-column-item-link b-mega-menu__tab-column-item-link--style-default">
+<span data-content="Point of Sale">Point of Sale</span>
+</a>
+
+															
+																																																																																						<a aria-label="Supply Chain Management" href="https://hailo.ai/applications/retail/smart-retail/#scm" class="c-link  b-mega-menu__tab-column-item-link b-mega-menu__tab-column-item-link--style-default">
+<span data-content="Supply Chain Management">Supply Chain Management</span>
+</a>
+
+															
+																																																																	</div>
+									
+																			<div class="b-mega-menu__tab-column-items b-mega-menu__tab-column-items--image">
+																					</div>
+																	</div>
+													</div>
+						<div class="b-mega-menu__tab-cta">
+																																			<div class="b-mega-menu__tab-cta-posts">
+			<div class="b-mega-menu__tab-cta-posts-title">
+			Customer story
+		</div>
+		<div class="b-mega-menu__tab-cta-posts-list">
+					<div class="b-mega-menu__tab-cta-post b-mega-menu__tab-cta-post--big">
+				<div class="b-mega-menu__tab-cta-post-image">
+					<img src="https://hailo.ai/wp-content/uploads/2023/08/ai-cast-thumbnail-1-1024x535.png" class="c-image" alt="">
+				</div>
+								<div class="b-mega-menu__tab-cta-post-body">
+					<a href="https://hailo.ai/resources/industries/retail/idein-ai-cast-smart-camera/" class="b-mega-menu__tab-cta-post-title ">
+						Idein: AI Cast Smart Camera
+					</a>
+
+											<div class="b-mega-menu__tab-cta-post-date">
+							9 August 2023
+						</div>
+										<a href="https://hailo.ai/resources/industries/retail/idein-ai-cast-smart-camera/" class="b-mega-menu__tab-cta-post-link" aria-label="Idein: AI Cast Smart Camera"></a>
+				</div>
+			</div>
+			</div>
+</div>
+																																</div>
+					</div>
+									<div class="b-mega-menu__tab ">
+													<div class="b-mega-menu__tab-label">
+								Personal Compute
+							</div>
+												<div class="b-mega-menu__tab-columns ">
+															<div class="b-mega-menu__tab-column">
+																																																		
+																			<div class="b-mega-menu__tab-column-items b-mega-menu__tab-column-items--links">
+																																																																				<a aria-label="Generative AI" href="https://hailo.ai/applications/personal-compute/generative-ai/" class="c-link  b-mega-menu__tab-column-item-link b-mega-menu__tab-column-item-link--style-main">
+<span data-content="Generative AI">Generative AI<div class="b-mega-menu__tab-column-item-link-arrow"></div></span>
+</a>
+
+															
+																																																																	</div>
+									
+																			<div class="b-mega-menu__tab-column-items b-mega-menu__tab-column-items--image">
+																					</div>
+																	</div>
+													</div>
+						<div class="b-mega-menu__tab-cta">
+																																			<div class="b-mega-menu__tab-cta-posts">
+			<div class="b-mega-menu__tab-cta-posts-title">
+			Recommended blog posts
+		</div>
+		<div class="b-mega-menu__tab-cta-posts-list">
+					<div class="b-mega-menu__tab-cta-post b-mega-menu__tab-cta-post--big">
+				<div class="b-mega-menu__tab-cta-post-image">
+					<img src="https://hailo.ai/wp-content/uploads/2025/07/Blog-Bringing-Generative-AI-to-the-Edge-LLM-on-Hailo-10H-Example.jpeg" class="c-image" alt="">
+				</div>
+								<div class="b-mega-menu__tab-cta-post-body">
+					<a href="https://hailo.ai/blog/bringing-generative-ai-to-the-edge-llm-on-hailo-10h/" class="b-mega-menu__tab-cta-post-title ">
+						Bringing Generative AI to the Edge: LLM on Hailo-10H
+					</a>
+
+											<div class="b-mega-menu__tab-cta-post-date">
+							29 July 2025
+						</div>
+										<a href="https://hailo.ai/blog/bringing-generative-ai-to-the-edge-llm-on-hailo-10h/" class="b-mega-menu__tab-cta-post-link" aria-label="Bringing Generative AI to the Edge: LLM on Hailo-10H"></a>
+				</div>
+			</div>
+					<div class="b-mega-menu__tab-cta-post b-mega-menu__tab-cta-post--big">
+				<div class="b-mega-menu__tab-cta-post-image">
+					<img src="https://hailo.ai/wp-content/uploads/2025/06/Beyond-TOPS-blog-1024x555.png" class="c-image" alt="">
+				</div>
+								<div class="b-mega-menu__tab-cta-post-body">
+					<a href="https://hailo.ai/blog/evaluating-edge-ai-processor-in-the-generative-ai-era/" class="b-mega-menu__tab-cta-post-title ">
+						Evaluating Edge AI Processor in the Generative AI Era
+					</a>
+
+											<div class="b-mega-menu__tab-cta-post-date">
+							29 June 2025
+						</div>
+										<a href="https://hailo.ai/blog/evaluating-edge-ai-processor-in-the-generative-ai-era/" class="b-mega-menu__tab-cta-post-link" aria-label="Evaluating Edge AI Processor in the Generative AI Era"></a>
+				</div>
+			</div>
+			</div>
+</div>
+																																</div>
+					</div>
+							</div>
+		</div>
+	</div>
+</div>
+</section>
+</div></li>
+<li id="menu-item-6812" class="menu-item menu-item-type-post_type menu-item-object-af_nav_mega_menu menu-item-6812 menu-item--mega-menu menu-item-has-children"><a href="/resources/">Resources</a><div class="sub-menu sub-menu--mega-menu"><section class="c-block c-margin c-margin--bottom-default c-padding--top-default c-padding--bottom-default c-border c-border--bottom-default c-block b-mega-menu b-mega-menu--page-  align b-mega-menu-layout-default b-mega-menu-style-default" id="b-mega-menu-3">
+	<div class="c-background c-background--container">
+    
+    
+    <div class="c-background__content">
+		<div class="b-mega-menu__container container">
+			<div class="b-mega-menu__tab-headers">
+									<div class="b-mega-menu__tab-header">
+													<a class="b-mega-menu__tab-header-title b-mega-menu__tab-header-title--selected" href="https://hailo.ai/resources/">
+								Resource Center
+							</a>
+											</div>
+									<div class="b-mega-menu__tab-header">
+													<a class="b-mega-menu__tab-header-title " href="https://hailo.ai/blog/">
+								Blog
+							</a>
+											</div>
+							</div>
+			<div class="b-mega-menu__tabs">
+									<div class="b-mega-menu__tab b-mega-menu__tab--selected">
+													<a class="b-mega-menu__tab-label" href="https://hailo.ai/resources/">
+								Resource Center
+							</a>
+												<div class="b-mega-menu__tab-columns ">
+															<div class="b-mega-menu__tab-column">
+																																																		
+																			<div class="b-mega-menu__tab-column-items b-mega-menu__tab-column-items--links">
+																																																																				<a aria-label="Articles" href="https://hailo.ai/resources/type/articles/" class="c-link  b-mega-menu__tab-column-item-link b-mega-menu__tab-column-item-link--style-default">
+<span data-content="Articles">Articles</span>
+</a>
+
+															
+																																																																																						<a aria-label="Brochures" href="https://hailo.ai/resources/type/brochures/" class="c-link  b-mega-menu__tab-column-item-link b-mega-menu__tab-column-item-link--style-default">
+<span data-content="Brochures">Brochures</span>
+</a>
+
+															
+																																																																																						<a aria-label="Customer Stories" href="https://hailo.ai/resources/type/customer-stories/" class="c-link  b-mega-menu__tab-column-item-link b-mega-menu__tab-column-item-link--style-default">
+<span data-content="Customer Stories">Customer Stories</span>
+</a>
+
+															
+																																																																																						<a aria-label="Demos" href="https://hailo.ai/resources/type/demos/" class="c-link  b-mega-menu__tab-column-item-link b-mega-menu__tab-column-item-link--style-default">
+<span data-content="Demos">Demos</span>
+</a>
+
+															
+																																																																																						<a aria-label="E-Books" href="https://hailo.ai/resources/type/ebooks/" class="c-link  b-mega-menu__tab-column-item-link b-mega-menu__tab-column-item-link--style-default">
+<span data-content="E-Books">E-Books</span>
+</a>
+
+															
+																																																																	</div>
+									
+																			<div class="b-mega-menu__tab-column-items b-mega-menu__tab-column-items--image">
+																					</div>
+																	</div>
+															<div class="b-mega-menu__tab-column">
+																																																		
+																			<div class="b-mega-menu__tab-column-items b-mega-menu__tab-column-items--links">
+																																																																				<a aria-label="Presentations" href="https://hailo.ai/resources/type/presentations/" class="c-link  b-mega-menu__tab-column-item-link b-mega-menu__tab-column-item-link--style-default">
+<span data-content="Presentations">Presentations</span>
+</a>
+
+															
+																																																																																						<a aria-label="Product Briefs" href="https://hailo.ai/resources/type/product-briefs/" class="c-link  b-mega-menu__tab-column-item-link b-mega-menu__tab-column-item-link--style-default">
+<span data-content="Product Briefs">Product Briefs</span>
+</a>
+
+															
+																																																																																						<a aria-label="Videos" href="https://hailo.ai/resources/type/videos/" class="c-link  b-mega-menu__tab-column-item-link b-mega-menu__tab-column-item-link--style-default">
+<span data-content="Videos">Videos</span>
+</a>
+
+															
+																																																																																						<a aria-label="Webinars" href="https://hailo.ai/resources/type/webinars/" class="c-link  b-mega-menu__tab-column-item-link b-mega-menu__tab-column-item-link--style-default">
+<span data-content="Webinars">Webinars</span>
+</a>
+
+															
+																																																																																						<a aria-label="White papers" href="https://hailo.ai/resources/type/white-papers/" class="c-link  b-mega-menu__tab-column-item-link b-mega-menu__tab-column-item-link--style-default">
+<span data-content="White papers">White papers</span>
+</a>
+
+															
+																																																																	</div>
+									
+																			<div class="b-mega-menu__tab-column-items b-mega-menu__tab-column-items--image">
+																					</div>
+																	</div>
+													</div>
+						<div class="b-mega-menu__tab-cta">
+																																			<div class="b-mega-menu__tab-cta-posts">
+			<div class="b-mega-menu__tab-cta-posts-title">
+			Explore more
+		</div>
+		<div class="b-mega-menu__tab-cta-posts-list">
+					<div class="b-mega-menu__tab-cta-post b-mega-menu__tab-cta-post--big">
+				<div class="b-mega-menu__tab-cta-post-image">
+					<img src="https://hailo.ai/wp-content/uploads/2025/03/Ebook__Powerful_Edge_AI_to_Empower_Intelligent_Transportation_System.jpg" class="c-image" alt="">
+				</div>
+								<div class="b-mega-menu__tab-cta-post-body">
+					<a href="https://hailo.ai/resources/industries/security/ebook-powerful-edge-ai-to-empower-intelligent-transportation-system/" class="b-mega-menu__tab-cta-post-title ">
+						Ebook: Powerful Edge AI to Empower Intelligent Transportation System
+					</a>
+
+											<div class="b-mega-menu__tab-cta-post-date">
+							2 March 2025
+						</div>
+										<a href="https://hailo.ai/resources/industries/security/ebook-powerful-edge-ai-to-empower-intelligent-transportation-system/" class="b-mega-menu__tab-cta-post-link" aria-label="Ebook: Powerful Edge AI to Empower Intelligent Transportation System"></a>
+				</div>
+			</div>
+			</div>
+</div>
+																																</div>
+					</div>
+									<div class="b-mega-menu__tab ">
+													<a class="b-mega-menu__tab-label" href="https://hailo.ai/blog/">
+								Blog
+							</a>
+												<div class="b-mega-menu__tab-columns ">
+													</div>
+						<div class="b-mega-menu__tab-cta">
+																																			<div class="b-mega-menu__tab-cta-posts">
+			<div class="b-mega-menu__tab-cta-posts-title">
+			Recent blog posts
+		</div>
+		<div class="b-mega-menu__tab-cta-posts-list">
+					<div class="b-mega-menu__tab-cta-post b-mega-menu__tab-cta-post--big">
+				<div class="b-mega-menu__tab-cta-post-image">
+					<img src="https://hailo.ai/wp-content/uploads/2025/07/Blog-Bringing-Generative-AI-to-the-Edge-LLM-on-Hailo-10H-Example.jpeg" class="c-image" alt="">
+				</div>
+								<div class="b-mega-menu__tab-cta-post-body">
+					<a href="https://hailo.ai/blog/bringing-generative-ai-to-the-edge-llm-on-hailo-10h/" class="b-mega-menu__tab-cta-post-title ">
+						Bringing Generative AI to the Edge: LLM on Hailo-10H
+					</a>
+
+											<div class="b-mega-menu__tab-cta-post-date">
+							29 July 2025
+						</div>
+										<a href="https://hailo.ai/blog/bringing-generative-ai-to-the-edge-llm-on-hailo-10h/" class="b-mega-menu__tab-cta-post-link" aria-label="Bringing Generative AI to the Edge: LLM on Hailo-10H"></a>
+				</div>
+			</div>
+					<div class="b-mega-menu__tab-cta-post b-mega-menu__tab-cta-post--big">
+				<div class="b-mega-menu__tab-cta-post-image">
+					<img src="https://hailo.ai/wp-content/uploads/2025/06/Beyond-TOPS-blog-1024x555.png" class="c-image" alt="">
+				</div>
+								<div class="b-mega-menu__tab-cta-post-body">
+					<a href="https://hailo.ai/blog/evaluating-edge-ai-processor-in-the-generative-ai-era/" class="b-mega-menu__tab-cta-post-title ">
+						Evaluating Edge AI Processor in the Generative AI Era
+					</a>
+
+											<div class="b-mega-menu__tab-cta-post-date">
+							29 June 2025
+						</div>
+										<a href="https://hailo.ai/blog/evaluating-edge-ai-processor-in-the-generative-ai-era/" class="b-mega-menu__tab-cta-post-link" aria-label="Evaluating Edge AI Processor in the Generative AI Era"></a>
+				</div>
+			</div>
+			</div>
+</div>
+																																</div>
+					</div>
+							</div>
+		</div>
+	</div>
+</div>
+</section>
+</div></li>
+<li id="menu-item-70" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-70"><a>Company</a>
+<ul class="sub-menu">
+	<li id="menu-item-74" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-74"><a href="https://hailo.ai/company-overview/">About Us</a></li>
+	<li id="menu-item-76" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-76"><a href="https://hailo.ai/company-overview/newsroom/">News &#038; Events</a></li>
+	<li id="menu-item-77" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-77"><a href="https://hailo.ai/company-overview/careers/">Careers</a></li>
+	<li id="menu-item-819" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-819"><a href="https://hailo.ai/company-overview/contact-us/">Contact Us</a></li>
+</ul>
+</li>
+</ul>
+
+					<div class="header__actions-wrap">
+						
+						
+													<span class="header__search-toggle"><svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M11.0405 5.89526C11.0405 8.59883 8.84883 10.7905 6.14526 10.7905C3.44168 10.7905 1.25 8.59883 1.25 5.89526C1.25 3.19168 3.44168 1 6.14526 1C8.84883 1 11.0405 3.19168 11.0405 5.89526ZM9.87149 10.4638C8.85592 11.2931 7.55868 11.7905 6.14526 11.7905C2.8894 11.7905 0.25 9.15112 0.25 5.89526C0.25 2.6394 2.8894 0 6.14526 0C9.40112 0 12.0405 2.6394 12.0405 5.89526C12.0405 7.37764 11.4934 8.73223 10.59 9.76811L16.1155 15.2936L15.4084 16.0007L9.87149 10.4638Z" fill="currentColor"/>
+</svg>
+</span>
+						
+						
+													<div class="header__login">
+								<span><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M5 15.9296V14.6C5 14.1757 5.16857 13.7687 5.46863 13.4686C5.76869 13.1686 6.17565 13 6.6 13H11.4C11.8243 13 12.2313 13.1686 12.5314 13.4686C12.8314 13.7687 13 14.1757 13 14.6V15.9296M17 9C17 13.4183 13.4183 17 9 17C4.58172 17 1 13.4183 1 9C1 4.58172 4.58172 1 9 1C13.4183 1 17 4.58172 17 9ZM11.4 7.4C11.4 8.72548 10.3255 9.8 9 9.8C7.67452 9.8 6.6 8.72548 6.6 7.4C6.6 6.07452 7.67452 5 9 5C10.3255 5 11.4 6.07452 11.4 7.4Z" stroke="currentColor" fill-rule="evenodd" clip-rule="evenodd"/>
+</svg>
+</span>
+								<div class="header__login-hover-fix"></div>
+								<div class="header__login-links">
+									<span><strong>Sign in to your account</strong></span>
+									
+									<a href="/authorization/?redirect_to=https%3A%2F%2Fhailo.ai%2Fauthorization%2F%3Fredirect_to%3Dhttps%253A%252F%252Fhailo.ai%252F%253Fdl_dev%253D1%2526file%253Defcf1fe500eff2b799e075344d01b0a8"
+									   class="c-link btn c-button btn-blue-gradient btn--size-medium btn--default is-animated"
+									   style="background-image: linear-gradient(90deg, rgb(66, 117, 233) 0%, rgb(73, 175, 219) 100%);">
+										<span>Log In</span>
+									</a>
+
+																		<span>Don&#039;t have an account? <a href="/developer-zone/request-access/?redirect_to=https%3A%2F%2Fhailo.ai%2Fauthorization%2F%3Fredirect_to%3Dhttps%253A%252F%252Fhailo.ai%252F%253Fdl_dev%253D1%2526file%253Defcf1fe500eff2b799e075344d01b0a8">Sign up&nbsp;&nbsp;<svg width="16" height="12" viewBox="0 0 16 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M9.84613 11.6553L8.7923 10.5707L12.6116 6.75146H0.5V5.25151H12.6116L8.7923 1.43226L9.84613 0.347656L15.5 6.00148L9.84613 11.6553Z" fill="#4275E9"/>
+</svg>
+</a></span>
+
+									<div class="header__login-links_bottom">
+										<hr>
+										<span><strong>Log in to:</strong></span>
+										<span><a href="/developer-zone"
+												 class="link--invert-hover">Developer Zone</a></span>
+										<span><a href="https://community.hailo.ai/session/sso" target="_blank"
+												 class="link--invert-hover">Community</a></span>
+										<span><a href="https://community.hailo.ai/" target="_blank" class="link--invert-hover"><span>Continue to Community as Guest&nbsp;&nbsp;<svg width="16" height="12" viewBox="0 0 16 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M9.84613 11.6553L8.7923 10.5707L12.6116 6.75146H0.5V5.25151H12.6116L8.7923 1.43226L9.84613 0.347656L15.5 6.00148L9.84613 11.6553Z" fill="#4275E9"/>
+</svg>
+</a></span>
+									</div>
+
+
+								</div>
+							</div>
+											</div>
+
+					<nav class="language-switcher language-switcher--header c-language-switcher b-content-menu__language-switcher b-content-menu__language-switcher--mobile language-switcher--style-default">
+		<div class="language-switcher__inner">
+							<div class="language-switcher__trigger">
+					<svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path fill-rule="evenodd" clip-rule="evenodd" d="M9.934 13.2096C9.29121 14.4952 8.58334 14.9611 8.06626 14.9976C7.99602 14.9958 7.92604 14.993 7.85633 14.9891C7.3474 14.9134 6.67728 14.4322 6.066 13.2096C5.85912 12.7959 5.6747 12.3238 5.51982 11.8041C6.30066 11.9312 7.13427 12 8 12C8.86573 12 9.69934 11.9312 10.4802 11.8041C10.3253 12.3238 10.1409 12.7959 9.934 13.2096ZM10.7412 10.7412C9.9032 10.9065 8.97876 11 8 11C7.02124 11 6.0968 10.9065 5.2588 10.7412C5.09347 9.9032 5 8.97876 5 8C5 7.02124 5.09347 6.0968 5.2588 5.2588C6.0968 5.09347 7.02124 5 8 5C8.97876 5 9.9032 5.09347 10.7412 5.2588C10.9065 6.0968 11 7.02124 11 8C11 8.97875 10.9065 9.9032 10.7412 10.7412ZM11.5785 11.5785C11.2551 12.8695 10.7622 13.9611 10.1582 14.7367C12.4715 14.0828 14.298 12.2695 14.9707 9.9642C14.1884 10.6568 13.0051 11.2211 11.5785 11.5785ZM14.9707 6.0358C14.298 3.73048 12.4715 1.9172 10.1582 1.26325C10.7622 2.03888 11.2551 3.13055 11.5785 4.42151C13.0051 4.77886 14.1884 5.34322 14.9707 6.0358ZM11.8041 5.51982C12.3238 5.6747 12.7959 5.85911 13.2096 6.066C14.5511 6.73671 15 7.47826 15 8C15 8.52174 14.5511 9.26329 13.2096 9.934C12.7959 10.1409 12.3238 10.3253 11.8041 10.4802C11.9312 9.69934 12 8.86573 12 8C12 7.13427 11.9312 6.30066 11.8041 5.51982ZM10.4802 4.19595C10.3253 3.67616 10.1409 3.20413 9.934 2.79036C9.29121 1.50477 8.58334 1.03891 8.06626 1.00236C7.99602 1.00417 7.92604 1.00702 7.85633 1.01088C7.3474 1.08657 6.67728 1.56781 6.066 2.79036C5.85912 3.20413 5.6747 3.67616 5.51982 4.19595C6.30066 4.06876 7.13427 4 8 4C8.86573 4 9.69934 4.06876 10.4802 4.19595ZM4.42151 4.42151C4.7147 3.25103 5.14723 2.24438 5.67561 1.48857C3.84323 2.21363 2.38996 3.68979 1.69546 5.53736C2.42417 5.07163 3.3548 4.6887 4.42151 4.42151ZM1.29349 8.78467C1.26475 8.52708 1.25 8.26526 1.25 8C1.25 7.73474 1.26475 7.47292 1.29349 7.21533C1.56196 6.8444 2.03446 6.44395 2.79036 6.066C3.20413 5.85912 3.67616 5.6747 4.19595 5.51982C4.06876 6.30066 4 7.13427 4 8C4 8.86573 4.06876 9.69934 4.19595 10.4802C3.67616 10.3253 3.20413 10.1409 2.79036 9.934C2.03446 9.55605 1.56196 9.1556 1.29349 8.78467ZM0.330929 9.14225C0.862122 12.8579 3.94652 15.7501 7.75 15.9846C7.83268 15.9948 7.91604 16 8 16C8.02785 16 8.05562 15.9994 8.08333 15.9983C8.13875 15.9994 8.19431 16 8.25 16C12.6683 16 16.25 12.4183 16.25 8C16.25 3.58172 12.6683 0 8.25 0C8.19431 0 8.13875 0.000569043 8.08333 0.00170163C8.05562 0.000569043 8.02785 0 8 0C7.91604 0 7.83268 0.0051739 7.75 0.015371C3.94652 0.24992 0.862122 3.14209 0.330929 6.85775C0.115616 7.21969 0 7.60309 0 8C0 8.39691 0.115616 8.78031 0.330929 9.14225ZM1.69546 10.4626C2.42417 10.9284 3.3548 11.3113 4.42151 11.5785C4.7147 12.749 5.14724 13.7556 5.67561 14.5114C3.84323 13.7864 2.38996 12.3102 1.69546 10.4626Z" fill="#252525"/>
+					</svg>
+
+					<span>English</span>
+				</div>
+			
+			<div class="language-switcher__options">
+				<ul>
+																																				<li>
+								<a class="language-switcher__link" href="https://hailo.ai/zh-hans/">
+									简体中文
+								</a>
+							</li>
+																															<li>
+								<a class="language-switcher__link" href="https://hailo.ai/de/">
+									Deutsch
+								</a>
+							</li>
+																															<li>
+								<a class="language-switcher__link" href="https://hailo.ai/ja/">
+									日本語
+								</a>
+							</li>
+															</ul>
+			</div>
+		</div>
+	</nav>
+				</div>
+
+				<div class="header__mobile-btns">
+											<span
+							class="header__search-toggle header__search-toggle--mobile"><svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M11.0405 5.89526C11.0405 8.59883 8.84883 10.7905 6.14526 10.7905C3.44168 10.7905 1.25 8.59883 1.25 5.89526C1.25 3.19168 3.44168 1 6.14526 1C8.84883 1 11.0405 3.19168 11.0405 5.89526ZM9.87149 10.4638C8.85592 11.2931 7.55868 11.7905 6.14526 11.7905C2.8894 11.7905 0.25 9.15112 0.25 5.89526C0.25 2.6394 2.8894 0 6.14526 0C9.40112 0 12.0405 2.6394 12.0405 5.89526C12.0405 7.37764 11.4934 8.73223 10.59 9.76811L16.1155 15.2936L15.4084 16.0007L9.87149 10.4638Z" fill="currentColor"/>
+</svg>
+</span>
+					
+					
+											<div class="header__login header__login--mobile">
+							<span><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M5 15.9296V14.6C5 14.1757 5.16857 13.7687 5.46863 13.4686C5.76869 13.1686 6.17565 13 6.6 13H11.4C11.8243 13 12.2313 13.1686 12.5314 13.4686C12.8314 13.7687 13 14.1757 13 14.6V15.9296M17 9C17 13.4183 13.4183 17 9 17C4.58172 17 1 13.4183 1 9C1 4.58172 4.58172 1 9 1C13.4183 1 17 4.58172 17 9ZM11.4 7.4C11.4 8.72548 10.3255 9.8 9 9.8C7.67452 9.8 6.6 8.72548 6.6 7.4C6.6 6.07452 7.67452 5 9 5C10.3255 5 11.4 6.07452 11.4 7.4Z" stroke="currentColor" fill-rule="evenodd" clip-rule="evenodd"/>
+</svg>
+</span>
+							<div class="header__login-hover-fix"></div>
+							<div class="header__login-links">
+								<span><strong>Sign in to your account</strong></span>
+								
+								<a href="/authorization/?redirect_to=https%3A%2F%2Fhailo.ai%2Fauthorization%2F%3Fredirect_to%3Dhttps%253A%252F%252Fhailo.ai%252F%253Fdl_dev%253D1%2526file%253Defcf1fe500eff2b799e075344d01b0a8"
+								   class="c-link btn c-button btn-blue-gradient btn--size-medium btn--default is-animated"
+								   style="background-image: linear-gradient(90deg, rgb(66, 117, 233) 0%, rgb(73, 175, 219) 100%);">
+									<span>Log In</span>
+								</a>
+
+																<span>Don&#039;t have an account? <a href="/developer-zone/request-access/?redirect_to=https%3A%2F%2Fhailo.ai%2Fauthorization%2F%3Fredirect_to%3Dhttps%253A%252F%252Fhailo.ai%252F%253Fdl_dev%253D1%2526file%253Defcf1fe500eff2b799e075344d01b0a8">Sign up&nbsp;&nbsp;<svg width="16" height="12" viewBox="0 0 16 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M9.84613 11.6553L8.7923 10.5707L12.6116 6.75146H0.5V5.25151H12.6116L8.7923 1.43226L9.84613 0.347656L15.5 6.00148L9.84613 11.6553Z" fill="#4275E9"/>
+</svg>
+</a></span>
+
+								<div class="header__login-links_bottom">
+									<hr>
+									<span><strong>Log in to:</strong></span>
+									<span><a href="/developer-zone" class="link--invert-hover">Developer Zone</a></span>
+									<span><a href="https://community.hailo.ai/session/sso" target="_blank"
+											 class="link--invert-hover">Community</a></span>
+									<span><a href="https://community.hailo.ai/" target="_blank" class="link--invert-hover"><span>Continue to Community as Guest&nbsp;&nbsp;<svg width="16" height="12" viewBox="0 0 16 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M9.84613 11.6553L8.7923 10.5707L12.6116 6.75146H0.5V5.25151H12.6116L8.7923 1.43226L9.84613 0.347656L15.5 6.00148L9.84613 11.6553Z" fill="#4275E9"/>
+</svg>
+</a></span>
+								</div>
+							</div>
+						</div>
+					
+					<button class="btn-nav" aria-controls="navbarSupportedContent" aria-expanded="false"
+							aria-label="Toggle navigation">
+						<span></span>
+						<span></span>
+						<span></span>
+						<span></span>
+					</button>
+				</div>
+			</div>
+		</div>
+	</header>
+
+	<div class="c-search c-search">
+	<div class="c-search__form-wrap">
+		<div class="container c-search__form-container">
+			<form class="c-search__form" action="#">
+				<input placeholder="Search across Hailo..." id="search-input" class="c-search__input" type="text" name="s">
+			</form>
+
+			<a class="c-search__close"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<mask id="mask0_669_47322" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24">
+<rect width="24" height="24" fill="#D9D9D9"/>
+</mask>
+<g mask="url(#mask0_669_47322)">
+<path d="M6.40002 18.6538L5.34619 17.6L10.9462 12L5.34619 6.40002L6.40002 5.34619L12 10.9462L17.6 5.34619L18.6538 6.40002L13.0538 12L18.6538 17.6L17.6 18.6538L12 13.0538L6.40002 18.6538Z" fill="currentColor"/>
+</g>
+</svg>
+</a>
+		</div>
+	</div>
+
+	<div class="c-search__results">
+		<div class="container c-search__results-container"></div>
+	</div>
+</div>
+
+	<div class="header header--enabled-sticky c-header header--dev-zone"
+		 data-hide-on-scroll="">
+		<div class="container">
+			<div class="header__body">
+				
+				<div class="header__menu">
+					<ul id="menu-developer-zone-menu" class="nav nav-dev-zone"><li id="menu-item-16407" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-16407"><a href="/authorization/?redirect_to=https%3A%2F%2Fhailo.ai%2Fdeveloper-zone%2Fsoftware-downloads%2F">SW Downloads</a></li>
+<li id="menu-item-16408" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-16408"><a href="/authorization/?redirect_to=https%3A%2F%2Fhailo.ai%2Fdeveloper-zone%2Fdocumentation%2F">Documentation</a></li>
+<li id="menu-item-16392" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-16392"><a href="/authorization/?redirect_to=%2Fdeveloper-zone%2Ftraining-and-support%2F">Resources</a></li>
+<li id="menu-item-16678" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-16678"><a target="_blank" href="https://github.com/hailo-ai">GitHub</a></li>
+<li id="menu-item-17084" class="menu-item menu-item-type-post_type menu-item-object-af-product menu-item-17084"><a target="_blank" href="https://hailo.ai/products/hailo-software/model-explorer-vision/">Model Explorer</a></li>
+<li id="menu-item-19762" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-19762"><a target="_blank" href="/authorization/?redirect_to=https%3A%2F%2Fcommunity.hailo.ai%2Fsession%2Fsso">Community</a></li>
+</ul>
+
+					<div class="header__actions-wrap">
+											</div>
+				</div>
+
+				<button class="btn-nav" aria-controls="navbarSupportedContent" aria-expanded="false"
+						aria-label="Toggle navigation"></button>
+			</div>
+		</div>
+	</div>
+<div class="login__content"><div class="login__container container">			<h1 class="screen-reader-text">Log In</h1>
+			<div id="login">
+		<h1 role="presentation" class="wp-login-logo"><a href="https://hailo.ai/">Sign in to Hailo’s Developer Zone</a></h1>
+	
+		<form name="loginform" id="loginform" action="https://hailo.ai/authorization/?wpe-login=true" method="post">
+			<p>
+				<label for="user_login">Email</label>
+				<input type="text" name="log" id="user_login" class="input" value="" size="20" autocapitalize="off" autocomplete="username" required="required" />
+			</p>
+
+			<div class="user-pass-wrap">
+				<label for="user_pass">Password</label>
+				<div class="wp-pwd">
+					<input type="password" name="pwd" id="user_pass" class="input password-input" value="" size="20" autocomplete="current-password" spellcheck="false" required="required" />
+					<button type="button" class="button button-secondary wp-hide-pw hide-if-no-js" data-toggle="0" aria-label="Show password">
+						<span class="dashicons dashicons-visibility" aria-hidden="true"></span>
+					</button>
+				</div>
+			</div>
+						<p class="forgetmenot"><input name="rememberme" type="checkbox" id="rememberme" value="forever"  /> <label for="rememberme">Keep me signed in</label></p>
+			<p class="submit">
+				<input type="submit" name="wp-submit" id="wp-submit" class="button button-primary button-large" value="Log In" />
+									<input type="hidden" name="redirect_to" value="https://hailo.ai/?dl_dev=1&amp;file=efcf1fe500eff2b799e075344d01b0a8" />
+									<input type="hidden" name="testcookie" value="1" />
+			</p>
+		</form>
+
+					<p id="nav">
+				<a class="saml-login-button" href="https://hailo.ai?option=saml_user_login">Employee Login</a><a class="wp-login-lost-password" href="https://hailo.ai/authorization/?action=lostpassword">Forgot your password?</a>	<span class="login__register">
+		<span class="login__register-text">Don’t have an account?</span>
+		<a href="/developer-zone/request-access/">Sign up</a>
+	</span>			</p>
+			<script type="text/javascript">
+/* <![CDATA[ */
+function wp_attempt_focus() {setTimeout( function() {try {d = document.getElementById( "user_login" );d.focus(); d.select();} catch( er ) {}}, 200);}
+wp_attempt_focus();
+if ( typeof wpOnload === 'function' ) { wpOnload() }
+/* ]]> */
+</script>
+		<p id="backtoblog">
+					</p>
+			</div>
+	
+	<script>
+				jQuery(".submit").append('<input type="hidden" name="saml_sso" value="false">');
+			</script></div></div><footer class="c-footer">
+			<div class="c-footer__body">
+				<div class="container">
+					<div class="c-footer__menu">
+												<section class="c-footer-items nav nav-footer"><div class="menu-footer-area-one-container"><ul id="menu-footer-area-one" class="menu"><li id="menu-item-23788" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-23788"><a href="https://hailo.ai/products/">Hailo Products</a></li>
+<li id="menu-item-19860" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-19860"><a href="/products/ai-vision-processors/">AI Vision Processors</a>
+<ul class="sub-menu">
+	<li id="menu-item-19861" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-19861"><a href="/products/ai-vision-processors/hailo-15-ai-vision-processor/">Hailo-15 AI Vision Processor</a></li>
+</ul>
+</li>
+<li id="menu-item-19862" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-19862"><a href="/products/ai-accelerators/">AI Accelerators</a>
+<ul class="sub-menu">
+	<li id="menu-item-19863" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-19863"><a href="/products/ai-accelerators/hailo-8-ai-accelerator/">Hailo-8 AI Accelerator</a></li>
+	<li id="menu-item-19864" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-19864"><a href="/products/ai-accelerators/hailo-8l-ai-accelerator-for-ai-light-applications/">Hailo-8L Entry-Level AI Accelerator</a></li>
+	<li id="menu-item-26249" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-26249"><a href="https://hailo.ai/products/ai-accelerators/hailo-10h-ai-accelerator/">Hailo-10H AI Accelerator</a></li>
+	<li id="menu-item-19866" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-19866"><a href="/products/ai-accelerators/hailo-8-m2-ai-acceleration-module/">Hailo-8 M.2 AI Acceleration Module</a></li>
+	<li id="menu-item-19867" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-19867"><a href="/products/ai-accelerators/hailo-8l-m-2-ai-acceleration-module-for-ai-light-applications/">Hailo-8L M.2 Entry-Level Acceleration Module</a></li>
+	<li id="menu-item-19868" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-19868"><a href="/products/ai-accelerators/hailo-8r-mpcie-ai-acceleration-module/">Hailo-8R mPCIe AI Acceleration Module</a></li>
+	<li id="menu-item-19865" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-19865"><a href="/products/ai-accelerators/hailo-8-century-high-performance-pcie-card/">Hailo-8 Century High Performance PCIe Card</a></li>
+	<li id="menu-item-19859" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-19859"><a href="https://hailo.ai/products/ai-accelerators/hailo-10h-m-2-ai-acceleration-module/">Hailo-10H M.2 AI Acceleration Module</a></li>
+</ul>
+</li>
+</ul></div></section>
+						<section class="c-footer-items nav nav-footer"><div class="menu-footer-area-two-container"><ul id="menu-footer-area-two" class="menu"><li id="menu-item-19870" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-19870"><a href="/products/hailo-software/">Software</a>
+<ul class="sub-menu">
+	<li id="menu-item-19871" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-19871"><a href="/products/hailo-software/hailo-ai-software-suite/">Software Suite</a></li>
+	<li id="menu-item-19872" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-19872"><a href="/products/hailo-software/hailo-ai-software-suite/#sw-dc">Dataflow Compiler</a></li>
+	<li id="menu-item-19873" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-19873"><a href="/products/hailo-software/hailo-ai-software-suite/#sw-hailort">HailoRT</a></li>
+	<li id="menu-item-19874" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-19874"><a href="/products/hailo-software/hailo-ai-software-suite/#sw-modelzoo">Model Zoo</a></li>
+	<li id="menu-item-19875" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-19875"><a href="https://hailo.ai/products/hailo-software/model-explorer-vision/">Model Explorer Vision</a></li>
+	<li id="menu-item-26250" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-26250"><a href="https://hailo.ai/products/hailo-software/model-explorer/generative-ai/">Model Explorer GenAI</a></li>
+	<li id="menu-item-19876" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-19876"><a href="https://hailo.ai/products/hailo-software/hailo-ai-software-suite/#example-applications">Example Applications</a></li>
+	<li id="menu-item-19877" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-19877"><a href="/products/hailo-software/vision-processor-software-package/">Vision Processor Software Package</a></li>
+	<li id="menu-item-19878" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-19878"><a href="/products/hailo-software/vision-processor-software-package/#hailo-linux">Hailo OS</a></li>
+	<li id="menu-item-19879" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-19879"><a href="/products/hailo-software/vision-processor-software-package/#hailo-media-library">Hailo Media Library</a></li>
+	<li id="menu-item-19880" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-19880"><a href="/products/hailo-software/vision-processor-software-package/#hailo-imaging">Hailo Imaging</a></li>
+	<li id="menu-item-19881" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-19881"><a href="/products/hailo-software/vision-processor-software-package/#hailodsp">HailoDSP</a></li>
+	<li id="menu-item-24211" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-24211"><a href="/products/hailo-software/vision-processor-software-package/#hailo-camera-applications">Hailo Camera Applications</a></li>
+</ul>
+</li>
+</ul></div></section>
+						<section class="c-footer-items nav nav-footer"><div class="menu-footer-area-three-container"><ul id="menu-footer-area-three" class="menu"><li id="menu-item-19882" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-19882"><a href="/applications/automotive/">Automotive</a>
+<ul class="sub-menu">
+	<li id="menu-item-19883" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-19883"><a href="/applications/automotive/adas-and-ad/">ADAS &#038; AD</a></li>
+	<li id="menu-item-21446" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-21446"><a href="https://hailo.ai/applications/automotive/hailo-generative-ai-processors-for-automotive">Generative AI</a></li>
+</ul>
+</li>
+<li id="menu-item-19884" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-19884"><a href="/applications/security/">Security</a>
+<ul class="sub-menu">
+	<li id="menu-item-19885" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-19885"><a href="/applications/security/intelligent-transportation/">Intelligent Transportation</a></li>
+	<li id="menu-item-19886" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-19886"><a href="/applications/security/perimeter-protection/">Perimeter Protection</a></li>
+	<li id="menu-item-19887" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-19887"><a href="/applications/security/access-control/">Access Control</a></li>
+</ul>
+</li>
+<li id="menu-item-19888" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-19888"><a href="/applications/industrial-automation/">Industrial Automation</a>
+<ul class="sub-menu">
+	<li id="menu-item-19889" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-19889"><a href="/applications/industrial-automation/automatic-optical-inspection/">Automatic Optical Inspection</a></li>
+</ul>
+</li>
+<li id="menu-item-19890" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-19890"><a href="/applications/retail/">Retail</a>
+<ul class="sub-menu">
+	<li id="menu-item-19891" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-19891"><a href="/applications/retail/smart-retail/">Smart Retail</a></li>
+</ul>
+</li>
+<li id="menu-item-20213" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-20213"><a href="https://hailo.ai/applications/personal-compute/">Personal Compute</a>
+<ul class="sub-menu">
+	<li id="menu-item-20212" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-20212"><a href="https://hailo.ai/applications/personal-compute/generative-ai/">Generative AI</a></li>
+</ul>
+</li>
+</ul></div></section>
+						<section class="c-footer-items nav nav-footer"><div class="menu-footer-area-four-container"><ul id="menu-footer-area-four" class="menu"><li id="menu-item-19892" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-19892"><a href="#">Company</a>
+<ul class="sub-menu">
+	<li id="menu-item-19893" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-19893"><a href="/company-overview/">About us</a></li>
+	<li id="menu-item-19895" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-19895"><a href="/company-overview/newsroom/">News &#038; Events</a></li>
+	<li id="menu-item-19897" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-19897"><a href="/company-overview/careers/">Careers</a></li>
+	<li id="menu-item-19896" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-19896"><a href="/company-overview/contact-us/">Contact us</a></li>
+	<li id="menu-item-19894" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-19894"><a href="/products/technology/">Technology</a></li>
+	<li id="menu-item-20214" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-20214"><a href="https://hailo.ai/products/quality-and-reliability/">Quality</a></li>
+	<li id="menu-item-22314" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-22314"><a href="https://hailo.ai/products/partners-ecosystem/">Partners Ecosystem</a></li>
+</ul>
+</li>
+<li id="menu-item-19901" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-19901"><a href="#">Resources</a>
+<ul class="sub-menu">
+	<li id="menu-item-19902" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-19902"><a href="/resources/">Resource Center</a></li>
+	<li id="menu-item-19903" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-19903"><a href="/blog/">Blog</a></li>
+	<li id="menu-item-19904" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-19904"><a href="/developer-zone">Developer Zone</a></li>
+	<li id="menu-item-20215" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-20215"><a target="_blank" href="https://community.hailo.ai/">Community</a></li>
+</ul>
+</li>
+</ul></div></section>
+						<div class="c-footer__social">
+														<ul class="c-social">
+			</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="c-footer__foot">
+				<div class="container">
+					<div class="c-footer__foot-inner">
+						<div class="c-text c-footer__copyright-text default">
+							
+						</div>
+						<ul id="menu-privacy-menu" class="nav nav-privacy"><li id="menu-item-17" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-17"><a href="https://hailo.ai/terms-and-conditions/privacy-policy/">Privacy Policy</a></li>
+<li id="menu-item-20081" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-20081"><a href="https://hailo.ai/terms-and-conditions/website-terms-of-use/">Terms of Use</a></li>
+</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+
+<script type="text/javascript" src="https://hailo.ai/wp-content/themes/airfleet/dist/login.js?ver=1761637453" id="theme-login-js-bundle-js"></script>
+<script type="text/javascript" id="theme-js-bundle-js-extra">
+/* <![CDATA[ */
+var wp_ajax = {"url":"https:\/\/hailo.ai\/wp-admin\/admin-ajax.php","post_type_labels":{"post":"Posts","page":"Pages","attachment":"Media","forum":"Forums","topic":"Topics","reply":"Replies","airfleet_style_guide":"Style Guide","af-resource":"Resources","af-me-model":"GenAI Models","af-news-and-events":"News and Events","af-product":"Products","af-application":"Applications","af-support":"Supports","af-file-permalink":"Files Permalink","af-sw-download":"SW Downloads","af-documentation":"Documentation","af-sphinx-archive":"Sphinx archives","af-landing-pages":"Landing Pages"}};
+var af_app = {"ajaxurl":"https:\/\/hailo.ai\/wp-admin\/admin-ajax.php"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="https://hailo.ai/wp-content/themes/airfleet/dist/theme.js?ver=1763651690" id="theme-js-bundle-js"></script>
+<script type="text/javascript" src="https://hailo.ai/wp-content/themes/airfleet/dist/critical.js?ver=1761637452" id="theme-js-bundle-critical-js"></script>
+<script type="text/javascript" src="https://hailo.ai/wp-includes/js/clipboard.min.js?ver=2.0.11" id="clipboard-js"></script>
+<script type="text/javascript" id="zxcvbn-async-js-extra">
+/* <![CDATA[ */
+var _zxcvbnSettings = {"src":"https:\/\/hailo.ai\/wp-includes\/js\/zxcvbn.min.js"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="https://hailo.ai/wp-includes/js/zxcvbn-async.min.js?ver=1.0" id="zxcvbn-async-js"></script>
+<script type="text/javascript" src="https://hailo.ai/wp-includes/js/dist/hooks.min.js?ver=4d63a3d491d11ffd8ac6" id="wp-hooks-js"></script>
+<script type="text/javascript" src="https://hailo.ai/wp-includes/js/dist/i18n.min.js?ver=5e580eb46a90c2b997e6" id="wp-i18n-js"></script>
+<script type="text/javascript" id="wp-i18n-js-after">
+/* <![CDATA[ */
+wp.i18n.setLocaleData( { 'text direction\u0004ltr': [ 'ltr' ] } );
+/* ]]> */
+</script>
+<script type="text/javascript" id="password-strength-meter-js-extra">
+/* <![CDATA[ */
+var pwsL10n = {"unknown":"Password strength unknown","short":"Very weak","bad":"Weak","good":"Medium","strong":"Strong","mismatch":"Mismatch"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="https://hailo.ai/wp-admin/js/password-strength-meter.min.js?ver=b0dd227598bdbb79ac0492ec1ef95940" id="password-strength-meter-js"></script>
+<script type="text/javascript" src="https://hailo.ai/wp-includes/js/underscore.min.js?ver=1.13.7" id="underscore-js"></script>
+<script type="text/javascript" id="wp-util-js-extra">
+/* <![CDATA[ */
+var _wpUtilSettings = {"ajax":{"url":"\/wp-admin\/admin-ajax.php"}};
+/* ]]> */
+</script>
+<script type="text/javascript" src="https://hailo.ai/wp-includes/js/wp-util.min.js?ver=b0dd227598bdbb79ac0492ec1ef95940" id="wp-util-js"></script>
+<script type="text/javascript" src="https://hailo.ai/wp-includes/js/dist/dom-ready.min.js?ver=f77871ff7694fffea381" id="wp-dom-ready-js"></script>
+<script type="text/javascript" src="https://hailo.ai/wp-includes/js/dist/a11y.min.js?ver=3156534cc54473497e14" id="wp-a11y-js"></script>
+<script type="text/javascript" id="user-profile-js-extra">
+/* <![CDATA[ */
+var userProfileL10n = {"user_id":"0","nonce":"943962d1ca"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="https://hailo.ai/wp-admin/js/user-profile.min.js?ver=b0dd227598bdbb79ac0492ec1ef95940" id="user-profile-js"></script>
+	</body>
+	</html>
+	
