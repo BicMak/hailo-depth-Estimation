@@ -1,6 +1,12 @@
 # hailo-depth-Estimation
 This project implements a real-time depth estimation inference application using the MiDaS v2 depth model. The model has been quantized for Hailo-8 NPU deployment in a previous project (https://github.com/BicMak/hailo-depth-quantization).
 
+### **keypoint**
+  - Deployed monocular depth estimation on Hailo NPU + Raspberry Pi platform
+  - On-device monocular depth estimation with real-time inference
+  - Integrated GStreamer-based inference pipeline for streamlined video processing
+
+
 ## Pipelin Structure
 ### 1. video input pipeline
 <img width="1918" height="241" alt="v412src" src="https://github.com/user-attachments/assets/2bdbe730-f7f0-4d4a-9e24-844276cd774d" />
