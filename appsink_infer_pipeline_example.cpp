@@ -11,6 +11,10 @@
 #include "hailo/hailort.hpp"
 #include "hailo/hailort_common.hpp" 
 
+#include <fstream>
+static std::ofstream log_file("timing_log.csv", std::ios::app);
+static bool header_written = false;
+
 constexpr hailo_format_type_t FORMAT_TYPE = HAILO_FORMAT_TYPE_AUTO;
 using namespace hailort;
 
@@ -120,7 +124,7 @@ GstElement* makeSrcPipeline(GstElement* pipeline) {
     gst_bin_add_many(GST_BIN(pipeline), appsrc, videoconvert, sink, NULL);
 
     GstCaps *caps = gst_caps_from_string(
-        "video/x-raw,format=BGR,width=1280,height=480,framerate=30/1");
+        "video/x-raw,format=RGB,width=1280,height=480,framerate=30/1");
     g_object_set(appsrc,
         "caps", caps,
         "format", GST_FORMAT_TIME,
@@ -137,7 +141,8 @@ GstElement* makeSrcPipeline(GstElement* pipeline) {
 }
 
 static GstFlowReturn new_sample_callback(GstElement *sink, gpointer user_data) {
-    std::cout << "🔵 Callback called!" << std::endl;  // 맨 첫줄에 추가
+    auto t_start = std::chrono::high_resolution_clock::now();
+
 
     // user_data에서 pipeline 꺼내기
     CallbackData* cb_data = static_cast<CallbackData*>(user_data);  // ← 수정!
@@ -164,44 +169,36 @@ static GstFlowReturn new_sample_callback(GstElement *sink, gpointer user_data) {
     int width = 256;
     int height = 256;
 
-    if (width*height == map.size){
-        std::cout << "datasize is int8"<<std::endl;
-    }
-    else{
-        std::cout << "datasize is fp32"<<std::endl;
-    }
     
-    // 1. int8로 로딩
+    // ========== 전처리 시작 ==========
+    auto t_preprocess_start = std::chrono::high_resolution_clock::now();
     cv::Mat raw_img(480, 640, CV_8UC3, map.data);
 
     cv::Mat input_img;
     cv::resize(raw_img, input_img, cv::Size(256, 256), 0, 0, cv::INTER_LINEAR);
+    auto t_preprocess_end = std::chrono::high_resolution_clock::now();
     
+    // ========== 추론 시작 ==========
+    auto t_infer_start = std::chrono::high_resolution_clock::now();    
     cv::Mat output_img;
     output_img = infer(*infer_pipeline, input_img);
-
-    // 2. 0-255로 정규화
+    auto t_infer_end = std::chrono::high_resolution_clock::now();
+    
+    // ========== 후처리 시작 ==========
+    auto t_postprocess_start = std::chrono::high_resolution_clock::now();
     cv::Mat depth_normalized;
     cv::normalize(output_img, depth_normalized, 0, 255, cv::NORM_MINMAX);
 
     // 4. 컬러맵 적용 (GRAY → BGR uint8)
     cv::Mat depth_colormap;
     cv::applyColorMap(depth_normalized, depth_colormap, cv::COLORMAP_MAGMA);
+    cv::cvtColor(depth_colormap, depth_colormap, cv::COLOR_RGB2BGR); 
 
     // 5. 640x480 리사이즈
     cv::Mat depth_resized;
     cv::resize(depth_colormap, depth_resized, cv::Size(640, 480), 0, 0, cv::INTER_LINEAR);
     depth_resized.convertTo(depth_resized, CV_8UC3);
     
-    std::cout << "=== Before hconcat ===" << std::endl;
-    std::cout << "raw_img: " << raw_img.rows << "x" << raw_img.cols 
-            << " channels=" << raw_img.channels() 
-            << " type=" << raw_img.type() << std::endl;
-    std::cout << "depth_resized: " << depth_resized.rows << "x" << depth_resized.cols 
-            << " channels=" << depth_resized.channels()
-            << " type=" << depth_resized.type() << std::endl;
-
-
     cv::Mat result;
     cv::hconcat(raw_img, depth_resized, result); 
 
@@ -215,8 +212,36 @@ static GstFlowReturn new_sample_callback(GstElement *sink, gpointer user_data) {
     gst_buffer_unmap(out_buffer, &out_map);
     
     gst_app_src_push_buffer(GST_APP_SRC(appsrc), out_buffer);
+    auto t_postprocess_end = std::chrono::high_resolution_clock::now();
+    auto t_end = std::chrono::high_resolution_clock::now();
+    
+    // ========== 시간 계산 및 출력 ==========
+    auto preprocess_time = std::chrono::duration_cast<std::chrono::milliseconds>(t_preprocess_end - t_preprocess_start).count();
+    auto infer_time = std::chrono::duration_cast<std::chrono::milliseconds>(t_infer_end - t_infer_start).count();
+    auto postprocess_time = std::chrono::duration_cast<std::chrono::milliseconds>(t_postprocess_end - t_postprocess_start).count();
+    auto total_time = std::chrono::duration_cast<std::chrono::milliseconds>(t_end - t_start).count();
+    
+if (!header_written) {
+    log_file << "Timestamp(ms),Preprocess(ms),Infer(ms),Postprocess(ms),Total(ms)\n";
+    header_written = true;
+}
 
-    // 정리
+    // 현재 시각 가져오기
+    auto now = std::chrono::system_clock::now();
+    auto timestamp = std::chrono::duration_cast<std::chrono::milliseconds>(
+        now.time_since_epoch()).count();
+
+    log_file << timestamp << ","
+            << preprocess_time << ","
+            << infer_time << ","
+            << postprocess_time << ","
+            << total_time << "\n";
+
+    std::cout << "⏱️  전처리: " << preprocess_time << "ms | "
+              << "추론: " << infer_time << "ms | "
+              << "후처리: " << postprocess_time << "ms | "
+              << "전체: " << total_time << "ms" << std::endl;
+    
     gst_buffer_unmap(buffer, &map);
     gst_sample_unref(sample);
     

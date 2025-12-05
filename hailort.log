@@ -1227,3 +1227,498 @@
 [2025-12-02 19:21:32.979] [8454] [HailoRT] [info] [queue_elements.cpp:855] [run_in_thread] Shutdown event was signaled in dequeue of UserBuffQEl0model-small_onnx/conv73!
 [2025-12-02 19:21:32.979] [8454] [HailoRT] [info] [queue_elements.cpp:68] [operator()] Thread in element UserBuffQEl0model-small_onnx/conv73 is not running anymore, exiting..
 [2025-12-02 19:21:32.979] [8447] [HailoRT] [info] [queue_elements.cpp:46] [~BaseQueueElement] Queue element UserBuffQEl0model-small_onnx/conv73 has 0 frames in his Queue on destruction
+[2025-12-05 11:19:03.603] [8945] [HailoRT] [info] [vdevice.cpp:535] [create] Creating vdevice with params: device_count: 1, scheduling_algorithm: ROUND_ROBIN, multi_process_service: false
+[2025-12-05 11:19:03.628] [8945] [HailoRT] [error] [driver_os_specific.cpp:34] [open_device_file] CHECK failed - Failed to open device file /dev/hailo0 with error 6
+[2025-12-05 11:19:03.629] [8945] [HailoRT] [error] [hailort_driver.cpp:148] [create] CHECK_SUCCESS failed with status=HAILO_DRIVER_OPERATION_FAILED(36)
+[2025-12-05 11:19:03.629] [8945] [HailoRT] [error] [pcie_device.cpp:87] [create] CHECK_SUCCESS failed with status=HAILO_DRIVER_OPERATION_FAILED(36)
+[2025-12-05 11:19:03.629] [8945] [HailoRT] [error] [device.cpp:130] [create_pcie] CHECK_SUCCESS failed with status=HAILO_DRIVER_OPERATION_FAILED(36)
+[2025-12-05 11:19:03.630] [8945] [HailoRT] [error] [vdevice.cpp:837] [create_devices] CHECK_SUCCESS failed with status=HAILO_DRIVER_OPERATION_FAILED(36)
+[2025-12-05 11:19:03.630] [8945] [HailoRT] [error] [vdevice.cpp:662] [create] CHECK_SUCCESS failed with status=HAILO_DRIVER_OPERATION_FAILED(36)
+[2025-12-05 11:19:03.630] [8945] [HailoRT] [error] [shared_resource_manager.hpp:81] [register_resource] CHECK_SUCCESS failed with status=HAILO_DRIVER_OPERATION_FAILED(36)
+[2025-12-05 11:19:03.630] [8945] [HailoRT] [error] [vdevice.cpp:133] [create] CHECK_SUCCESS failed with status=HAILO_DRIVER_OPERATION_FAILED(36)
+[2025-12-05 11:19:03.630] [8945] [HailoRT] [error] [vdevice.cpp:567] [create] CHECK_SUCCESS failed with status=HAILO_DRIVER_OPERATION_FAILED(36)
+[2025-12-05 11:19:07.804] [8988] [HailoRT] [info] [vdevice.cpp:535] [create] Creating vdevice with params: device_count: 1, scheduling_algorithm: ROUND_ROBIN, multi_process_service: false
+[2025-12-05 11:19:07.828] [8988] [HailoRT] [error] [driver_os_specific.cpp:34] [open_device_file] CHECK failed - Failed to open device file /dev/hailo0 with error 6
+[2025-12-05 11:19:07.829] [8988] [HailoRT] [error] [hailort_driver.cpp:148] [create] CHECK_SUCCESS failed with status=HAILO_DRIVER_OPERATION_FAILED(36)
+[2025-12-05 11:19:07.829] [8988] [HailoRT] [error] [pcie_device.cpp:87] [create] CHECK_SUCCESS failed with status=HAILO_DRIVER_OPERATION_FAILED(36)
+[2025-12-05 11:19:07.830] [8988] [HailoRT] [error] [device.cpp:130] [create_pcie] CHECK_SUCCESS failed with status=HAILO_DRIVER_OPERATION_FAILED(36)
+[2025-12-05 11:19:07.830] [8988] [HailoRT] [error] [vdevice.cpp:837] [create_devices] CHECK_SUCCESS failed with status=HAILO_DRIVER_OPERATION_FAILED(36)
+[2025-12-05 11:19:07.830] [8988] [HailoRT] [error] [vdevice.cpp:662] [create] CHECK_SUCCESS failed with status=HAILO_DRIVER_OPERATION_FAILED(36)
+[2025-12-05 11:19:07.830] [8988] [HailoRT] [error] [shared_resource_manager.hpp:81] [register_resource] CHECK_SUCCESS failed with status=HAILO_DRIVER_OPERATION_FAILED(36)
+[2025-12-05 11:19:07.830] [8988] [HailoRT] [error] [vdevice.cpp:133] [create] CHECK_SUCCESS failed with status=HAILO_DRIVER_OPERATION_FAILED(36)
+[2025-12-05 11:19:07.830] [8988] [HailoRT] [error] [vdevice.cpp:567] [create] CHECK_SUCCESS failed with status=HAILO_DRIVER_OPERATION_FAILED(36)
+[2025-12-05 11:19:30.898] [9085] [HailoRT] [info] [vdevice.cpp:535] [create] Creating vdevice with params: device_count: 1, scheduling_algorithm: ROUND_ROBIN, multi_process_service: false
+[2025-12-05 11:19:30.920] [9085] [HailoRT] [error] [driver_os_specific.cpp:34] [open_device_file] CHECK failed - Failed to open device file /dev/hailo0 with error 6
+[2025-12-05 11:19:30.921] [9085] [HailoRT] [error] [hailort_driver.cpp:148] [create] CHECK_SUCCESS failed with status=HAILO_DRIVER_OPERATION_FAILED(36)
+[2025-12-05 11:19:30.921] [9085] [HailoRT] [error] [pcie_device.cpp:87] [create] CHECK_SUCCESS failed with status=HAILO_DRIVER_OPERATION_FAILED(36)
+[2025-12-05 11:19:30.921] [9085] [HailoRT] [error] [device.cpp:130] [create_pcie] CHECK_SUCCESS failed with status=HAILO_DRIVER_OPERATION_FAILED(36)
+[2025-12-05 11:19:30.921] [9085] [HailoRT] [error] [vdevice.cpp:837] [create_devices] CHECK_SUCCESS failed with status=HAILO_DRIVER_OPERATION_FAILED(36)
+[2025-12-05 11:19:30.923] [9085] [HailoRT] [error] [vdevice.cpp:662] [create] CHECK_SUCCESS failed with status=HAILO_DRIVER_OPERATION_FAILED(36)
+[2025-12-05 11:19:30.923] [9085] [HailoRT] [error] [shared_resource_manager.hpp:81] [register_resource] CHECK_SUCCESS failed with status=HAILO_DRIVER_OPERATION_FAILED(36)
+[2025-12-05 11:19:30.923] [9085] [HailoRT] [error] [vdevice.cpp:133] [create] CHECK_SUCCESS failed with status=HAILO_DRIVER_OPERATION_FAILED(36)
+[2025-12-05 11:19:30.923] [9085] [HailoRT] [error] [vdevice.cpp:567] [create] CHECK_SUCCESS failed with status=HAILO_DRIVER_OPERATION_FAILED(36)
+[2025-12-05 11:20:23.151] [9333] [HailoRT] [info] [vdevice.cpp:535] [create] Creating vdevice with params: device_count: 1, scheduling_algorithm: ROUND_ROBIN, multi_process_service: false
+[2025-12-05 11:20:23.176] [9333] [HailoRT] [error] [driver_os_specific.cpp:34] [open_device_file] CHECK failed - Failed to open device file /dev/hailo0 with error 6
+[2025-12-05 11:20:23.176] [9333] [HailoRT] [error] [hailort_driver.cpp:148] [create] CHECK_SUCCESS failed with status=HAILO_DRIVER_OPERATION_FAILED(36)
+[2025-12-05 11:20:23.176] [9333] [HailoRT] [error] [pcie_device.cpp:87] [create] CHECK_SUCCESS failed with status=HAILO_DRIVER_OPERATION_FAILED(36)
+[2025-12-05 11:20:23.176] [9333] [HailoRT] [error] [device.cpp:130] [create_pcie] CHECK_SUCCESS failed with status=HAILO_DRIVER_OPERATION_FAILED(36)
+[2025-12-05 11:20:23.176] [9333] [HailoRT] [error] [vdevice.cpp:837] [create_devices] CHECK_SUCCESS failed with status=HAILO_DRIVER_OPERATION_FAILED(36)
+[2025-12-05 11:20:23.176] [9333] [HailoRT] [error] [vdevice.cpp:662] [create] CHECK_SUCCESS failed with status=HAILO_DRIVER_OPERATION_FAILED(36)
+[2025-12-05 11:20:23.176] [9333] [HailoRT] [error] [shared_resource_manager.hpp:81] [register_resource] CHECK_SUCCESS failed with status=HAILO_DRIVER_OPERATION_FAILED(36)
+[2025-12-05 11:20:23.176] [9333] [HailoRT] [error] [vdevice.cpp:133] [create] CHECK_SUCCESS failed with status=HAILO_DRIVER_OPERATION_FAILED(36)
+[2025-12-05 11:20:23.176] [9333] [HailoRT] [error] [vdevice.cpp:567] [create] CHECK_SUCCESS failed with status=HAILO_DRIVER_OPERATION_FAILED(36)
+[2025-12-05 11:21:05.714] [9406] [HailoRT] [info] [vdevice.cpp:535] [create] Creating vdevice with params: device_count: 1, scheduling_algorithm: ROUND_ROBIN, multi_process_service: false
+[2025-12-05 11:21:05.724] [9406] [HailoRT] [error] [driver_os_specific.cpp:34] [open_device_file] CHECK failed - Failed to open device file /dev/hailo0 with error 6
+[2025-12-05 11:21:05.725] [9406] [HailoRT] [error] [hailort_driver.cpp:148] [create] CHECK_SUCCESS failed with status=HAILO_DRIVER_OPERATION_FAILED(36)
+[2025-12-05 11:21:05.726] [9406] [HailoRT] [error] [pcie_device.cpp:87] [create] CHECK_SUCCESS failed with status=HAILO_DRIVER_OPERATION_FAILED(36)
+[2025-12-05 11:21:05.726] [9406] [HailoRT] [error] [device.cpp:130] [create_pcie] CHECK_SUCCESS failed with status=HAILO_DRIVER_OPERATION_FAILED(36)
+[2025-12-05 11:21:05.726] [9406] [HailoRT] [error] [vdevice.cpp:837] [create_devices] CHECK_SUCCESS failed with status=HAILO_DRIVER_OPERATION_FAILED(36)
+[2025-12-05 11:21:05.726] [9406] [HailoRT] [error] [vdevice.cpp:662] [create] CHECK_SUCCESS failed with status=HAILO_DRIVER_OPERATION_FAILED(36)
+[2025-12-05 11:21:05.726] [9406] [HailoRT] [error] [shared_resource_manager.hpp:81] [register_resource] CHECK_SUCCESS failed with status=HAILO_DRIVER_OPERATION_FAILED(36)
+[2025-12-05 11:21:05.726] [9406] [HailoRT] [error] [vdevice.cpp:133] [create] CHECK_SUCCESS failed with status=HAILO_DRIVER_OPERATION_FAILED(36)
+[2025-12-05 11:21:05.726] [9406] [HailoRT] [error] [vdevice.cpp:567] [create] CHECK_SUCCESS failed with status=HAILO_DRIVER_OPERATION_FAILED(36)
+[2025-12-05 11:22:57.349] [9597] [HailoRT] [info] [vdevice.cpp:535] [create] Creating vdevice with params: device_count: 1, scheduling_algorithm: ROUND_ROBIN, multi_process_service: false
+[2025-12-05 11:22:57.372] [9597] [HailoRT] [error] [driver_os_specific.cpp:34] [open_device_file] CHECK failed - Failed to open device file /dev/hailo0 with error 6
+[2025-12-05 11:22:57.373] [9597] [HailoRT] [error] [hailort_driver.cpp:148] [create] CHECK_SUCCESS failed with status=HAILO_DRIVER_OPERATION_FAILED(36)
+[2025-12-05 11:22:57.373] [9597] [HailoRT] [error] [pcie_device.cpp:87] [create] CHECK_SUCCESS failed with status=HAILO_DRIVER_OPERATION_FAILED(36)
+[2025-12-05 11:22:57.373] [9597] [HailoRT] [error] [device.cpp:130] [create_pcie] CHECK_SUCCESS failed with status=HAILO_DRIVER_OPERATION_FAILED(36)
+[2025-12-05 11:22:57.373] [9597] [HailoRT] [error] [vdevice.cpp:837] [create_devices] CHECK_SUCCESS failed with status=HAILO_DRIVER_OPERATION_FAILED(36)
+[2025-12-05 11:22:57.373] [9597] [HailoRT] [error] [vdevice.cpp:662] [create] CHECK_SUCCESS failed with status=HAILO_DRIVER_OPERATION_FAILED(36)
+[2025-12-05 11:22:57.373] [9597] [HailoRT] [error] [shared_resource_manager.hpp:81] [register_resource] CHECK_SUCCESS failed with status=HAILO_DRIVER_OPERATION_FAILED(36)
+[2025-12-05 11:22:57.373] [9597] [HailoRT] [error] [vdevice.cpp:133] [create] CHECK_SUCCESS failed with status=HAILO_DRIVER_OPERATION_FAILED(36)
+[2025-12-05 11:22:57.373] [9597] [HailoRT] [error] [vdevice.cpp:567] [create] CHECK_SUCCESS failed with status=HAILO_DRIVER_OPERATION_FAILED(36)
+[2025-12-05 11:23:38.604] [9737] [HailoRT] [info] [vdevice.cpp:535] [create] Creating vdevice with params: device_count: 1, scheduling_algorithm: ROUND_ROBIN, multi_process_service: false
+[2025-12-05 11:23:38.619] [9737] [HailoRT] [info] [device.cpp:51] [Device] OS Version: Linux 6.12.47+rpt-rpi-2712 #1 SMP PREEMPT Debian 1:6.12.47-1+rpt1~bookworm (2025-09-16) aarch64
+[2025-12-05 11:23:38.622] [9737] [HailoRT] [info] [control.cpp:113] [control__parse_identify_results] firmware_version is: 4.23.0
+[2025-12-05 11:23:38.623] [9737] [HailoRT] [info] [vdevice.cpp:682] [create] VDevice Infos: 0001:01:00.0
+[2025-12-05 11:23:38.911] [9737] [HailoRT] [info] [hef.cpp:1994] [get_network_group_and_network_name] No name was given. Addressing all networks of default network_group: model-small_onnx
+[2025-12-05 11:23:38.925] [9737] [HailoRT] [info] [internal_buffer_manager.cpp:77] [print_execution_results] Planned internal buffer memory: CMA=0 CMA-Desc=458752 Pinned=698112. memory to edge layer usage factor is 1
+[2025-12-05 11:23:38.925] [9737] [HailoRT] [info] [internal_buffer_manager.cpp:86] [print_execution_results] Default Internal buffer planner executed successfully
+[2025-12-05 11:23:38.984] [9737] [HailoRT] [info] [device_internal.cpp:57] [configure] Configuring HEF took 72.658907 milliseconds
+[2025-12-05 11:23:39.006] [9737] [HailoRT] [info] [vdevice.cpp:780] [configure] Configuring HEF on VDevice took 95.428836 milliseconds
+[2025-12-05 11:23:39.015] [9737] [HailoRT] [info] [edge_elements.cpp:52] [create] Created (HwWriteEl1model-small_onnx/input_layer1 | hw_frame_size: 196608)
+[2025-12-05 11:23:39.015] [9737] [HailoRT] [info] [vstream.cpp:754] [InputVStreamImpl] Creating model-small_onnx/input_layer1...
+[2025-12-05 11:23:39.015] [9737] [HailoRT] [info] [vstream_builder.cpp:102] [create_inputs] Input pipeline 'model-small_onnx/input_layer1': (HwWriteEl1model-small_onnx/input_layer1 | hw_frame_size: 196608) >> HW
+[2025-12-05 11:23:39.015] [9737] [HailoRT] [info] [edge_elements.cpp:287] [create] Created (HwReadEl0model-small_onnx/conv73 | hw_frame_size: 65536)
+[2025-12-05 11:23:39.017] [9737] [HailoRT] [info] [queue_elements.cpp:800] [create] Created (UserBuffQEl0model-small_onnx/conv73 | timeout: 10s)
+[2025-12-05 11:23:39.017] [9737] [HailoRT] [info] [vstream.cpp:1114] [OutputVStreamImpl] Creating model-small_onnx/conv73...
+[2025-12-05 11:23:39.017] [9737] [HailoRT] [info] [vstream_builder.cpp:220] [create_outputs] Output pipeline 'model-small_onnx/conv73': HW >> (HwReadEl0model-small_onnx/conv73 | hw_frame_size: 65536) >> (UserBuffQEl0model-small_onnx/conv73 | timeout: 10s)
+[2025-12-05 11:23:49.734] [9753] [HailoRT] [error] [async_stream_base.hpp:167] [cv_wait_for] Got HAILO_TIMEOUT while waiting for output stream buffer model-small_onnx/conv73
+[2025-12-05 11:23:49.734] [9753] [HailoRT] [error] [edge_elements.cpp:399] [run_pull] CHECK_SUCCESS failed with status=HAILO_TIMEOUT(4) - HwReadEl0model-small_onnx/conv73 (D2H) failed with status=HAILO_TIMEOUT(4)
+[2025-12-05 11:23:49.734] [9753] [HailoRT] [error] [queue_elements.cpp:871] [run_in_thread] CHECK_SUCCESS failed with status=HAILO_TIMEOUT(4)
+[2025-12-05 11:23:49.734] [9753] [HailoRT] [error] [queue_elements.cpp:79] [operator()] Queue element UserBuffQEl0model-small_onnx/conv73 run in thread function failed! status = HAILO_TIMEOUT(4)
+[2025-12-05 11:23:49.734] [9773] [HailoRT] [info] [queue_elements.cpp:834] [run_pull] Shutdown event was signaled in dequeue of queue element UserBuffQEl0model-small_onnx/conv73!
+[2025-12-05 11:23:49.734] [9773] [HailoRT] [info] [vstream.cpp:1138] [read] Receiving to VStream was shutdown!
+[2025-12-05 11:23:49.735] [9755] [HailoRT] [error] [inference_pipeline.cpp:257] [infer] Failed waiting for threads with status HAILO_TIMEOUT(4)
+[2025-12-05 11:23:59.755] [9753] [HailoRT] [error] [async_stream_base.hpp:167] [cv_wait_for] Got HAILO_TIMEOUT while waiting for output stream buffer model-small_onnx/conv73
+[2025-12-05 11:23:59.755] [9753] [HailoRT] [error] [edge_elements.cpp:399] [run_pull] CHECK_SUCCESS failed with status=HAILO_TIMEOUT(4) - HwReadEl0model-small_onnx/conv73 (D2H) failed with status=HAILO_TIMEOUT(4)
+[2025-12-05 11:23:59.755] [9753] [HailoRT] [error] [queue_elements.cpp:871] [run_in_thread] CHECK_SUCCESS failed with status=HAILO_TIMEOUT(4)
+[2025-12-05 11:23:59.755] [9753] [HailoRT] [error] [queue_elements.cpp:79] [operator()] Queue element UserBuffQEl0model-small_onnx/conv73 run in thread function failed! status = HAILO_TIMEOUT(4)
+[2025-12-05 11:23:59.755] [9802] [HailoRT] [info] [queue_elements.cpp:834] [run_pull] Shutdown event was signaled in dequeue of queue element UserBuffQEl0model-small_onnx/conv73!
+[2025-12-05 11:23:59.755] [9802] [HailoRT] [info] [vstream.cpp:1138] [read] Receiving to VStream was shutdown!
+[2025-12-05 11:23:59.755] [9755] [HailoRT] [error] [inference_pipeline.cpp:257] [infer] Failed waiting for threads with status HAILO_TIMEOUT(4)
+[2025-12-05 11:24:09.766] [9753] [HailoRT] [error] [async_stream_base.hpp:167] [cv_wait_for] Got HAILO_TIMEOUT while waiting for output stream buffer model-small_onnx/conv73
+[2025-12-05 11:24:09.766] [9753] [HailoRT] [error] [edge_elements.cpp:399] [run_pull] CHECK_SUCCESS failed with status=HAILO_TIMEOUT(4) - HwReadEl0model-small_onnx/conv73 (D2H) failed with status=HAILO_TIMEOUT(4)
+[2025-12-05 11:24:09.766] [9753] [HailoRT] [error] [queue_elements.cpp:871] [run_in_thread] CHECK_SUCCESS failed with status=HAILO_TIMEOUT(4)
+[2025-12-05 11:24:09.766] [9753] [HailoRT] [error] [queue_elements.cpp:79] [operator()] Queue element UserBuffQEl0model-small_onnx/conv73 run in thread function failed! status = HAILO_TIMEOUT(4)
+[2025-12-05 11:24:09.766] [9834] [HailoRT] [info] [queue_elements.cpp:834] [run_pull] Shutdown event was signaled in dequeue of queue element UserBuffQEl0model-small_onnx/conv73!
+[2025-12-05 11:24:09.766] [9834] [HailoRT] [info] [vstream.cpp:1138] [read] Receiving to VStream was shutdown!
+[2025-12-05 11:24:09.766] [9755] [HailoRT] [error] [inference_pipeline.cpp:257] [infer] Failed waiting for threads with status HAILO_TIMEOUT(4)
+[2025-12-05 11:24:19.774] [9753] [HailoRT] [error] [async_stream_base.hpp:167] [cv_wait_for] Got HAILO_TIMEOUT while waiting for output stream buffer model-small_onnx/conv73
+[2025-12-05 11:24:19.774] [9753] [HailoRT] [error] [edge_elements.cpp:399] [run_pull] CHECK_SUCCESS failed with status=HAILO_TIMEOUT(4) - HwReadEl0model-small_onnx/conv73 (D2H) failed with status=HAILO_TIMEOUT(4)
+[2025-12-05 11:24:19.775] [9753] [HailoRT] [error] [queue_elements.cpp:871] [run_in_thread] CHECK_SUCCESS failed with status=HAILO_TIMEOUT(4)
+[2025-12-05 11:24:19.775] [9753] [HailoRT] [error] [queue_elements.cpp:79] [operator()] Queue element UserBuffQEl0model-small_onnx/conv73 run in thread function failed! status = HAILO_TIMEOUT(4)
+[2025-12-05 11:24:19.775] [9874] [HailoRT] [info] [queue_elements.cpp:834] [run_pull] Shutdown event was signaled in dequeue of queue element UserBuffQEl0model-small_onnx/conv73!
+[2025-12-05 11:24:19.775] [9874] [HailoRT] [info] [vstream.cpp:1138] [read] Receiving to VStream was shutdown!
+[2025-12-05 11:24:19.775] [9755] [HailoRT] [error] [inference_pipeline.cpp:257] [infer] Failed waiting for threads with status HAILO_TIMEOUT(4)
+[2025-12-05 11:25:22.649] [10027] [HailoRT] [info] [vdevice.cpp:535] [create] Creating vdevice with params: device_count: 1, scheduling_algorithm: ROUND_ROBIN, multi_process_service: false
+[2025-12-05 11:25:22.661] [10027] [HailoRT] [info] [device.cpp:51] [Device] OS Version: Linux 6.12.47+rpt-rpi-2712 #1 SMP PREEMPT Debian 1:6.12.47-1+rpt1~bookworm (2025-09-16) aarch64
+[2025-12-05 11:25:22.662] [10027] [HailoRT] [info] [control.cpp:113] [control__parse_identify_results] firmware_version is: 4.23.0
+[2025-12-05 11:25:22.662] [10027] [HailoRT] [info] [vdevice.cpp:682] [create] VDevice Infos: 0001:01:00.0
+[2025-12-05 11:25:22.673] [10027] [HailoRT] [info] [hef.cpp:1994] [get_network_group_and_network_name] No name was given. Addressing all networks of default network_group: model-small_onnx
+[2025-12-05 11:25:22.682] [10027] [HailoRT] [info] [internal_buffer_manager.cpp:77] [print_execution_results] Planned internal buffer memory: CMA=0 CMA-Desc=458752 Pinned=698112. memory to edge layer usage factor is 1
+[2025-12-05 11:25:22.682] [10027] [HailoRT] [info] [internal_buffer_manager.cpp:86] [print_execution_results] Default Internal buffer planner executed successfully
+[2025-12-05 11:25:22.739] [10027] [HailoRT] [info] [device_internal.cpp:57] [configure] Configuring HEF took 65.45138 milliseconds
+[2025-12-05 11:25:22.758] [10027] [HailoRT] [info] [vdevice.cpp:780] [configure] Configuring HEF on VDevice took 84.407703 milliseconds
+[2025-12-05 11:25:22.758] [10027] [HailoRT] [info] [edge_elements.cpp:52] [create] Created (HwWriteEl1model-small_onnx/input_layer1 | hw_frame_size: 196608)
+[2025-12-05 11:25:22.758] [10027] [HailoRT] [info] [vstream.cpp:754] [InputVStreamImpl] Creating model-small_onnx/input_layer1...
+[2025-12-05 11:25:22.758] [10027] [HailoRT] [info] [vstream_builder.cpp:102] [create_inputs] Input pipeline 'model-small_onnx/input_layer1': (HwWriteEl1model-small_onnx/input_layer1 | hw_frame_size: 196608) >> HW
+[2025-12-05 11:25:22.758] [10027] [HailoRT] [info] [edge_elements.cpp:287] [create] Created (HwReadEl0model-small_onnx/conv73 | hw_frame_size: 65536)
+[2025-12-05 11:25:22.759] [10027] [HailoRT] [info] [queue_elements.cpp:800] [create] Created (UserBuffQEl0model-small_onnx/conv73 | timeout: 10s)
+[2025-12-05 11:25:22.759] [10027] [HailoRT] [info] [vstream.cpp:1114] [OutputVStreamImpl] Creating model-small_onnx/conv73...
+[2025-12-05 11:25:22.759] [10027] [HailoRT] [info] [vstream_builder.cpp:220] [create_outputs] Output pipeline 'model-small_onnx/conv73': HW >> (HwReadEl0model-small_onnx/conv73 | hw_frame_size: 65536) >> (UserBuffQEl0model-small_onnx/conv73 | timeout: 10s)
+[2025-12-05 11:25:33.402] [10034] [HailoRT] [error] [async_stream_base.hpp:167] [cv_wait_for] Got HAILO_TIMEOUT while waiting for output stream buffer model-small_onnx/conv73
+[2025-12-05 11:25:33.405] [10034] [HailoRT] [error] [edge_elements.cpp:399] [run_pull] CHECK_SUCCESS failed with status=HAILO_TIMEOUT(4) - HwReadEl0model-small_onnx/conv73 (D2H) failed with status=HAILO_TIMEOUT(4)
+[2025-12-05 11:25:33.405] [10034] [HailoRT] [error] [queue_elements.cpp:871] [run_in_thread] CHECK_SUCCESS failed with status=HAILO_TIMEOUT(4)
+[2025-12-05 11:25:33.405] [10034] [HailoRT] [error] [queue_elements.cpp:79] [operator()] Queue element UserBuffQEl0model-small_onnx/conv73 run in thread function failed! status = HAILO_TIMEOUT(4)
+[2025-12-05 11:25:33.405] [10051] [HailoRT] [info] [queue_elements.cpp:834] [run_pull] Shutdown event was signaled in dequeue of queue element UserBuffQEl0model-small_onnx/conv73!
+[2025-12-05 11:25:33.405] [10051] [HailoRT] [info] [vstream.cpp:1138] [read] Receiving to VStream was shutdown!
+[2025-12-05 11:25:33.405] [10044] [HailoRT] [error] [inference_pipeline.cpp:257] [infer] Failed waiting for threads with status HAILO_TIMEOUT(4)
+[2025-12-05 11:29:55.017] [10218] [HailoRT] [info] [vdevice.cpp:535] [create] Creating vdevice with params: device_count: 1, scheduling_algorithm: ROUND_ROBIN, multi_process_service: false
+[2025-12-05 11:29:55.029] [10218] [HailoRT] [info] [device.cpp:51] [Device] OS Version: Linux 6.12.47+rpt-rpi-2712 #1 SMP PREEMPT Debian 1:6.12.47-1+rpt1~bookworm (2025-09-16) aarch64
+[2025-12-05 11:29:55.029] [10218] [HailoRT] [info] [control.cpp:113] [control__parse_identify_results] firmware_version is: 4.23.0
+[2025-12-05 11:29:55.029] [10218] [HailoRT] [info] [vdevice.cpp:682] [create] VDevice Infos: 0001:01:00.0
+[2025-12-05 11:29:55.039] [10218] [HailoRT] [info] [hef.cpp:1994] [get_network_group_and_network_name] No name was given. Addressing all networks of default network_group: model-small_onnx
+[2025-12-05 11:29:55.050] [10218] [HailoRT] [info] [internal_buffer_manager.cpp:77] [print_execution_results] Planned internal buffer memory: CMA=0 CMA-Desc=458752 Pinned=698112. memory to edge layer usage factor is 1
+[2025-12-05 11:29:55.050] [10218] [HailoRT] [info] [internal_buffer_manager.cpp:86] [print_execution_results] Default Internal buffer planner executed successfully
+[2025-12-05 11:29:55.091] [10218] [HailoRT] [info] [device_internal.cpp:57] [configure] Configuring HEF took 51.904042 milliseconds
+[2025-12-05 11:29:55.110] [10218] [HailoRT] [info] [vdevice.cpp:780] [configure] Configuring HEF on VDevice took 71.041365 milliseconds
+[2025-12-05 11:29:55.111] [10218] [HailoRT] [error] [core_op.cpp:121] [activate] CHECK failed - Manually activate a core-op is not allowed when the core-op scheduler is active!
+[2025-12-05 11:29:55.111] [10218] [HailoRT] [error] [network_group.cpp:98] [ActivatedNetworkGroupImpl] Failed activate HAILO_INVALID_OPERATION(6)
+[2025-12-05 11:29:55.111] [10218] [HailoRT] [error] [network_group.cpp:49] [create] CHECK_SUCCESS failed with status=HAILO_INVALID_OPERATION(6)
+[2025-12-05 11:30:24.402] [10462] [HailoRT] [info] [vdevice.cpp:535] [create] Creating vdevice with params: device_count: 1, scheduling_algorithm: ROUND_ROBIN, multi_process_service: false
+[2025-12-05 11:30:24.413] [10462] [HailoRT] [info] [device.cpp:51] [Device] OS Version: Linux 6.12.47+rpt-rpi-2712 #1 SMP PREEMPT Debian 1:6.12.47-1+rpt1~bookworm (2025-09-16) aarch64
+[2025-12-05 11:30:24.413] [10462] [HailoRT] [info] [control.cpp:113] [control__parse_identify_results] firmware_version is: 4.23.0
+[2025-12-05 11:30:24.413] [10462] [HailoRT] [info] [vdevice.cpp:682] [create] VDevice Infos: 0001:01:00.0
+[2025-12-05 11:30:24.422] [10462] [HailoRT] [info] [hef.cpp:1994] [get_network_group_and_network_name] No name was given. Addressing all networks of default network_group: model-small_onnx
+[2025-12-05 11:30:24.430] [10462] [HailoRT] [info] [internal_buffer_manager.cpp:77] [print_execution_results] Planned internal buffer memory: CMA=0 CMA-Desc=458752 Pinned=698112. memory to edge layer usage factor is 1
+[2025-12-05 11:30:24.430] [10462] [HailoRT] [info] [internal_buffer_manager.cpp:86] [print_execution_results] Default Internal buffer planner executed successfully
+[2025-12-05 11:30:24.485] [10462] [HailoRT] [info] [device_internal.cpp:57] [configure] Configuring HEF took 62.195077 milliseconds
+[2025-12-05 11:30:24.500] [10462] [HailoRT] [info] [vdevice.cpp:780] [configure] Configuring HEF on VDevice took 77.25599 milliseconds
+[2025-12-05 11:30:24.500] [10462] [HailoRT] [error] [core_op.cpp:121] [activate] CHECK failed - Manually activate a core-op is not allowed when the core-op scheduler is active!
+[2025-12-05 11:30:24.501] [10462] [HailoRT] [error] [network_group.cpp:98] [ActivatedNetworkGroupImpl] Failed activate HAILO_INVALID_OPERATION(6)
+[2025-12-05 11:30:24.501] [10462] [HailoRT] [error] [network_group.cpp:49] [create] CHECK_SUCCESS failed with status=HAILO_INVALID_OPERATION(6)
+[2025-12-05 11:30:43.307] [10524] [HailoRT] [info] [vdevice.cpp:535] [create] Creating vdevice with params: device_count: 1, scheduling_algorithm: ROUND_ROBIN, multi_process_service: false
+[2025-12-05 11:30:43.320] [10524] [HailoRT] [info] [device.cpp:51] [Device] OS Version: Linux 6.12.47+rpt-rpi-2712 #1 SMP PREEMPT Debian 1:6.12.47-1+rpt1~bookworm (2025-09-16) aarch64
+[2025-12-05 11:30:43.320] [10524] [HailoRT] [info] [control.cpp:113] [control__parse_identify_results] firmware_version is: 4.23.0
+[2025-12-05 11:30:43.320] [10524] [HailoRT] [info] [vdevice.cpp:682] [create] VDevice Infos: 0001:01:00.0
+[2025-12-05 11:30:43.332] [10524] [HailoRT] [info] [hef.cpp:1994] [get_network_group_and_network_name] No name was given. Addressing all networks of default network_group: model-small_onnx
+[2025-12-05 11:30:43.342] [10524] [HailoRT] [info] [internal_buffer_manager.cpp:77] [print_execution_results] Planned internal buffer memory: CMA=0 CMA-Desc=458752 Pinned=698112. memory to edge layer usage factor is 1
+[2025-12-05 11:30:43.342] [10524] [HailoRT] [info] [internal_buffer_manager.cpp:86] [print_execution_results] Default Internal buffer planner executed successfully
+[2025-12-05 11:30:43.413] [10524] [HailoRT] [info] [device_internal.cpp:57] [configure] Configuring HEF took 80.117931 milliseconds
+[2025-12-05 11:30:43.430] [10524] [HailoRT] [info] [vdevice.cpp:780] [configure] Configuring HEF on VDevice took 97.608751 milliseconds
+[2025-12-05 11:30:43.430] [10524] [HailoRT] [info] [edge_elements.cpp:52] [create] Created (HwWriteEl1model-small_onnx/input_layer1 | hw_frame_size: 196608)
+[2025-12-05 11:30:43.430] [10524] [HailoRT] [info] [vstream.cpp:754] [InputVStreamImpl] Creating model-small_onnx/input_layer1...
+[2025-12-05 11:30:43.430] [10524] [HailoRT] [info] [vstream_builder.cpp:102] [create_inputs] Input pipeline 'model-small_onnx/input_layer1': (HwWriteEl1model-small_onnx/input_layer1 | hw_frame_size: 196608) >> HW
+[2025-12-05 11:30:43.430] [10524] [HailoRT] [info] [edge_elements.cpp:287] [create] Created (HwReadEl0model-small_onnx/conv73 | hw_frame_size: 65536)
+[2025-12-05 11:30:43.430] [10524] [HailoRT] [info] [queue_elements.cpp:800] [create] Created (UserBuffQEl0model-small_onnx/conv73 | timeout: 10s)
+[2025-12-05 11:30:43.430] [10524] [HailoRT] [info] [vstream.cpp:1114] [OutputVStreamImpl] Creating model-small_onnx/conv73...
+[2025-12-05 11:30:43.430] [10524] [HailoRT] [info] [vstream_builder.cpp:220] [create_outputs] Output pipeline 'model-small_onnx/conv73': HW >> (HwReadEl0model-small_onnx/conv73 | hw_frame_size: 65536) >> (UserBuffQEl0model-small_onnx/conv73 | timeout: 10s)
+[2025-12-05 11:30:54.040] [10540] [HailoRT] [error] [async_stream_base.hpp:167] [cv_wait_for] Got HAILO_TIMEOUT while waiting for output stream buffer model-small_onnx/conv73
+[2025-12-05 11:30:54.040] [10540] [HailoRT] [error] [edge_elements.cpp:399] [run_pull] CHECK_SUCCESS failed with status=HAILO_TIMEOUT(4) - HwReadEl0model-small_onnx/conv73 (D2H) failed with status=HAILO_TIMEOUT(4)
+[2025-12-05 11:30:54.040] [10540] [HailoRT] [error] [queue_elements.cpp:871] [run_in_thread] CHECK_SUCCESS failed with status=HAILO_TIMEOUT(4)
+[2025-12-05 11:30:54.040] [10540] [HailoRT] [error] [queue_elements.cpp:79] [operator()] Queue element UserBuffQEl0model-small_onnx/conv73 run in thread function failed! status = HAILO_TIMEOUT(4)
+[2025-12-05 11:30:54.040] [10548] [HailoRT] [info] [queue_elements.cpp:834] [run_pull] Shutdown event was signaled in dequeue of queue element UserBuffQEl0model-small_onnx/conv73!
+[2025-12-05 11:30:54.040] [10548] [HailoRT] [info] [vstream.cpp:1138] [read] Receiving to VStream was shutdown!
+[2025-12-05 11:30:54.040] [10542] [HailoRT] [error] [inference_pipeline.cpp:257] [infer] Failed waiting for threads with status HAILO_TIMEOUT(4)
+[2025-12-05 11:31:04.049] [10540] [HailoRT] [error] [async_stream_base.hpp:167] [cv_wait_for] Got HAILO_TIMEOUT while waiting for output stream buffer model-small_onnx/conv73
+[2025-12-05 11:31:04.049] [10540] [HailoRT] [error] [edge_elements.cpp:399] [run_pull] CHECK_SUCCESS failed with status=HAILO_TIMEOUT(4) - HwReadEl0model-small_onnx/conv73 (D2H) failed with status=HAILO_TIMEOUT(4)
+[2025-12-05 11:31:04.050] [10540] [HailoRT] [error] [queue_elements.cpp:871] [run_in_thread] CHECK_SUCCESS failed with status=HAILO_TIMEOUT(4)
+[2025-12-05 11:31:04.050] [10540] [HailoRT] [error] [queue_elements.cpp:79] [operator()] Queue element UserBuffQEl0model-small_onnx/conv73 run in thread function failed! status = HAILO_TIMEOUT(4)
+[2025-12-05 11:31:04.050] [10591] [HailoRT] [info] [queue_elements.cpp:834] [run_pull] Shutdown event was signaled in dequeue of queue element UserBuffQEl0model-small_onnx/conv73!
+[2025-12-05 11:31:04.050] [10591] [HailoRT] [info] [vstream.cpp:1138] [read] Receiving to VStream was shutdown!
+[2025-12-05 11:31:04.050] [10542] [HailoRT] [error] [inference_pipeline.cpp:257] [infer] Failed waiting for threads with status HAILO_TIMEOUT(4)
+[2025-12-05 11:31:14.060] [10540] [HailoRT] [error] [async_stream_base.hpp:167] [cv_wait_for] Got HAILO_TIMEOUT while waiting for output stream buffer model-small_onnx/conv73
+[2025-12-05 11:31:14.060] [10540] [HailoRT] [error] [edge_elements.cpp:399] [run_pull] CHECK_SUCCESS failed with status=HAILO_TIMEOUT(4) - HwReadEl0model-small_onnx/conv73 (D2H) failed with status=HAILO_TIMEOUT(4)
+[2025-12-05 11:31:14.060] [10540] [HailoRT] [error] [queue_elements.cpp:871] [run_in_thread] CHECK_SUCCESS failed with status=HAILO_TIMEOUT(4)
+[2025-12-05 11:31:14.060] [10540] [HailoRT] [error] [queue_elements.cpp:79] [operator()] Queue element UserBuffQEl0model-small_onnx/conv73 run in thread function failed! status = HAILO_TIMEOUT(4)
+[2025-12-05 11:31:14.060] [10628] [HailoRT] [info] [queue_elements.cpp:834] [run_pull] Shutdown event was signaled in dequeue of queue element UserBuffQEl0model-small_onnx/conv73!
+[2025-12-05 11:31:14.060] [10628] [HailoRT] [info] [vstream.cpp:1138] [read] Receiving to VStream was shutdown!
+[2025-12-05 11:31:14.060] [10542] [HailoRT] [error] [inference_pipeline.cpp:257] [infer] Failed waiting for threads with status HAILO_TIMEOUT(4)
+[2025-12-05 11:31:24.070] [10540] [HailoRT] [error] [async_stream_base.hpp:167] [cv_wait_for] Got HAILO_TIMEOUT while waiting for output stream buffer model-small_onnx/conv73
+[2025-12-05 11:31:24.070] [10540] [HailoRT] [error] [edge_elements.cpp:399] [run_pull] CHECK_SUCCESS failed with status=HAILO_TIMEOUT(4) - HwReadEl0model-small_onnx/conv73 (D2H) failed with status=HAILO_TIMEOUT(4)
+[2025-12-05 11:31:24.070] [10540] [HailoRT] [error] [queue_elements.cpp:871] [run_in_thread] CHECK_SUCCESS failed with status=HAILO_TIMEOUT(4)
+[2025-12-05 11:31:24.070] [10540] [HailoRT] [error] [queue_elements.cpp:79] [operator()] Queue element UserBuffQEl0model-small_onnx/conv73 run in thread function failed! status = HAILO_TIMEOUT(4)
+[2025-12-05 11:31:24.070] [10665] [HailoRT] [info] [queue_elements.cpp:834] [run_pull] Shutdown event was signaled in dequeue of queue element UserBuffQEl0model-small_onnx/conv73!
+[2025-12-05 11:31:24.070] [10665] [HailoRT] [info] [vstream.cpp:1138] [read] Receiving to VStream was shutdown!
+[2025-12-05 11:31:24.070] [10542] [HailoRT] [error] [inference_pipeline.cpp:257] [infer] Failed waiting for threads with status HAILO_TIMEOUT(4)
+[2025-12-05 11:31:34.076] [10540] [HailoRT] [error] [async_stream_base.hpp:167] [cv_wait_for] Got HAILO_TIMEOUT while waiting for output stream buffer model-small_onnx/conv73
+[2025-12-05 11:31:34.076] [10540] [HailoRT] [error] [edge_elements.cpp:399] [run_pull] CHECK_SUCCESS failed with status=HAILO_TIMEOUT(4) - HwReadEl0model-small_onnx/conv73 (D2H) failed with status=HAILO_TIMEOUT(4)
+[2025-12-05 11:31:34.076] [10540] [HailoRT] [error] [queue_elements.cpp:871] [run_in_thread] CHECK_SUCCESS failed with status=HAILO_TIMEOUT(4)
+[2025-12-05 11:31:34.076] [10540] [HailoRT] [error] [queue_elements.cpp:79] [operator()] Queue element UserBuffQEl0model-small_onnx/conv73 run in thread function failed! status = HAILO_TIMEOUT(4)
+[2025-12-05 11:31:34.076] [10706] [HailoRT] [info] [queue_elements.cpp:834] [run_pull] Shutdown event was signaled in dequeue of queue element UserBuffQEl0model-small_onnx/conv73!
+[2025-12-05 11:31:34.076] [10706] [HailoRT] [info] [vstream.cpp:1138] [read] Receiving to VStream was shutdown!
+[2025-12-05 11:31:34.076] [10542] [HailoRT] [error] [inference_pipeline.cpp:257] [infer] Failed waiting for threads with status HAILO_TIMEOUT(4)
+[2025-12-05 11:31:44.085] [10540] [HailoRT] [error] [async_stream_base.hpp:167] [cv_wait_for] Got HAILO_TIMEOUT while waiting for output stream buffer model-small_onnx/conv73
+[2025-12-05 11:31:44.085] [10540] [HailoRT] [error] [edge_elements.cpp:399] [run_pull] CHECK_SUCCESS failed with status=HAILO_TIMEOUT(4) - HwReadEl0model-small_onnx/conv73 (D2H) failed with status=HAILO_TIMEOUT(4)
+[2025-12-05 11:31:44.085] [10540] [HailoRT] [error] [queue_elements.cpp:871] [run_in_thread] CHECK_SUCCESS failed with status=HAILO_TIMEOUT(4)
+[2025-12-05 11:31:44.086] [10540] [HailoRT] [error] [queue_elements.cpp:79] [operator()] Queue element UserBuffQEl0model-small_onnx/conv73 run in thread function failed! status = HAILO_TIMEOUT(4)
+[2025-12-05 11:31:44.086] [10776] [HailoRT] [info] [queue_elements.cpp:834] [run_pull] Shutdown event was signaled in dequeue of queue element UserBuffQEl0model-small_onnx/conv73!
+[2025-12-05 11:31:44.086] [10776] [HailoRT] [info] [vstream.cpp:1138] [read] Receiving to VStream was shutdown!
+[2025-12-05 11:31:44.086] [10542] [HailoRT] [error] [inference_pipeline.cpp:257] [infer] Failed waiting for threads with status HAILO_TIMEOUT(4)
+[2025-12-05 11:32:00.342] [10893] [HailoRT] [info] [vdevice.cpp:535] [create] Creating vdevice with params: device_count: 1, scheduling_algorithm: ROUND_ROBIN, multi_process_service: false
+[2025-12-05 11:32:00.355] [10893] [HailoRT] [info] [device.cpp:51] [Device] OS Version: Linux 6.12.47+rpt-rpi-2712 #1 SMP PREEMPT Debian 1:6.12.47-1+rpt1~bookworm (2025-09-16) aarch64
+[2025-12-05 11:32:00.355] [10893] [HailoRT] [info] [control.cpp:113] [control__parse_identify_results] firmware_version is: 4.23.0
+[2025-12-05 11:32:00.355] [10893] [HailoRT] [info] [vdevice.cpp:682] [create] VDevice Infos: 0001:01:00.0
+[2025-12-05 11:32:00.365] [10893] [HailoRT] [info] [hef.cpp:1994] [get_network_group_and_network_name] No name was given. Addressing all networks of default network_group: model-small_onnx
+[2025-12-05 11:32:00.374] [10893] [HailoRT] [info] [internal_buffer_manager.cpp:77] [print_execution_results] Planned internal buffer memory: CMA=0 CMA-Desc=458752 Pinned=698112. memory to edge layer usage factor is 1
+[2025-12-05 11:32:00.374] [10893] [HailoRT] [info] [internal_buffer_manager.cpp:86] [print_execution_results] Default Internal buffer planner executed successfully
+[2025-12-05 11:32:00.427] [10893] [HailoRT] [info] [device_internal.cpp:57] [configure] Configuring HEF took 61.297746 milliseconds
+[2025-12-05 11:32:00.443] [10893] [HailoRT] [info] [vdevice.cpp:780] [configure] Configuring HEF on VDevice took 76.996747 milliseconds
+[2025-12-05 11:32:00.443] [10893] [HailoRT] [info] [edge_elements.cpp:52] [create] Created (HwWriteEl1model-small_onnx/input_layer1 | hw_frame_size: 196608)
+[2025-12-05 11:32:00.443] [10893] [HailoRT] [info] [vstream.cpp:754] [InputVStreamImpl] Creating model-small_onnx/input_layer1...
+[2025-12-05 11:32:00.443] [10893] [HailoRT] [info] [vstream_builder.cpp:102] [create_inputs] Input pipeline 'model-small_onnx/input_layer1': (HwWriteEl1model-small_onnx/input_layer1 | hw_frame_size: 196608) >> HW
+[2025-12-05 11:32:00.443] [10893] [HailoRT] [info] [edge_elements.cpp:287] [create] Created (HwReadEl0model-small_onnx/conv73 | hw_frame_size: 65536)
+[2025-12-05 11:32:00.443] [10893] [HailoRT] [info] [queue_elements.cpp:800] [create] Created (UserBuffQEl0model-small_onnx/conv73 | timeout: 10s)
+[2025-12-05 11:32:00.443] [10893] [HailoRT] [info] [vstream.cpp:1114] [OutputVStreamImpl] Creating model-small_onnx/conv73...
+[2025-12-05 11:32:00.443] [10893] [HailoRT] [info] [vstream_builder.cpp:220] [create_outputs] Output pipeline 'model-small_onnx/conv73': HW >> (HwReadEl0model-small_onnx/conv73 | hw_frame_size: 65536) >> (UserBuffQEl0model-small_onnx/conv73 | timeout: 10s)
+[2025-12-05 11:32:11.050] [10900] [HailoRT] [error] [async_stream_base.hpp:167] [cv_wait_for] Got HAILO_TIMEOUT while waiting for output stream buffer model-small_onnx/conv73
+[2025-12-05 11:32:11.050] [10900] [HailoRT] [error] [edge_elements.cpp:399] [run_pull] CHECK_SUCCESS failed with status=HAILO_TIMEOUT(4) - HwReadEl0model-small_onnx/conv73 (D2H) failed with status=HAILO_TIMEOUT(4)
+[2025-12-05 11:32:11.050] [10900] [HailoRT] [error] [queue_elements.cpp:871] [run_in_thread] CHECK_SUCCESS failed with status=HAILO_TIMEOUT(4)
+[2025-12-05 11:32:11.050] [10900] [HailoRT] [error] [queue_elements.cpp:79] [operator()] Queue element UserBuffQEl0model-small_onnx/conv73 run in thread function failed! status = HAILO_TIMEOUT(4)
+[2025-12-05 11:32:11.050] [10925] [HailoRT] [info] [queue_elements.cpp:834] [run_pull] Shutdown event was signaled in dequeue of queue element UserBuffQEl0model-small_onnx/conv73!
+[2025-12-05 11:32:11.050] [10925] [HailoRT] [info] [vstream.cpp:1138] [read] Receiving to VStream was shutdown!
+[2025-12-05 11:32:11.050] [10918] [HailoRT] [error] [inference_pipeline.cpp:257] [infer] Failed waiting for threads with status HAILO_TIMEOUT(4)
+[2025-12-05 11:32:21.059] [10900] [HailoRT] [error] [async_stream_base.hpp:167] [cv_wait_for] Got HAILO_TIMEOUT while waiting for output stream buffer model-small_onnx/conv73
+[2025-12-05 11:32:21.059] [10900] [HailoRT] [error] [edge_elements.cpp:399] [run_pull] CHECK_SUCCESS failed with status=HAILO_TIMEOUT(4) - HwReadEl0model-small_onnx/conv73 (D2H) failed with status=HAILO_TIMEOUT(4)
+[2025-12-05 11:32:21.059] [10900] [HailoRT] [error] [queue_elements.cpp:871] [run_in_thread] CHECK_SUCCESS failed with status=HAILO_TIMEOUT(4)
+[2025-12-05 11:32:21.059] [10900] [HailoRT] [error] [queue_elements.cpp:79] [operator()] Queue element UserBuffQEl0model-small_onnx/conv73 run in thread function failed! status = HAILO_TIMEOUT(4)
+[2025-12-05 11:32:21.059] [10964] [HailoRT] [info] [queue_elements.cpp:834] [run_pull] Shutdown event was signaled in dequeue of queue element UserBuffQEl0model-small_onnx/conv73!
+[2025-12-05 11:32:21.059] [10964] [HailoRT] [info] [vstream.cpp:1138] [read] Receiving to VStream was shutdown!
+[2025-12-05 11:32:21.059] [10918] [HailoRT] [error] [inference_pipeline.cpp:257] [infer] Failed waiting for threads with status HAILO_TIMEOUT(4)
+[2025-12-05 11:34:27.321] [11229] [HailoRT] [info] [vdevice.cpp:535] [create] Creating vdevice with params: device_count: 1, scheduling_algorithm: ROUND_ROBIN, multi_process_service: false
+[2025-12-05 11:34:27.333] [11229] [HailoRT] [info] [device.cpp:51] [Device] OS Version: Linux 6.12.47+rpt-rpi-2712 #1 SMP PREEMPT Debian 1:6.12.47-1+rpt1~bookworm (2025-09-16) aarch64
+[2025-12-05 11:34:27.333] [11229] [HailoRT] [info] [control.cpp:113] [control__parse_identify_results] firmware_version is: 4.23.0
+[2025-12-05 11:34:27.333] [11229] [HailoRT] [info] [vdevice.cpp:682] [create] VDevice Infos: 0001:01:00.0
+[2025-12-05 11:34:27.343] [11229] [HailoRT] [info] [hef.cpp:1994] [get_network_group_and_network_name] No name was given. Addressing all networks of default network_group: model-small_onnx
+[2025-12-05 11:34:27.350] [11229] [HailoRT] [info] [internal_buffer_manager.cpp:77] [print_execution_results] Planned internal buffer memory: CMA=0 CMA-Desc=458752 Pinned=698112. memory to edge layer usage factor is 1
+[2025-12-05 11:34:27.350] [11229] [HailoRT] [info] [internal_buffer_manager.cpp:86] [print_execution_results] Default Internal buffer planner executed successfully
+[2025-12-05 11:34:27.412] [11229] [HailoRT] [info] [device_internal.cpp:57] [configure] Configuring HEF took 69.29539 milliseconds
+[2025-12-05 11:34:27.429] [11229] [HailoRT] [info] [vdevice.cpp:780] [configure] Configuring HEF on VDevice took 85.8607 milliseconds
+[2025-12-05 11:34:27.429] [11229] [HailoRT] [info] [edge_elements.cpp:52] [create] Created (HwWriteEl1model-small_onnx/input_layer1 | hw_frame_size: 196608)
+[2025-12-05 11:34:27.429] [11229] [HailoRT] [info] [vstream.cpp:754] [InputVStreamImpl] Creating model-small_onnx/input_layer1...
+[2025-12-05 11:34:27.429] [11229] [HailoRT] [info] [vstream_builder.cpp:102] [create_inputs] Input pipeline 'model-small_onnx/input_layer1': (HwWriteEl1model-small_onnx/input_layer1 | hw_frame_size: 196608) >> HW
+[2025-12-05 11:34:27.429] [11229] [HailoRT] [info] [edge_elements.cpp:287] [create] Created (HwReadEl0model-small_onnx/conv73 | hw_frame_size: 65536)
+[2025-12-05 11:34:27.429] [11229] [HailoRT] [info] [queue_elements.cpp:800] [create] Created (UserBuffQEl0model-small_onnx/conv73 | timeout: 10s)
+[2025-12-05 11:34:27.429] [11229] [HailoRT] [info] [vstream.cpp:1114] [OutputVStreamImpl] Creating model-small_onnx/conv73...
+[2025-12-05 11:34:27.429] [11229] [HailoRT] [info] [vstream_builder.cpp:220] [create_outputs] Output pipeline 'model-small_onnx/conv73': HW >> (HwReadEl0model-small_onnx/conv73 | hw_frame_size: 65536) >> (UserBuffQEl0model-small_onnx/conv73 | timeout: 10s)
+[2025-12-05 11:34:38.028] [11237] [HailoRT] [error] [async_stream_base.hpp:167] [cv_wait_for] Got HAILO_TIMEOUT while waiting for output stream buffer model-small_onnx/conv73
+[2025-12-05 11:34:38.028] [11237] [HailoRT] [error] [edge_elements.cpp:399] [run_pull] CHECK_SUCCESS failed with status=HAILO_TIMEOUT(4) - HwReadEl0model-small_onnx/conv73 (D2H) failed with status=HAILO_TIMEOUT(4)
+[2025-12-05 11:34:38.028] [11237] [HailoRT] [error] [queue_elements.cpp:871] [run_in_thread] CHECK_SUCCESS failed with status=HAILO_TIMEOUT(4)
+[2025-12-05 11:34:38.028] [11237] [HailoRT] [error] [queue_elements.cpp:79] [operator()] Queue element UserBuffQEl0model-small_onnx/conv73 run in thread function failed! status = HAILO_TIMEOUT(4)
+[2025-12-05 11:34:38.028] [11254] [HailoRT] [info] [queue_elements.cpp:834] [run_pull] Shutdown event was signaled in dequeue of queue element UserBuffQEl0model-small_onnx/conv73!
+[2025-12-05 11:34:38.028] [11254] [HailoRT] [info] [vstream.cpp:1138] [read] Receiving to VStream was shutdown!
+[2025-12-05 11:34:38.028] [11247] [HailoRT] [error] [inference_pipeline.cpp:257] [infer] Failed waiting for threads with status HAILO_TIMEOUT(4)
+[2025-12-05 11:34:48.035] [11237] [HailoRT] [error] [async_stream_base.hpp:167] [cv_wait_for] Got HAILO_TIMEOUT while waiting for output stream buffer model-small_onnx/conv73
+[2025-12-05 11:34:48.035] [11237] [HailoRT] [error] [edge_elements.cpp:399] [run_pull] CHECK_SUCCESS failed with status=HAILO_TIMEOUT(4) - HwReadEl0model-small_onnx/conv73 (D2H) failed with status=HAILO_TIMEOUT(4)
+[2025-12-05 11:34:48.036] [11237] [HailoRT] [error] [queue_elements.cpp:871] [run_in_thread] CHECK_SUCCESS failed with status=HAILO_TIMEOUT(4)
+[2025-12-05 11:34:48.036] [11237] [HailoRT] [error] [queue_elements.cpp:79] [operator()] Queue element UserBuffQEl0model-small_onnx/conv73 run in thread function failed! status = HAILO_TIMEOUT(4)
+[2025-12-05 11:34:48.036] [11293] [HailoRT] [info] [queue_elements.cpp:834] [run_pull] Shutdown event was signaled in dequeue of queue element UserBuffQEl0model-small_onnx/conv73!
+[2025-12-05 11:34:48.036] [11293] [HailoRT] [info] [vstream.cpp:1138] [read] Receiving to VStream was shutdown!
+[2025-12-05 11:34:48.036] [11247] [HailoRT] [error] [inference_pipeline.cpp:257] [infer] Failed waiting for threads with status HAILO_TIMEOUT(4)
+[2025-12-05 11:34:58.042] [11237] [HailoRT] [error] [async_stream_base.hpp:167] [cv_wait_for] Got HAILO_TIMEOUT while waiting for output stream buffer model-small_onnx/conv73
+[2025-12-05 11:34:58.042] [11237] [HailoRT] [error] [edge_elements.cpp:399] [run_pull] CHECK_SUCCESS failed with status=HAILO_TIMEOUT(4) - HwReadEl0model-small_onnx/conv73 (D2H) failed with status=HAILO_TIMEOUT(4)
+[2025-12-05 11:34:58.042] [11237] [HailoRT] [error] [queue_elements.cpp:871] [run_in_thread] CHECK_SUCCESS failed with status=HAILO_TIMEOUT(4)
+[2025-12-05 11:34:58.042] [11237] [HailoRT] [error] [queue_elements.cpp:79] [operator()] Queue element UserBuffQEl0model-small_onnx/conv73 run in thread function failed! status = HAILO_TIMEOUT(4)
+[2025-12-05 11:34:58.042] [11325] [HailoRT] [info] [queue_elements.cpp:834] [run_pull] Shutdown event was signaled in dequeue of queue element UserBuffQEl0model-small_onnx/conv73!
+[2025-12-05 11:34:58.042] [11325] [HailoRT] [info] [vstream.cpp:1138] [read] Receiving to VStream was shutdown!
+[2025-12-05 11:34:58.042] [11247] [HailoRT] [error] [inference_pipeline.cpp:257] [infer] Failed waiting for threads with status HAILO_TIMEOUT(4)
+[2025-12-05 11:35:08.049] [11237] [HailoRT] [error] [async_stream_base.hpp:167] [cv_wait_for] Got HAILO_TIMEOUT while waiting for output stream buffer model-small_onnx/conv73
+[2025-12-05 11:35:08.049] [11237] [HailoRT] [error] [edge_elements.cpp:399] [run_pull] CHECK_SUCCESS failed with status=HAILO_TIMEOUT(4) - HwReadEl0model-small_onnx/conv73 (D2H) failed with status=HAILO_TIMEOUT(4)
+[2025-12-05 11:35:08.049] [11237] [HailoRT] [error] [queue_elements.cpp:871] [run_in_thread] CHECK_SUCCESS failed with status=HAILO_TIMEOUT(4)
+[2025-12-05 11:35:08.049] [11237] [HailoRT] [error] [queue_elements.cpp:79] [operator()] Queue element UserBuffQEl0model-small_onnx/conv73 run in thread function failed! status = HAILO_TIMEOUT(4)
+[2025-12-05 11:35:08.049] [11365] [HailoRT] [info] [queue_elements.cpp:834] [run_pull] Shutdown event was signaled in dequeue of queue element UserBuffQEl0model-small_onnx/conv73!
+[2025-12-05 11:35:08.049] [11365] [HailoRT] [info] [vstream.cpp:1138] [read] Receiving to VStream was shutdown!
+[2025-12-05 11:35:08.049] [11247] [HailoRT] [error] [inference_pipeline.cpp:257] [infer] Failed waiting for threads with status HAILO_TIMEOUT(4)
+[2025-12-05 11:37:29.174] [11641] [HailoRT] [info] [vdevice.cpp:535] [create] Creating vdevice with params: device_count: 1, scheduling_algorithm: ROUND_ROBIN, multi_process_service: false
+[2025-12-05 11:37:29.187] [11641] [HailoRT] [info] [device.cpp:51] [Device] OS Version: Linux 6.12.47+rpt-rpi-2712 #1 SMP PREEMPT Debian 1:6.12.47-1+rpt1~bookworm (2025-09-16) aarch64
+[2025-12-05 11:37:29.187] [11641] [HailoRT] [info] [control.cpp:113] [control__parse_identify_results] firmware_version is: 4.23.0
+[2025-12-05 11:37:29.187] [11641] [HailoRT] [info] [vdevice.cpp:682] [create] VDevice Infos: 0001:01:00.0
+[2025-12-05 11:37:29.197] [11641] [HailoRT] [info] [hef.cpp:1994] [get_network_group_and_network_name] No name was given. Addressing all networks of default network_group: model-small_onnx
+[2025-12-05 11:37:29.205] [11641] [HailoRT] [info] [internal_buffer_manager.cpp:77] [print_execution_results] Planned internal buffer memory: CMA=0 CMA-Desc=458752 Pinned=698112. memory to edge layer usage factor is 1
+[2025-12-05 11:37:29.205] [11641] [HailoRT] [info] [internal_buffer_manager.cpp:86] [print_execution_results] Default Internal buffer planner executed successfully
+[2025-12-05 11:37:29.250] [11641] [HailoRT] [info] [device_internal.cpp:57] [configure] Configuring HEF took 52.346563 milliseconds
+[2025-12-05 11:37:29.266] [11641] [HailoRT] [info] [vdevice.cpp:780] [configure] Configuring HEF on VDevice took 68.508314 milliseconds
+[2025-12-05 11:37:29.267] [11641] [HailoRT] [info] [edge_elements.cpp:52] [create] Created (HwWriteEl1model-small_onnx/input_layer1 | hw_frame_size: 196608)
+[2025-12-05 11:37:29.267] [11641] [HailoRT] [info] [vstream.cpp:754] [InputVStreamImpl] Creating model-small_onnx/input_layer1...
+[2025-12-05 11:37:29.267] [11641] [HailoRT] [info] [vstream_builder.cpp:102] [create_inputs] Input pipeline 'model-small_onnx/input_layer1': (HwWriteEl1model-small_onnx/input_layer1 | hw_frame_size: 196608) >> HW
+[2025-12-05 11:37:29.267] [11641] [HailoRT] [info] [edge_elements.cpp:287] [create] Created (HwReadEl0model-small_onnx/conv73 | hw_frame_size: 65536)
+[2025-12-05 11:37:29.267] [11641] [HailoRT] [info] [queue_elements.cpp:800] [create] Created (UserBuffQEl0model-small_onnx/conv73 | timeout: 10s)
+[2025-12-05 11:37:29.267] [11641] [HailoRT] [info] [vstream.cpp:1114] [OutputVStreamImpl] Creating model-small_onnx/conv73...
+[2025-12-05 11:37:29.267] [11641] [HailoRT] [info] [vstream_builder.cpp:220] [create_outputs] Output pipeline 'model-small_onnx/conv73': HW >> (HwReadEl0model-small_onnx/conv73 | hw_frame_size: 65536) >> (UserBuffQEl0model-small_onnx/conv73 | timeout: 10s)
+[2025-12-05 11:37:39.911] [11648] [HailoRT] [error] [async_stream_base.hpp:167] [cv_wait_for] Got HAILO_TIMEOUT while waiting for output stream buffer model-small_onnx/conv73
+[2025-12-05 11:37:39.911] [11648] [HailoRT] [error] [edge_elements.cpp:399] [run_pull] CHECK_SUCCESS failed with status=HAILO_TIMEOUT(4) - HwReadEl0model-small_onnx/conv73 (D2H) failed with status=HAILO_TIMEOUT(4)
+[2025-12-05 11:37:39.911] [11648] [HailoRT] [error] [queue_elements.cpp:871] [run_in_thread] CHECK_SUCCESS failed with status=HAILO_TIMEOUT(4)
+[2025-12-05 11:37:39.911] [11648] [HailoRT] [error] [queue_elements.cpp:79] [operator()] Queue element UserBuffQEl0model-small_onnx/conv73 run in thread function failed! status = HAILO_TIMEOUT(4)
+[2025-12-05 11:37:39.911] [11665] [HailoRT] [info] [queue_elements.cpp:834] [run_pull] Shutdown event was signaled in dequeue of queue element UserBuffQEl0model-small_onnx/conv73!
+[2025-12-05 11:37:39.911] [11665] [HailoRT] [info] [vstream.cpp:1138] [read] Receiving to VStream was shutdown!
+[2025-12-05 11:37:39.911] [11658] [HailoRT] [error] [inference_pipeline.cpp:257] [infer] Failed waiting for threads with status HAILO_TIMEOUT(4)
+[2025-12-05 11:37:49.919] [11648] [HailoRT] [error] [async_stream_base.hpp:167] [cv_wait_for] Got HAILO_TIMEOUT while waiting for output stream buffer model-small_onnx/conv73
+[2025-12-05 11:37:49.919] [11704] [HailoRT] [error] [queue_elements.cpp:838] [run_pull] CHECK failed - UserBuffQEl0model-small_onnx/conv73 (D2H) failed with status=HAILO_TIMEOUT(4) (timeout=10000ms)
+[2025-12-05 11:37:49.919] [11648] [HailoRT] [error] [edge_elements.cpp:399] [run_pull] CHECK_SUCCESS failed with status=HAILO_TIMEOUT(4) - HwReadEl0model-small_onnx/conv73 (D2H) failed with status=HAILO_TIMEOUT(4)
+[2025-12-05 11:37:49.919] [11648] [HailoRT] [error] [queue_elements.cpp:871] [run_in_thread] CHECK_SUCCESS failed with status=HAILO_TIMEOUT(4)
+[2025-12-05 11:37:49.919] [11648] [HailoRT] [error] [queue_elements.cpp:79] [operator()] Queue element UserBuffQEl0model-small_onnx/conv73 run in thread function failed! status = HAILO_TIMEOUT(4)
+[2025-12-05 11:37:49.919] [11658] [HailoRT] [error] [inference_pipeline.cpp:257] [infer] Failed waiting for threads with status HAILO_TIMEOUT(4)
+[2025-12-05 11:37:49.945] [11648] [HailoRT] [info] [queue_elements.cpp:855] [run_in_thread] Shutdown event was signaled in dequeue of UserBuffQEl0model-small_onnx/conv73!
+[2025-12-05 11:37:49.945] [11648] [HailoRT] [info] [queue_elements.cpp:68] [operator()] Thread in element UserBuffQEl0model-small_onnx/conv73 is not running anymore, exiting..
+[2025-12-05 11:37:49.945] [11641] [HailoRT] [info] [queue_elements.cpp:46] [~BaseQueueElement] Queue element UserBuffQEl0model-small_onnx/conv73 has 0 frames in his Queue on destruction
+[2025-12-05 11:38:17.173] [11840] [HailoRT] [info] [vdevice.cpp:535] [create] Creating vdevice with params: device_count: 1, scheduling_algorithm: ROUND_ROBIN, multi_process_service: false
+[2025-12-05 11:38:17.185] [11840] [HailoRT] [info] [device.cpp:51] [Device] OS Version: Linux 6.12.47+rpt-rpi-2712 #1 SMP PREEMPT Debian 1:6.12.47-1+rpt1~bookworm (2025-09-16) aarch64
+[2025-12-05 11:38:17.185] [11840] [HailoRT] [info] [control.cpp:113] [control__parse_identify_results] firmware_version is: 4.23.0
+[2025-12-05 11:38:17.185] [11840] [HailoRT] [info] [vdevice.cpp:682] [create] VDevice Infos: 0001:01:00.0
+[2025-12-05 11:38:17.196] [11840] [HailoRT] [info] [hef.cpp:1994] [get_network_group_and_network_name] No name was given. Addressing all networks of default network_group: model-small_onnx
+[2025-12-05 11:38:17.204] [11840] [HailoRT] [info] [internal_buffer_manager.cpp:77] [print_execution_results] Planned internal buffer memory: CMA=0 CMA-Desc=458752 Pinned=698112. memory to edge layer usage factor is 1
+[2025-12-05 11:38:17.204] [11840] [HailoRT] [info] [internal_buffer_manager.cpp:86] [print_execution_results] Default Internal buffer planner executed successfully
+[2025-12-05 11:38:17.252] [11840] [HailoRT] [info] [device_internal.cpp:57] [configure] Configuring HEF took 54.563207 milliseconds
+[2025-12-05 11:38:17.268] [11840] [HailoRT] [info] [vdevice.cpp:780] [configure] Configuring HEF on VDevice took 71.41779 milliseconds
+[2025-12-05 11:38:17.268] [11840] [HailoRT] [info] [edge_elements.cpp:52] [create] Created (HwWriteEl1model-small_onnx/input_layer1 | hw_frame_size: 196608)
+[2025-12-05 11:38:17.268] [11840] [HailoRT] [info] [vstream.cpp:754] [InputVStreamImpl] Creating model-small_onnx/input_layer1...
+[2025-12-05 11:38:17.268] [11840] [HailoRT] [info] [vstream_builder.cpp:102] [create_inputs] Input pipeline 'model-small_onnx/input_layer1': (HwWriteEl1model-small_onnx/input_layer1 | hw_frame_size: 196608) >> HW
+[2025-12-05 11:38:17.269] [11840] [HailoRT] [info] [edge_elements.cpp:287] [create] Created (HwReadEl0model-small_onnx/conv73 | hw_frame_size: 65536)
+[2025-12-05 11:38:17.269] [11840] [HailoRT] [info] [queue_elements.cpp:800] [create] Created (UserBuffQEl0model-small_onnx/conv73 | timeout: 10s)
+[2025-12-05 11:38:17.269] [11840] [HailoRT] [info] [vstream.cpp:1114] [OutputVStreamImpl] Creating model-small_onnx/conv73...
+[2025-12-05 11:38:17.269] [11840] [HailoRT] [info] [vstream_builder.cpp:220] [create_outputs] Output pipeline 'model-small_onnx/conv73': HW >> (HwReadEl0model-small_onnx/conv73 | hw_frame_size: 65536) >> (UserBuffQEl0model-small_onnx/conv73 | timeout: 10s)
+[2025-12-05 11:38:27.894] [11847] [HailoRT] [error] [async_stream_base.hpp:167] [cv_wait_for] Got HAILO_TIMEOUT while waiting for output stream buffer model-small_onnx/conv73
+[2025-12-05 11:38:27.894] [11847] [HailoRT] [error] [edge_elements.cpp:399] [run_pull] CHECK_SUCCESS failed with status=HAILO_TIMEOUT(4) - HwReadEl0model-small_onnx/conv73 (D2H) failed with status=HAILO_TIMEOUT(4)
+[2025-12-05 11:38:27.894] [11847] [HailoRT] [error] [queue_elements.cpp:871] [run_in_thread] CHECK_SUCCESS failed with status=HAILO_TIMEOUT(4)
+[2025-12-05 11:38:27.894] [11847] [HailoRT] [error] [queue_elements.cpp:79] [operator()] Queue element UserBuffQEl0model-small_onnx/conv73 run in thread function failed! status = HAILO_TIMEOUT(4)
+[2025-12-05 11:38:27.894] [11864] [HailoRT] [info] [queue_elements.cpp:834] [run_pull] Shutdown event was signaled in dequeue of queue element UserBuffQEl0model-small_onnx/conv73!
+[2025-12-05 11:38:27.894] [11864] [HailoRT] [info] [vstream.cpp:1138] [read] Receiving to VStream was shutdown!
+[2025-12-05 11:38:27.894] [11857] [HailoRT] [error] [inference_pipeline.cpp:257] [infer] Failed waiting for threads with status HAILO_TIMEOUT(4)
+[2025-12-05 11:40:33.772] [12732] [HailoRT] [info] [vdevice.cpp:535] [create] Creating vdevice with params: device_count: 1, scheduling_algorithm: ROUND_ROBIN, multi_process_service: false
+[2025-12-05 11:40:33.785] [12732] [HailoRT] [info] [device.cpp:51] [Device] OS Version: Linux 6.12.47+rpt-rpi-2712 #1 SMP PREEMPT Debian 1:6.12.47-1+rpt1~bookworm (2025-09-16) aarch64
+[2025-12-05 11:40:33.785] [12732] [HailoRT] [info] [control.cpp:113] [control__parse_identify_results] firmware_version is: 4.23.0
+[2025-12-05 11:40:33.785] [12732] [HailoRT] [info] [vdevice.cpp:682] [create] VDevice Infos: 0001:01:00.0
+[2025-12-05 11:40:33.796] [12732] [HailoRT] [info] [hef.cpp:1994] [get_network_group_and_network_name] No name was given. Addressing all networks of default network_group: model-small_onnx
+[2025-12-05 11:40:33.805] [12732] [HailoRT] [info] [internal_buffer_manager.cpp:77] [print_execution_results] Planned internal buffer memory: CMA=0 CMA-Desc=458752 Pinned=698112. memory to edge layer usage factor is 1
+[2025-12-05 11:40:33.805] [12732] [HailoRT] [info] [internal_buffer_manager.cpp:86] [print_execution_results] Default Internal buffer planner executed successfully
+[2025-12-05 11:40:33.871] [12732] [HailoRT] [info] [device_internal.cpp:57] [configure] Configuring HEF took 74.55498 milliseconds
+[2025-12-05 11:40:33.887] [12732] [HailoRT] [info] [vdevice.cpp:780] [configure] Configuring HEF on VDevice took 91.531782 milliseconds
+[2025-12-05 11:40:33.888] [12732] [HailoRT] [info] [edge_elements.cpp:52] [create] Created (HwWriteEl1model-small_onnx/input_layer1 | hw_frame_size: 196608)
+[2025-12-05 11:40:33.888] [12732] [HailoRT] [info] [vstream.cpp:754] [InputVStreamImpl] Creating model-small_onnx/input_layer1...
+[2025-12-05 11:40:33.888] [12732] [HailoRT] [info] [vstream_builder.cpp:102] [create_inputs] Input pipeline 'model-small_onnx/input_layer1': (HwWriteEl1model-small_onnx/input_layer1 | hw_frame_size: 196608) >> HW
+[2025-12-05 11:40:33.888] [12732] [HailoRT] [info] [edge_elements.cpp:287] [create] Created (HwReadEl0model-small_onnx/conv73 | hw_frame_size: 65536)
+[2025-12-05 11:40:33.888] [12732] [HailoRT] [info] [queue_elements.cpp:800] [create] Created (UserBuffQEl0model-small_onnx/conv73 | timeout: 10s)
+[2025-12-05 11:40:33.888] [12732] [HailoRT] [info] [vstream.cpp:1114] [OutputVStreamImpl] Creating model-small_onnx/conv73...
+[2025-12-05 11:40:33.888] [12732] [HailoRT] [info] [vstream_builder.cpp:220] [create_outputs] Output pipeline 'model-small_onnx/conv73': HW >> (HwReadEl0model-small_onnx/conv73 | hw_frame_size: 65536) >> (UserBuffQEl0model-small_onnx/conv73 | timeout: 10s)
+[2025-12-05 11:40:44.516] [12739] [HailoRT] [error] [async_stream_base.hpp:167] [cv_wait_for] Got HAILO_TIMEOUT while waiting for output stream buffer model-small_onnx/conv73
+[2025-12-05 11:40:44.516] [12739] [HailoRT] [error] [edge_elements.cpp:399] [run_pull] CHECK_SUCCESS failed with status=HAILO_TIMEOUT(4) - HwReadEl0model-small_onnx/conv73 (D2H) failed with status=HAILO_TIMEOUT(4)
+[2025-12-05 11:40:44.516] [12739] [HailoRT] [error] [queue_elements.cpp:871] [run_in_thread] CHECK_SUCCESS failed with status=HAILO_TIMEOUT(4)
+[2025-12-05 11:40:44.516] [12739] [HailoRT] [error] [queue_elements.cpp:79] [operator()] Queue element UserBuffQEl0model-small_onnx/conv73 run in thread function failed! status = HAILO_TIMEOUT(4)
+[2025-12-05 11:40:44.516] [12757] [HailoRT] [info] [queue_elements.cpp:834] [run_pull] Shutdown event was signaled in dequeue of queue element UserBuffQEl0model-small_onnx/conv73!
+[2025-12-05 11:40:44.516] [12757] [HailoRT] [info] [vstream.cpp:1138] [read] Receiving to VStream was shutdown!
+[2025-12-05 11:40:44.516] [12750] [HailoRT] [error] [inference_pipeline.cpp:257] [infer] Failed waiting for threads with status HAILO_TIMEOUT(4)
+[2025-12-05 11:40:54.529] [12739] [HailoRT] [error] [async_stream_base.hpp:167] [cv_wait_for] Got HAILO_TIMEOUT while waiting for output stream buffer model-small_onnx/conv73
+[2025-12-05 11:40:54.529] [12739] [HailoRT] [error] [edge_elements.cpp:399] [run_pull] CHECK_SUCCESS failed with status=HAILO_TIMEOUT(4) - HwReadEl0model-small_onnx/conv73 (D2H) failed with status=HAILO_TIMEOUT(4)
+[2025-12-05 11:40:54.529] [12739] [HailoRT] [error] [queue_elements.cpp:871] [run_in_thread] CHECK_SUCCESS failed with status=HAILO_TIMEOUT(4)
+[2025-12-05 11:40:54.529] [12739] [HailoRT] [error] [queue_elements.cpp:79] [operator()] Queue element UserBuffQEl0model-small_onnx/conv73 run in thread function failed! status = HAILO_TIMEOUT(4)
+[2025-12-05 11:40:54.530] [12809] [HailoRT] [info] [queue_elements.cpp:834] [run_pull] Shutdown event was signaled in dequeue of queue element UserBuffQEl0model-small_onnx/conv73!
+[2025-12-05 11:40:54.530] [12809] [HailoRT] [info] [vstream.cpp:1138] [read] Receiving to VStream was shutdown!
+[2025-12-05 11:40:54.530] [12750] [HailoRT] [error] [inference_pipeline.cpp:257] [infer] Failed waiting for threads with status HAILO_TIMEOUT(4)
+[2025-12-05 11:45:00.512] [3428] [HailoRT] [info] [vdevice.cpp:535] [create] Creating vdevice with params: device_count: 1, scheduling_algorithm: ROUND_ROBIN, multi_process_service: false
+[2025-12-05 11:45:00.525] [3428] [HailoRT] [info] [device.cpp:51] [Device] OS Version: Linux 6.12.47+rpt-rpi-2712 #1 SMP PREEMPT Debian 1:6.12.47-1+rpt1~bookworm (2025-09-16) aarch64
+[2025-12-05 11:45:00.528] [3428] [HailoRT] [info] [control.cpp:113] [control__parse_identify_results] firmware_version is: 4.23.0
+[2025-12-05 11:45:00.529] [3428] [HailoRT] [info] [vdevice.cpp:682] [create] VDevice Infos: 0001:01:00.0
+[2025-12-05 11:45:01.797] [3428] [HailoRT] [info] [hef.cpp:1994] [get_network_group_and_network_name] No name was given. Addressing all networks of default network_group: model-small_onnx
+[2025-12-05 11:45:01.858] [3428] [HailoRT] [info] [internal_buffer_manager.cpp:77] [print_execution_results] Planned internal buffer memory: CMA=0 CMA-Desc=458752 Pinned=698112. memory to edge layer usage factor is 1
+[2025-12-05 11:45:01.858] [3428] [HailoRT] [info] [internal_buffer_manager.cpp:86] [print_execution_results] Default Internal buffer planner executed successfully
+[2025-12-05 11:45:01.897] [3428] [HailoRT] [info] [device_internal.cpp:57] [configure] Configuring HEF took 99.329061 milliseconds
+[2025-12-05 11:45:01.917] [3428] [HailoRT] [info] [vdevice.cpp:780] [configure] Configuring HEF on VDevice took 119.998988 milliseconds
+[2025-12-05 11:45:01.987] [3428] [HailoRT] [info] [edge_elements.cpp:52] [create] Created (HwWriteEl1model-small_onnx/input_layer1 | hw_frame_size: 196608)
+[2025-12-05 11:45:01.987] [3428] [HailoRT] [info] [vstream.cpp:754] [InputVStreamImpl] Creating model-small_onnx/input_layer1...
+[2025-12-05 11:45:01.987] [3428] [HailoRT] [info] [vstream_builder.cpp:102] [create_inputs] Input pipeline 'model-small_onnx/input_layer1': (HwWriteEl1model-small_onnx/input_layer1 | hw_frame_size: 196608) >> HW
+[2025-12-05 11:45:01.987] [3428] [HailoRT] [info] [edge_elements.cpp:287] [create] Created (HwReadEl0model-small_onnx/conv73 | hw_frame_size: 65536)
+[2025-12-05 11:45:02.011] [3428] [HailoRT] [info] [queue_elements.cpp:800] [create] Created (UserBuffQEl0model-small_onnx/conv73 | timeout: 10s)
+[2025-12-05 11:45:02.011] [3428] [HailoRT] [info] [vstream.cpp:1114] [OutputVStreamImpl] Creating model-small_onnx/conv73...
+[2025-12-05 11:45:02.011] [3428] [HailoRT] [info] [vstream_builder.cpp:220] [create_outputs] Output pipeline 'model-small_onnx/conv73': HW >> (HwReadEl0model-small_onnx/conv73 | hw_frame_size: 65536) >> (UserBuffQEl0model-small_onnx/conv73 | timeout: 10s)
+[2025-12-05 11:45:21.981] [3457] [HailoRT] [info] [queue_elements.cpp:855] [run_in_thread] Shutdown event was signaled in dequeue of UserBuffQEl0model-small_onnx/conv73!
+[2025-12-05 11:45:21.984] [3457] [HailoRT] [info] [queue_elements.cpp:68] [operator()] Thread in element UserBuffQEl0model-small_onnx/conv73 is not running anymore, exiting..
+[2025-12-05 11:45:21.985] [3428] [HailoRT] [info] [queue_elements.cpp:46] [~BaseQueueElement] Queue element UserBuffQEl0model-small_onnx/conv73 has 0 frames in his Queue on destruction
+[2025-12-05 11:48:09.156] [4468] [HailoRT] [info] [vdevice.cpp:535] [create] Creating vdevice with params: device_count: 1, scheduling_algorithm: ROUND_ROBIN, multi_process_service: false
+[2025-12-05 11:48:09.169] [4468] [HailoRT] [info] [device.cpp:51] [Device] OS Version: Linux 6.12.47+rpt-rpi-2712 #1 SMP PREEMPT Debian 1:6.12.47-1+rpt1~bookworm (2025-09-16) aarch64
+[2025-12-05 11:48:09.169] [4468] [HailoRT] [info] [control.cpp:113] [control__parse_identify_results] firmware_version is: 4.23.0
+[2025-12-05 11:48:09.169] [4468] [HailoRT] [info] [vdevice.cpp:682] [create] VDevice Infos: 0001:01:00.0
+[2025-12-05 11:48:09.181] [4468] [HailoRT] [info] [hef.cpp:1994] [get_network_group_and_network_name] No name was given. Addressing all networks of default network_group: model-small_onnx
+[2025-12-05 11:48:09.190] [4468] [HailoRT] [info] [internal_buffer_manager.cpp:77] [print_execution_results] Planned internal buffer memory: CMA=0 CMA-Desc=458752 Pinned=698112. memory to edge layer usage factor is 1
+[2025-12-05 11:48:09.190] [4468] [HailoRT] [info] [internal_buffer_manager.cpp:86] [print_execution_results] Default Internal buffer planner executed successfully
+[2025-12-05 11:48:09.241] [4468] [HailoRT] [info] [device_internal.cpp:57] [configure] Configuring HEF took 58.000831 milliseconds
+[2025-12-05 11:48:09.257] [4468] [HailoRT] [info] [vdevice.cpp:780] [configure] Configuring HEF on VDevice took 74.812076 milliseconds
+[2025-12-05 11:48:09.258] [4468] [HailoRT] [info] [edge_elements.cpp:52] [create] Created (HwWriteEl1model-small_onnx/input_layer1 | hw_frame_size: 196608)
+[2025-12-05 11:48:09.258] [4468] [HailoRT] [info] [vstream.cpp:754] [InputVStreamImpl] Creating model-small_onnx/input_layer1...
+[2025-12-05 11:48:09.258] [4468] [HailoRT] [info] [vstream_builder.cpp:102] [create_inputs] Input pipeline 'model-small_onnx/input_layer1': (HwWriteEl1model-small_onnx/input_layer1 | hw_frame_size: 196608) >> HW
+[2025-12-05 11:48:09.258] [4468] [HailoRT] [info] [edge_elements.cpp:287] [create] Created (HwReadEl0model-small_onnx/conv73 | hw_frame_size: 65536)
+[2025-12-05 11:48:09.258] [4468] [HailoRT] [info] [queue_elements.cpp:800] [create] Created (UserBuffQEl0model-small_onnx/conv73 | timeout: 10s)
+[2025-12-05 11:48:09.258] [4468] [HailoRT] [info] [vstream.cpp:1114] [OutputVStreamImpl] Creating model-small_onnx/conv73...
+[2025-12-05 11:48:09.258] [4468] [HailoRT] [info] [vstream_builder.cpp:220] [create_outputs] Output pipeline 'model-small_onnx/conv73': HW >> (HwReadEl0model-small_onnx/conv73 | hw_frame_size: 65536) >> (UserBuffQEl0model-small_onnx/conv73 | timeout: 10s)
+[2025-12-05 11:49:55.997] [4475] [HailoRT] [info] [queue_elements.cpp:855] [run_in_thread] Shutdown event was signaled in dequeue of UserBuffQEl0model-small_onnx/conv73!
+[2025-12-05 11:49:55.998] [4475] [HailoRT] [info] [queue_elements.cpp:68] [operator()] Thread in element UserBuffQEl0model-small_onnx/conv73 is not running anymore, exiting..
+[2025-12-05 11:49:55.998] [4468] [HailoRT] [info] [queue_elements.cpp:46] [~BaseQueueElement] Queue element UserBuffQEl0model-small_onnx/conv73 has 0 frames in his Queue on destruction
+[2025-12-05 12:09:54.101] [9883] [HailoRT] [info] [vdevice.cpp:535] [create] Creating vdevice with params: device_count: 1, scheduling_algorithm: ROUND_ROBIN, multi_process_service: false
+[2025-12-05 12:09:54.113] [9883] [HailoRT] [info] [device.cpp:51] [Device] OS Version: Linux 6.12.47+rpt-rpi-2712 #1 SMP PREEMPT Debian 1:6.12.47-1+rpt1~bookworm (2025-09-16) aarch64
+[2025-12-05 12:09:54.113] [9883] [HailoRT] [info] [control.cpp:113] [control__parse_identify_results] firmware_version is: 4.23.0
+[2025-12-05 12:09:54.113] [9883] [HailoRT] [info] [vdevice.cpp:682] [create] VDevice Infos: 0001:01:00.0
+[2025-12-05 12:09:54.125] [9883] [HailoRT] [info] [hef.cpp:1994] [get_network_group_and_network_name] No name was given. Addressing all networks of default network_group: model-small_onnx
+[2025-12-05 12:09:54.133] [9883] [HailoRT] [info] [internal_buffer_manager.cpp:77] [print_execution_results] Planned internal buffer memory: CMA=0 CMA-Desc=458752 Pinned=698112. memory to edge layer usage factor is 1
+[2025-12-05 12:09:54.133] [9883] [HailoRT] [info] [internal_buffer_manager.cpp:86] [print_execution_results] Default Internal buffer planner executed successfully
+[2025-12-05 12:09:54.176] [9883] [HailoRT] [info] [device_internal.cpp:57] [configure] Configuring HEF took 50.294753 milliseconds
+[2025-12-05 12:09:54.195] [9883] [HailoRT] [info] [vdevice.cpp:780] [configure] Configuring HEF on VDevice took 69.303391 milliseconds
+[2025-12-05 12:09:54.195] [9883] [HailoRT] [info] [edge_elements.cpp:52] [create] Created (HwWriteEl1model-small_onnx/input_layer1 | hw_frame_size: 196608)
+[2025-12-05 12:09:54.195] [9883] [HailoRT] [info] [vstream.cpp:754] [InputVStreamImpl] Creating model-small_onnx/input_layer1...
+[2025-12-05 12:09:54.195] [9883] [HailoRT] [info] [vstream_builder.cpp:102] [create_inputs] Input pipeline 'model-small_onnx/input_layer1': (HwWriteEl1model-small_onnx/input_layer1 | hw_frame_size: 196608) >> HW
+[2025-12-05 12:09:54.195] [9883] [HailoRT] [info] [edge_elements.cpp:287] [create] Created (HwReadEl0model-small_onnx/conv73 | hw_frame_size: 65536)
+[2025-12-05 12:09:54.196] [9883] [HailoRT] [info] [queue_elements.cpp:800] [create] Created (UserBuffQEl0model-small_onnx/conv73 | timeout: 10s)
+[2025-12-05 12:09:54.196] [9883] [HailoRT] [info] [vstream.cpp:1114] [OutputVStreamImpl] Creating model-small_onnx/conv73...
+[2025-12-05 12:09:54.196] [9883] [HailoRT] [info] [vstream_builder.cpp:220] [create_outputs] Output pipeline 'model-small_onnx/conv73': HW >> (HwReadEl0model-small_onnx/conv73 | hw_frame_size: 65536) >> (UserBuffQEl0model-small_onnx/conv73 | timeout: 10s)
+[2025-12-05 12:13:14.052] [11316] [HailoRT] [info] [vdevice.cpp:535] [create] Creating vdevice with params: device_count: 1, scheduling_algorithm: ROUND_ROBIN, multi_process_service: false
+[2025-12-05 12:13:14.064] [11316] [HailoRT] [info] [device.cpp:51] [Device] OS Version: Linux 6.12.47+rpt-rpi-2712 #1 SMP PREEMPT Debian 1:6.12.47-1+rpt1~bookworm (2025-09-16) aarch64
+[2025-12-05 12:13:14.066] [11316] [HailoRT] [info] [control.cpp:113] [control__parse_identify_results] firmware_version is: 4.23.0
+[2025-12-05 12:13:14.066] [11316] [HailoRT] [info] [vdevice.cpp:682] [create] VDevice Infos: 0001:01:00.0
+[2025-12-05 12:13:14.080] [11316] [HailoRT] [info] [hef.cpp:1994] [get_network_group_and_network_name] No name was given. Addressing all networks of default network_group: model-small_onnx
+[2025-12-05 12:13:14.088] [11316] [HailoRT] [info] [internal_buffer_manager.cpp:77] [print_execution_results] Planned internal buffer memory: CMA=0 CMA-Desc=458752 Pinned=698112. memory to edge layer usage factor is 1
+[2025-12-05 12:13:14.088] [11316] [HailoRT] [info] [internal_buffer_manager.cpp:86] [print_execution_results] Default Internal buffer planner executed successfully
+[2025-12-05 12:13:14.136] [11316] [HailoRT] [info] [device_internal.cpp:57] [configure] Configuring HEF took 55.665562 milliseconds
+[2025-12-05 12:13:14.154] [11316] [HailoRT] [info] [vdevice.cpp:780] [configure] Configuring HEF on VDevice took 73.560089 milliseconds
+[2025-12-05 12:13:14.154] [11316] [HailoRT] [info] [edge_elements.cpp:52] [create] Created (HwWriteEl1model-small_onnx/input_layer1 | hw_frame_size: 196608)
+[2025-12-05 12:13:14.154] [11316] [HailoRT] [info] [vstream.cpp:754] [InputVStreamImpl] Creating model-small_onnx/input_layer1...
+[2025-12-05 12:13:14.154] [11316] [HailoRT] [info] [vstream_builder.cpp:102] [create_inputs] Input pipeline 'model-small_onnx/input_layer1': (HwWriteEl1model-small_onnx/input_layer1 | hw_frame_size: 196608) >> HW
+[2025-12-05 12:13:14.154] [11316] [HailoRT] [info] [edge_elements.cpp:287] [create] Created (HwReadEl0model-small_onnx/conv73 | hw_frame_size: 65536)
+[2025-12-05 12:13:14.155] [11316] [HailoRT] [info] [queue_elements.cpp:800] [create] Created (UserBuffQEl0model-small_onnx/conv73 | timeout: 10s)
+[2025-12-05 12:13:14.155] [11316] [HailoRT] [info] [vstream.cpp:1114] [OutputVStreamImpl] Creating model-small_onnx/conv73...
+[2025-12-05 12:13:14.155] [11316] [HailoRT] [info] [vstream_builder.cpp:220] [create_outputs] Output pipeline 'model-small_onnx/conv73': HW >> (HwReadEl0model-small_onnx/conv73 | hw_frame_size: 65536) >> (UserBuffQEl0model-small_onnx/conv73 | timeout: 10s)
+[2025-12-05 12:13:32.181] [11323] [HailoRT] [info] [queue_elements.cpp:855] [run_in_thread] Shutdown event was signaled in dequeue of UserBuffQEl0model-small_onnx/conv73!
+[2025-12-05 12:13:32.182] [11323] [HailoRT] [info] [queue_elements.cpp:68] [operator()] Thread in element UserBuffQEl0model-small_onnx/conv73 is not running anymore, exiting..
+[2025-12-05 12:13:32.182] [11316] [HailoRT] [info] [queue_elements.cpp:46] [~BaseQueueElement] Queue element UserBuffQEl0model-small_onnx/conv73 has 0 frames in his Queue on destruction
+[2025-12-05 12:14:15.212] [12257] [HailoRT] [info] [vdevice.cpp:535] [create] Creating vdevice with params: device_count: 1, scheduling_algorithm: ROUND_ROBIN, multi_process_service: false
+[2025-12-05 12:14:15.225] [12257] [HailoRT] [info] [device.cpp:51] [Device] OS Version: Linux 6.12.47+rpt-rpi-2712 #1 SMP PREEMPT Debian 1:6.12.47-1+rpt1~bookworm (2025-09-16) aarch64
+[2025-12-05 12:14:15.225] [12257] [HailoRT] [info] [control.cpp:113] [control__parse_identify_results] firmware_version is: 4.23.0
+[2025-12-05 12:14:15.225] [12257] [HailoRT] [info] [vdevice.cpp:682] [create] VDevice Infos: 0001:01:00.0
+[2025-12-05 12:14:15.234] [12257] [HailoRT] [info] [hef.cpp:1994] [get_network_group_and_network_name] No name was given. Addressing all networks of default network_group: model-small_onnx
+[2025-12-05 12:14:15.242] [12257] [HailoRT] [info] [internal_buffer_manager.cpp:77] [print_execution_results] Planned internal buffer memory: CMA=0 CMA-Desc=458752 Pinned=698112. memory to edge layer usage factor is 1
+[2025-12-05 12:14:15.242] [12257] [HailoRT] [info] [internal_buffer_manager.cpp:86] [print_execution_results] Default Internal buffer planner executed successfully
+[2025-12-05 12:14:15.282] [12257] [HailoRT] [info] [device_internal.cpp:57] [configure] Configuring HEF took 46.748455 milliseconds
+[2025-12-05 12:14:15.298] [12257] [HailoRT] [info] [vdevice.cpp:780] [configure] Configuring HEF on VDevice took 63.238091 milliseconds
+[2025-12-05 12:14:15.298] [12257] [HailoRT] [info] [edge_elements.cpp:52] [create] Created (HwWriteEl1model-small_onnx/input_layer1 | hw_frame_size: 196608)
+[2025-12-05 12:14:15.298] [12257] [HailoRT] [info] [vstream.cpp:754] [InputVStreamImpl] Creating model-small_onnx/input_layer1...
+[2025-12-05 12:14:15.298] [12257] [HailoRT] [info] [vstream_builder.cpp:102] [create_inputs] Input pipeline 'model-small_onnx/input_layer1': (HwWriteEl1model-small_onnx/input_layer1 | hw_frame_size: 196608) >> HW
+[2025-12-05 12:14:15.298] [12257] [HailoRT] [info] [edge_elements.cpp:287] [create] Created (HwReadEl0model-small_onnx/conv73 | hw_frame_size: 65536)
+[2025-12-05 12:14:15.299] [12257] [HailoRT] [info] [queue_elements.cpp:800] [create] Created (UserBuffQEl0model-small_onnx/conv73 | timeout: 10s)
+[2025-12-05 12:14:15.299] [12257] [HailoRT] [info] [vstream.cpp:1114] [OutputVStreamImpl] Creating model-small_onnx/conv73...
+[2025-12-05 12:14:15.299] [12257] [HailoRT] [info] [vstream_builder.cpp:220] [create_outputs] Output pipeline 'model-small_onnx/conv73': HW >> (HwReadEl0model-small_onnx/conv73 | hw_frame_size: 65536) >> (UserBuffQEl0model-small_onnx/conv73 | timeout: 10s)
+[2025-12-05 12:14:49.783] [12264] [HailoRT] [info] [queue_elements.cpp:855] [run_in_thread] Shutdown event was signaled in dequeue of UserBuffQEl0model-small_onnx/conv73!
+[2025-12-05 12:14:49.783] [12264] [HailoRT] [info] [queue_elements.cpp:68] [operator()] Thread in element UserBuffQEl0model-small_onnx/conv73 is not running anymore, exiting..
+[2025-12-05 12:14:49.783] [12257] [HailoRT] [info] [queue_elements.cpp:46] [~BaseQueueElement] Queue element UserBuffQEl0model-small_onnx/conv73 has 0 frames in his Queue on destruction
+[2025-12-05 12:16:43.850] [14008] [HailoRT] [info] [vdevice.cpp:535] [create] Creating vdevice with params: device_count: 1, scheduling_algorithm: ROUND_ROBIN, multi_process_service: false
+[2025-12-05 12:16:43.861] [14008] [HailoRT] [info] [device.cpp:51] [Device] OS Version: Linux 6.12.47+rpt-rpi-2712 #1 SMP PREEMPT Debian 1:6.12.47-1+rpt1~bookworm (2025-09-16) aarch64
+[2025-12-05 12:16:43.861] [14008] [HailoRT] [info] [control.cpp:113] [control__parse_identify_results] firmware_version is: 4.23.0
+[2025-12-05 12:16:43.861] [14008] [HailoRT] [info] [vdevice.cpp:682] [create] VDevice Infos: 0001:01:00.0
+[2025-12-05 12:16:43.874] [14008] [HailoRT] [info] [hef.cpp:1994] [get_network_group_and_network_name] No name was given. Addressing all networks of default network_group: model-small_onnx
+[2025-12-05 12:16:43.882] [14008] [HailoRT] [info] [internal_buffer_manager.cpp:77] [print_execution_results] Planned internal buffer memory: CMA=0 CMA-Desc=458752 Pinned=698112. memory to edge layer usage factor is 1
+[2025-12-05 12:16:43.882] [14008] [HailoRT] [info] [internal_buffer_manager.cpp:86] [print_execution_results] Default Internal buffer planner executed successfully
+[2025-12-05 12:16:43.936] [14008] [HailoRT] [info] [device_internal.cpp:57] [configure] Configuring HEF took 61.973952 milliseconds
+[2025-12-05 12:16:43.954] [14008] [HailoRT] [info] [vdevice.cpp:780] [configure] Configuring HEF on VDevice took 80.214178 milliseconds
+[2025-12-05 12:16:43.955] [14008] [HailoRT] [info] [edge_elements.cpp:52] [create] Created (HwWriteEl1model-small_onnx/input_layer1 | hw_frame_size: 196608)
+[2025-12-05 12:16:43.955] [14008] [HailoRT] [info] [vstream.cpp:754] [InputVStreamImpl] Creating model-small_onnx/input_layer1...
+[2025-12-05 12:16:43.955] [14008] [HailoRT] [info] [vstream_builder.cpp:102] [create_inputs] Input pipeline 'model-small_onnx/input_layer1': (HwWriteEl1model-small_onnx/input_layer1 | hw_frame_size: 196608) >> HW
+[2025-12-05 12:16:43.955] [14008] [HailoRT] [info] [edge_elements.cpp:287] [create] Created (HwReadEl0model-small_onnx/conv73 | hw_frame_size: 65536)
+[2025-12-05 12:16:43.956] [14008] [HailoRT] [info] [queue_elements.cpp:800] [create] Created (UserBuffQEl0model-small_onnx/conv73 | timeout: 10s)
+[2025-12-05 12:16:43.956] [14008] [HailoRT] [info] [vstream.cpp:1114] [OutputVStreamImpl] Creating model-small_onnx/conv73...
+[2025-12-05 12:16:43.956] [14008] [HailoRT] [info] [vstream_builder.cpp:220] [create_outputs] Output pipeline 'model-small_onnx/conv73': HW >> (HwReadEl0model-small_onnx/conv73 | hw_frame_size: 65536) >> (UserBuffQEl0model-small_onnx/conv73 | timeout: 10s)
+[2025-12-05 12:17:03.623] [14015] [HailoRT] [info] [queue_elements.cpp:855] [run_in_thread] Shutdown event was signaled in dequeue of UserBuffQEl0model-small_onnx/conv73!
+[2025-12-05 12:17:03.623] [14015] [HailoRT] [info] [queue_elements.cpp:68] [operator()] Thread in element UserBuffQEl0model-small_onnx/conv73 is not running anymore, exiting..
+[2025-12-05 12:17:03.623] [14008] [HailoRT] [info] [queue_elements.cpp:46] [~BaseQueueElement] Queue element UserBuffQEl0model-small_onnx/conv73 has 0 frames in his Queue on destruction
+[2025-12-05 12:17:55.600] [15031] [HailoRT] [info] [vdevice.cpp:535] [create] Creating vdevice with params: device_count: 1, scheduling_algorithm: ROUND_ROBIN, multi_process_service: false
+[2025-12-05 12:17:55.613] [15031] [HailoRT] [info] [device.cpp:51] [Device] OS Version: Linux 6.12.47+rpt-rpi-2712 #1 SMP PREEMPT Debian 1:6.12.47-1+rpt1~bookworm (2025-09-16) aarch64
+[2025-12-05 12:17:55.613] [15031] [HailoRT] [info] [control.cpp:113] [control__parse_identify_results] firmware_version is: 4.23.0
+[2025-12-05 12:17:55.613] [15031] [HailoRT] [info] [vdevice.cpp:682] [create] VDevice Infos: 0001:01:00.0
+[2025-12-05 12:17:55.626] [15031] [HailoRT] [info] [hef.cpp:1994] [get_network_group_and_network_name] No name was given. Addressing all networks of default network_group: model-small_onnx
+[2025-12-05 12:17:55.635] [15031] [HailoRT] [info] [internal_buffer_manager.cpp:77] [print_execution_results] Planned internal buffer memory: CMA=0 CMA-Desc=458752 Pinned=698112. memory to edge layer usage factor is 1
+[2025-12-05 12:17:55.635] [15031] [HailoRT] [info] [internal_buffer_manager.cpp:86] [print_execution_results] Default Internal buffer planner executed successfully
+[2025-12-05 12:17:55.686] [15031] [HailoRT] [info] [device_internal.cpp:57] [configure] Configuring HEF took 60.096348 milliseconds
+[2025-12-05 12:17:55.708] [15031] [HailoRT] [info] [vdevice.cpp:780] [configure] Configuring HEF on VDevice took 81.767452 milliseconds
+[2025-12-05 12:17:55.708] [15031] [HailoRT] [info] [edge_elements.cpp:52] [create] Created (HwWriteEl1model-small_onnx/input_layer1 | hw_frame_size: 196608)
+[2025-12-05 12:17:55.708] [15031] [HailoRT] [info] [vstream.cpp:754] [InputVStreamImpl] Creating model-small_onnx/input_layer1...
+[2025-12-05 12:17:55.708] [15031] [HailoRT] [info] [vstream_builder.cpp:102] [create_inputs] Input pipeline 'model-small_onnx/input_layer1': (HwWriteEl1model-small_onnx/input_layer1 | hw_frame_size: 196608) >> HW
+[2025-12-05 12:17:55.708] [15031] [HailoRT] [info] [edge_elements.cpp:287] [create] Created (HwReadEl0model-small_onnx/conv73 | hw_frame_size: 65536)
+[2025-12-05 12:17:55.709] [15031] [HailoRT] [info] [queue_elements.cpp:800] [create] Created (UserBuffQEl0model-small_onnx/conv73 | timeout: 10s)
+[2025-12-05 12:17:55.709] [15031] [HailoRT] [info] [vstream.cpp:1114] [OutputVStreamImpl] Creating model-small_onnx/conv73...
+[2025-12-05 12:17:55.709] [15031] [HailoRT] [info] [vstream_builder.cpp:220] [create_outputs] Output pipeline 'model-small_onnx/conv73': HW >> (HwReadEl0model-small_onnx/conv73 | hw_frame_size: 65536) >> (UserBuffQEl0model-small_onnx/conv73 | timeout: 10s)
