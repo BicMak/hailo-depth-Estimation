@@ -6,7 +6,7 @@ This project implements a real-time depth estimation inference application using
   - On-device monocular depth estimation with real-time inference
   - Integrated GStreamer-based inference pipeline for streamlined video processing
 
-## each process time statics
+## Processing Pipeline Performance Statistics
 
 | target | Preprocess | Infer | Postprocess | Total |
 |:---:|---:|---:|---:|---:|
