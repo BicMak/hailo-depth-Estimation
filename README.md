@@ -6,6 +6,17 @@ This project implements a real-time depth estimation inference application using
   - On-device monocular depth estimation with real-time inference
   - Integrated GStreamer-based inference pipeline for streamlined video processing
 
+## each process time statics
+
+| target | Preprocess | Infer | Postprocess | Total |
+|:---:|---:|---:|---:|---:|
+| **mean** | 0.13 ms | 38.64 ms | 2.46 ms | 42.57 ms |
+| **median** | 0.00 ms | 39.00 ms | 2.00 ms | 43.00 ms |
+| **min** | 0 ms | 28 ms | 2 ms | 34 ms |
+| **max** | 6 ms | 49 ms | 14 ms | 61 ms |
+| **std** | 0.54 ms | 1.56 ms | 1.18 ms | 1.83 ms |
+- The bottleneck is the NPU inference stage
+- NPU inference time is difficult to reduce further, as there is an inherent trade-off between model precision and inference speed
 
 ## Pipelin Structure
 ### 1. video input pipeline
@@ -29,3 +40,8 @@ This project implements a real-time depth estimation inference application using
   - Format conversion only: BGR → RGB
   - concat origial image and depthmap image in same image 
 - autovideosink : Visualize the concatenated image on screen
+
+## Reference
+- [Gstreamer](https://gstreamer.freedesktop.org/documentation/tutorials/basic/index.html?gi-language=c)
+- [HailoRT](https://github.com/hailo-ai/hailort)
+- [HailoTappas](https://github.com/hailo-ai/tappas)
