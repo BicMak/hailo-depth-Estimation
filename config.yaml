@@ -1,0 +1,29 @@
+# 카메라 설정
+device: /dev/video0
+
+# 모델 설정
+model:
+  hef_path: ./hefs/Midas_v2_small_model.hef
+  input_size:
+    width: 256
+    height: 256
+
+# 비디오 설정
+video:
+  input:
+    width: 640
+    height: 480
+  output:
+    width: 1280
+    height: 480
+    file: output.mp4
+  framerate: 30
+
+# 인코더 설정
+encoder:
+  speed_preset: 1  # ultrafast
+  tune: 4          # zerolatency
+
+# 로그 설정
+logging:
+  timing_log: timing_log.csv

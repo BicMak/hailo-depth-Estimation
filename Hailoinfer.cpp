@@ -30,8 +30,6 @@ constexpr hailo_format_type_t FORMAT_TYPE = HAILO_FORMAT_TYPE_AUTO;
 using namespace hailort;
 
 
-
-
 Expected<std::shared_ptr<ConfiguredNetworkGroup>> configure_network_group(VDevice &vdevice, std::string hef_file)
 {
     //hailo model load

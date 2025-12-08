@@ -6,6 +6,7 @@ project(hailocpp)
 find_package(HailoRT 4.23.0 EXACT REQUIRED)
 find_package(OpenCV REQUIRED)
 find_package(PkgConfig REQUIRED)
+find_package(yaml-cpp REQUIRED)
 
 # GStreamer 패키지 찾기
 pkg_check_modules(GLIB REQUIRED glib-2.0)
@@ -25,8 +26,9 @@ link_directories(
 
 # Hailo 예제 실행파일
 add_executable(appsink_infer_pipeline_example 
-    appsink_infer_pipeline_example.cpp 
+    main.cpp 
     Hailoinfer.cpp
+    gstreaming.cpp
 )
 target_link_libraries(appsink_infer_pipeline_example PRIVATE 
     HailoRT::libhailort

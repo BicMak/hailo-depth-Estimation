@@ -7,24 +7,20 @@
 #include <string>
 #include <opencv2/opencv.hpp>
 
+#include <yaml-cpp/yaml.h>
+
 #include "Hailoinfer.hpp"
 #include "hailo/hailort.hpp"
 #include "hailo/hailort_common.hpp" 
+#include "gstreaming.hpp" 
 
 #include <fstream>
-static std::ofstream log_file("timing_log.csv", std::ios::app);
-static bool header_written = false;
 
-constexpr hailo_format_type_t FORMAT_TYPE = HAILO_FORMAT_TYPE_AUTO;
-using namespace hailort;
-
-struct CallbackData {
-    InferVStreams* infer_pipeline;
-    GstElement* appsrc;
-};
+std::ofstream log_file("timing_log.csv", std::ios::app);
+bool header_written = false;
 
 // 버스 메시지 콜백
-static gboolean on_message(GstBus *bus, GstMessage *message, gpointer data) {
+gboolean on_message(GstBus *bus, GstMessage *message, gpointer data) {
     GMainLoop *loop = (GMainLoop*)data;
     
     switch (GST_MESSAGE_TYPE(message)) {
@@ -112,17 +108,36 @@ void makeSinkpipeline(GstElement* pipeline){
 }
 
 GstElement* makeSrcPipeline(GstElement* pipeline) {
+    // 엘리먼트 생성
     GstElement *appsrc = gst_element_factory_make("appsrc", "app_src");
     GstElement *videoconvert = gst_element_factory_make("videoconvert", "convert_src");
+    GstElement *tee = gst_element_factory_make("tee", "tee");
+    
+    // 화면 출력 브랜치
+    GstElement *queue1 = gst_element_factory_make("queue", "queue_display");
     GstElement *sink = gst_element_factory_make("autovideosink", "video_sink");
-
-    if (!appsrc || !videoconvert || !sink) {
+    
+    // 파일 저장 브랜치
+    GstElement *queue2 = gst_element_factory_make("queue", "queue_file");
+    GstElement *encoder = gst_element_factory_make("x264enc", "encoder");
+    GstElement *muxer = gst_element_factory_make("mp4mux", "muxer");
+    GstElement *filesink = gst_element_factory_make("filesink", "file_sink");
+    
+    // NULL 체크
+    if (!appsrc || !videoconvert || !tee || !queue1 || !sink || 
+        !queue2 || !encoder || !muxer || !filesink) {
         std::cerr << "Src 파이프라인 엘리먼트 생성 실패!" << std::endl;
         return nullptr;
     }
-
-    gst_bin_add_many(GST_BIN(pipeline), appsrc, videoconvert, sink, NULL);
-
+    
+    // 파이프라인에 추가
+    gst_bin_add_many(GST_BIN(pipeline), 
+        appsrc, videoconvert, tee,
+        queue1, sink,
+        queue2, encoder, muxer, filesink,
+        NULL);
+    
+    // appsrc 설정
     GstCaps *caps = gst_caps_from_string(
         "video/x-raw,format=RGB,width=1280,height=480,framerate=30/1");
     g_object_set(appsrc,
@@ -131,16 +146,55 @@ GstElement* makeSrcPipeline(GstElement* pipeline) {
         "is-live", TRUE,
         NULL);
     gst_caps_unref(caps);
-
-    if (!gst_element_link_many(appsrc, videoconvert, sink, NULL)) {
-        std::cerr << "appsrc 파이프라인 링크 실패" << std::endl;
+    
+    // filesink 설정
+    g_object_set(filesink, 
+        "location", "output.mp4",
+        NULL);
+    
+    // encoder 설정 (선택사항, 성능 최적화)
+    g_object_set(encoder,
+        "speed-preset", 1,  // ultrafast
+        "tune", 0x00000004, // zerolatency
+        NULL);
+    
+    // 메인 라인 링크
+    if (!gst_element_link_many(appsrc, videoconvert, tee, NULL)) {
+        std::cerr << "메인 파이프라인 링크 실패" << std::endl;
         return nullptr;
     }
+    
+    // 화면 출력 브랜치 링크
+    if (!gst_element_link_many(queue1, sink, NULL)) {
+        std::cerr << "화면 출력 브랜치 링크 실패" << std::endl;
+        return nullptr;
+    }
+    
+    // 파일 저장 브랜치 링크
+    if (!gst_element_link_many(queue2, encoder, muxer, filesink, NULL)) {
+        std::cerr << "파일 저장 브랜치 링크 실패" << std::endl;
+        return nullptr;
+    }
+    
+    // tee 패드 연결 (수정됨!)
+    GstPad *tee_src1 = gst_element_request_pad_simple(tee, "src_%u");  // ← 변경
+    GstPad *queue1_sink = gst_element_get_static_pad(queue1, "sink");
+    gst_pad_link(tee_src1, queue1_sink);
 
-    return appsrc;  // ← 반환!
+    GstPad *tee_src2 = gst_element_request_pad_simple(tee, "src_%u");  // ← 변경
+    GstPad *queue2_sink = gst_element_get_static_pad(queue2, "sink");
+    gst_pad_link(tee_src2, queue2_sink);
+
+    // 패드 언레프
+    gst_object_unref(tee_src1);
+    gst_object_unref(queue1_sink);
+    gst_object_unref(tee_src2);
+    gst_object_unref(queue2_sink);
+    
+    return appsrc;
 }
 
-static GstFlowReturn new_sample_callback(GstElement *sink, gpointer user_data) {
+GstFlowReturn new_sample_callback(GstElement *sink, gpointer user_data) {
     auto t_start = std::chrono::high_resolution_clock::now();
 
 
@@ -221,10 +275,10 @@ static GstFlowReturn new_sample_callback(GstElement *sink, gpointer user_data) {
     auto postprocess_time = std::chrono::duration_cast<std::chrono::milliseconds>(t_postprocess_end - t_postprocess_start).count();
     auto total_time = std::chrono::duration_cast<std::chrono::milliseconds>(t_end - t_start).count();
     
-if (!header_written) {
-    log_file << "Timestamp(ms),Preprocess(ms),Infer(ms),Postprocess(ms),Total(ms)\n";
-    header_written = true;
-}
+    if (!header_written) {
+        log_file << "Timestamp(ms),Preprocess(ms),Infer(ms),Postprocess(ms),Total(ms)\n";
+        header_written = true;
+    }
 
     // 현재 시각 가져오기
     auto now = std::chrono::system_clock::now();
@@ -250,93 +304,3 @@ if (!header_written) {
 }
 
 
-
-int main(int argc, char *argv[]) {
-    //infer 초기화
-    const std::string HEF_FILE = "./hefs/Midas_v2_small_model.hef";
-    auto vdevice = VDevice::create();
-    if (!vdevice) {
-        std::cerr << "Failed to create vdevice, status = " << vdevice.status() << std::endl;
-        return vdevice.status();
-    }
-
-    auto network_group = configure_network_group(*vdevice.value(),HEF_FILE);
-    if (!network_group) {
-        std::cerr << "Failed to configure network group " << HEF_FILE << std::endl;
-        return network_group.status();
-    }
-
-    auto input_params = network_group.value()->make_input_vstream_params({}, FORMAT_TYPE, HAILO_DEFAULT_VSTREAM_TIMEOUT_MS, HAILO_DEFAULT_VSTREAM_QUEUE_SIZE);
-    if (!input_params) {
-        std::cerr << "Failed make_input_vstream_params " << input_params.status() << std::endl;
-        return input_params.status();
-    }
-
-    auto output_params = network_group.value()->make_output_vstream_params({}, FORMAT_TYPE, HAILO_DEFAULT_VSTREAM_TIMEOUT_MS, HAILO_DEFAULT_VSTREAM_QUEUE_SIZE);
-    if (!output_params) {
-        std::cerr << "Failed make_output_vstream_params " << output_params.status() << std::endl;
-        return output_params.status();
-    }
-
-    auto pipeline = InferVStreams::create(*network_group.value(), input_params.value(), output_params.value());
-    if (!pipeline) {
-        std::cerr << "Failed to create inference pipeline " << pipeline.status() << std::endl;
-        return pipeline.status();
-    }
-
-    // GStreamer 초기화
-    gst_init(&argc, &argv);
-    GstElement *sink_pipeline = gst_pipeline_new("hailo-infersink");
-    GstElement *src_pipeline = gst_pipeline_new("source_view");
-
-    makeSinkpipeline(sink_pipeline);
-    GstElement *appsrc = makeSrcPipeline(src_pipeline);  // ← 한 번만!
-
-    // appsink 생성 및 링크
-    GstElement *appsink = gst_element_factory_make("appsink", "app_sink");
-    gst_bin_add(GST_BIN(sink_pipeline), appsink);
-    g_object_set(appsink, 
-        "emit-signals", TRUE,
-        "sync", FALSE,
-        "max-buffers", 1,
-        "drop", TRUE,
-        NULL);
-
-    GstElement *queue1 = gst_bin_get_by_name(GST_BIN(sink_pipeline), "queue1");
-    gst_element_link(queue1, appsink);
-    gst_object_unref(queue1);
-
-    // CallbackData 초기화
-    CallbackData cb_data;
-    cb_data.infer_pipeline = &pipeline.value();
-    cb_data.appsrc = appsrc;
-    
-    // callback 연결 (한 번만!)
-    g_signal_connect(appsink, "new-sample", G_CALLBACK(new_sample_callback), &cb_data);
-
-    // 버스 설정 (두 파이프라인 모두)
-    GstBus *sink_bus = gst_pipeline_get_bus(GST_PIPELINE(sink_pipeline));
-    GstBus *src_bus = gst_pipeline_get_bus(GST_PIPELINE(src_pipeline));
-    GMainLoop *loop = g_main_loop_new(NULL, FALSE);
-
-    gst_bus_add_signal_watch(sink_bus);
-    gst_bus_add_signal_watch(src_bus);
-    g_signal_connect(sink_bus, "message", G_CALLBACK(on_message), loop);
-    g_signal_connect(src_bus, "message", G_CALLBACK(on_message), loop);
-
-    // 파이프라인 시작 (둘 다!)
-    gst_element_set_state(sink_pipeline, GST_STATE_PLAYING);
-    gst_element_set_state(src_pipeline, GST_STATE_PLAYING);
-    
-    g_main_loop_run(loop);
-    
-    // 정리 (둘 다!)
-    gst_element_set_state(sink_pipeline, GST_STATE_NULL);
-    gst_element_set_state(src_pipeline, GST_STATE_NULL);
-    gst_object_unref(sink_bus);
-    gst_object_unref(src_bus);
-    gst_object_unref(sink_pipeline);
-    gst_object_unref(src_pipeline);
-    g_main_loop_unref(loop);
-    
-}
