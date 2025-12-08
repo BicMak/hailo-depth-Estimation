@@ -13,12 +13,13 @@
 #include "hailo/hailort.hpp"
 #include "hailo/hailort_common.hpp" 
 #include "gstreaming.hpp" 
+#include "hailoinfer.hpp"
 
 #include <fstream>
 
-std::ofstream log_file("timing_log.csv", std::ios::app);
 bool header_written = false;
 
+// 버스 메시지 콜백
 // 버스 메시지 콜백
 gboolean on_message(GstBus *bus, GstMessage *message, gpointer data) {
     GMainLoop *loop = (GMainLoop*)data;
@@ -55,7 +56,7 @@ gboolean on_message(GstBus *bus, GstMessage *message, gpointer data) {
     return TRUE;
 }
 
-void makeSinkpipeline(GstElement* pipeline){
+void makeSinkpipeline(GstElement* pipeline, const Config& config){
     
     if (!gst_is_initialized()) {
         std::cerr << "GStreamer 초기화 실패" << std::endl;
@@ -63,16 +64,11 @@ void makeSinkpipeline(GstElement* pipeline){
     
     std::cout << "GStreamer 초기화 성공" << std::endl;
     
-    // 설정
-    std::string device = "/dev/video0";
-    std::string hef_path = "./hefs/Midas_v2_small_model.hef";
-
     // 엘리먼트 생성
     GstElement *source = gst_element_factory_make("v4l2src", "source");
-    GstElement *videoconvert1 = gst_element_factory_make("videoconvert", "convert1");  // 추가!
+    GstElement *videoconvert1 = gst_element_factory_make("videoconvert", "convert1");
     GstElement *scaler = gst_element_factory_make("videoscale", "scaler");
     GstElement *queue1 = gst_element_factory_make("queue", "queue1");
-
 
     // 엘리먼트 생성 후 NULL 체크
     if (!source || !videoconvert1 || !scaler || !queue1) {
@@ -86,13 +82,16 @@ void makeSinkpipeline(GstElement* pipeline){
 
     // 파이프라인에 추가
     gst_bin_add_many(GST_BIN(pipeline), 
-        source,  videoconvert1, scaler, queue1,  NULL);
+        source, videoconvert1, scaler, queue1, NULL);
 
     // Property 설정
-    g_object_set(source, "device", device.c_str(), NULL);
+    g_object_set(source, "device", config.device.c_str(), NULL);
 
     // Part 1 연결: source → ... → appsink
-    GstCaps *caps1 = gst_caps_from_string("video/x-raw,format=RGB,width=640,height=480");
+    std::string caps_str = "video/x-raw,format=RGB,width=" + 
+                          std::to_string(config.video_inWidth) + 
+                          ",height=" + std::to_string(config.video_inHeight);
+    GstCaps *caps1 = gst_caps_from_string(caps_str.c_str());
 
     if (!gst_element_link(source, videoconvert1)) {
         std::cerr << "source → videoconvert1 링크 실패" << std::endl;
@@ -104,10 +103,9 @@ void makeSinkpipeline(GstElement* pipeline){
         std::cerr << "scaler → queue1 링크 실패" << std::endl;
     }
     gst_caps_unref(caps1);
-
 }
 
-GstElement* makeSrcPipeline(GstElement* pipeline) {
+GstElement* makeSrcPipeline(GstElement* pipeline, const Config& config) {
     // 엘리먼트 생성
     GstElement *appsrc = gst_element_factory_make("appsrc", "app_src");
     GstElement *videoconvert = gst_element_factory_make("videoconvert", "convert_src");
@@ -138,8 +136,11 @@ GstElement* makeSrcPipeline(GstElement* pipeline) {
         NULL);
     
     // appsrc 설정
-    GstCaps *caps = gst_caps_from_string(
-        "video/x-raw,format=RGB,width=1280,height=480,framerate=30/1");
+    std::string caps_str = "video/x-raw,format=RGB,width=" + 
+                          std::to_string(config.video_outWidth) + 
+                          ",height=" + std::to_string(config.video_outHeight) +
+                          ",framerate=" + std::to_string(config.frame_rate) + "/1";
+    GstCaps *caps = gst_caps_from_string(caps_str.c_str());
     g_object_set(appsrc,
         "caps", caps,
         "format", GST_FORMAT_TIME,
@@ -149,13 +150,13 @@ GstElement* makeSrcPipeline(GstElement* pipeline) {
     
     // filesink 설정
     g_object_set(filesink, 
-        "location", "output.mp4",
+        "location", config.output_name.c_str(),
         NULL);
     
-    // encoder 설정 (선택사항, 성능 최적화)
+    // encoder 설정
     g_object_set(encoder,
-        "speed-preset", 1,  // ultrafast
-        "tune", 0x00000004, // zerolatency
+        "speed-preset", config.encode_speed,
+        "tune", config.tune,
         NULL);
     
     // 메인 라인 링크
@@ -176,12 +177,12 @@ GstElement* makeSrcPipeline(GstElement* pipeline) {
         return nullptr;
     }
     
-    // tee 패드 연결 (수정됨!)
-    GstPad *tee_src1 = gst_element_request_pad_simple(tee, "src_%u");  // ← 변경
+    // tee 패드 연결
+    GstPad *tee_src1 = gst_element_request_pad_simple(tee, "src_%u");
     GstPad *queue1_sink = gst_element_get_static_pad(queue1, "sink");
     gst_pad_link(tee_src1, queue1_sink);
 
-    GstPad *tee_src2 = gst_element_request_pad_simple(tee, "src_%u");  // ← 변경
+    GstPad *tee_src2 = gst_element_request_pad_simple(tee, "src_%u");
     GstPad *queue2_sink = gst_element_get_static_pad(queue2, "sink");
     gst_pad_link(tee_src2, queue2_sink);
 
@@ -197,13 +198,13 @@ GstElement* makeSrcPipeline(GstElement* pipeline) {
 GstFlowReturn new_sample_callback(GstElement *sink, gpointer user_data) {
     auto t_start = std::chrono::high_resolution_clock::now();
 
-
-    // user_data에서 pipeline 꺼내기
-    CallbackData* cb_data = static_cast<CallbackData*>(user_data);  // ← 수정!
+    // user_data에서 필요한 데이터 꺼내기
+    CallbackData* cb_data = static_cast<CallbackData*>(user_data);
     InferVStreams* infer_pipeline = cb_data->infer_pipeline;
     GstElement* appsrc = cb_data->appsrc;
+    const Config* config = cb_data->config;  // Config 추가 필요
+    
     // 1. appsink에서 sample 가져오기
-
     GstSample *sample = gst_app_sink_pull_sample(GST_APP_SINK(sink));
     if (!sample) {
         return GST_FLOW_ERROR;
@@ -213,23 +214,14 @@ GstFlowReturn new_sample_callback(GstElement *sink, gpointer user_data) {
     GstMapInfo map;
     gst_buffer_map(buffer, &map, GST_MAP_READ);
     
-    // 2. 여기에 후처리 코드 작성
-    // map.data: NPU 출력 데이터 (raw bytes)
-    // map.size: 데이터 크기
-
-    auto buffer_data = map.data;
-    auto buffer_size = map.size;
-    
-    int width = 256;
-    int height = 256;
-
-    
     // ========== 전처리 시작 ==========
     auto t_preprocess_start = std::chrono::high_resolution_clock::now();
-    cv::Mat raw_img(480, 640, CV_8UC3, map.data);
+    cv::Mat raw_img(config->video_inHeight, config->video_inWidth, CV_8UC3, map.data);
 
     cv::Mat input_img;
-    cv::resize(raw_img, input_img, cv::Size(256, 256), 0, 0, cv::INTER_LINEAR);
+    cv::resize(raw_img, input_img, 
+               cv::Size(config->model_width, config->model_height), 
+               0, 0, cv::INTER_LINEAR);
     auto t_preprocess_end = std::chrono::high_resolution_clock::now();
     
     // ========== 추론 시작 ==========
@@ -243,14 +235,14 @@ GstFlowReturn new_sample_callback(GstElement *sink, gpointer user_data) {
     cv::Mat depth_normalized;
     cv::normalize(output_img, depth_normalized, 0, 255, cv::NORM_MINMAX);
 
-    // 4. 컬러맵 적용 (GRAY → BGR uint8)
     cv::Mat depth_colormap;
     cv::applyColorMap(depth_normalized, depth_colormap, cv::COLORMAP_MAGMA);
     cv::cvtColor(depth_colormap, depth_colormap, cv::COLOR_RGB2BGR); 
 
-    // 5. 640x480 리사이즈
     cv::Mat depth_resized;
-    cv::resize(depth_colormap, depth_resized, cv::Size(640, 480), 0, 0, cv::INTER_LINEAR);
+    cv::resize(depth_colormap, depth_resized, 
+               cv::Size(config->video_inWidth, config->video_inHeight), 
+               0, 0, cv::INTER_LINEAR);
     depth_resized.convertTo(depth_resized, CV_8UC3);
     
     cv::Mat result;
@@ -280,7 +272,6 @@ GstFlowReturn new_sample_callback(GstElement *sink, gpointer user_data) {
         header_written = true;
     }
 
-    // 현재 시각 가져오기
     auto now = std::chrono::system_clock::now();
     auto timestamp = std::chrono::duration_cast<std::chrono::milliseconds>(
         now.time_since_epoch()).count();
@@ -300,7 +291,4 @@ GstFlowReturn new_sample_callback(GstElement *sink, gpointer user_data) {
     gst_sample_unref(sample);
     
     return GST_FLOW_OK;
-
 }
-
-

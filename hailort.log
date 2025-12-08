@@ -1811,3 +1811,22 @@
 [2025-12-08 20:12:00.508] [5889] [HailoRT] [info] [queue_elements.cpp:855] [run_in_thread] Shutdown event was signaled in dequeue of UserBuffQEl0model-small_onnx/conv73!
 [2025-12-08 20:12:00.509] [5889] [HailoRT] [info] [queue_elements.cpp:68] [operator()] Thread in element UserBuffQEl0model-small_onnx/conv73 is not running anymore, exiting..
 [2025-12-08 20:12:00.509] [5853] [HailoRT] [info] [queue_elements.cpp:46] [~BaseQueueElement] Queue element UserBuffQEl0model-small_onnx/conv73 has 0 frames in his Queue on destruction
+[2025-12-08 20:32:41.608] [8297] [HailoRT] [info] [vdevice.cpp:535] [create] Creating vdevice with params: device_count: 1, scheduling_algorithm: ROUND_ROBIN, multi_process_service: false
+[2025-12-08 20:32:41.622] [8297] [HailoRT] [info] [device.cpp:51] [Device] OS Version: Linux 6.12.47+rpt-rpi-2712 #1 SMP PREEMPT Debian 1:6.12.47-1+rpt1~bookworm (2025-09-16) aarch64
+[2025-12-08 20:32:41.622] [8297] [HailoRT] [info] [control.cpp:113] [control__parse_identify_results] firmware_version is: 4.23.0
+[2025-12-08 20:32:41.622] [8297] [HailoRT] [info] [vdevice.cpp:682] [create] VDevice Infos: 0001:01:00.0
+[2025-12-08 20:32:41.810] [8297] [HailoRT] [info] [hef.cpp:1994] [get_network_group_and_network_name] No name was given. Addressing all networks of default network_group: model-small_onnx
+[2025-12-08 20:32:41.822] [8297] [HailoRT] [info] [internal_buffer_manager.cpp:77] [print_execution_results] Planned internal buffer memory: CMA=0 CMA-Desc=458752 Pinned=698112. memory to edge layer usage factor is 1
+[2025-12-08 20:32:41.823] [8297] [HailoRT] [info] [internal_buffer_manager.cpp:86] [print_execution_results] Default Internal buffer planner executed successfully
+[2025-12-08 20:32:41.881] [8297] [HailoRT] [info] [device_internal.cpp:57] [configure] Configuring HEF took 69.620766 milliseconds
+[2025-12-08 20:32:41.901] [8297] [HailoRT] [info] [vdevice.cpp:780] [configure] Configuring HEF on VDevice took 89.930393 milliseconds
+[2025-12-08 20:32:41.901] [8297] [HailoRT] [info] [edge_elements.cpp:52] [create] Created (HwWriteEl1model-small_onnx/input_layer1 | hw_frame_size: 196608)
+[2025-12-08 20:32:41.901] [8297] [HailoRT] [info] [vstream.cpp:754] [InputVStreamImpl] Creating model-small_onnx/input_layer1...
+[2025-12-08 20:32:41.901] [8297] [HailoRT] [info] [vstream_builder.cpp:102] [create_inputs] Input pipeline 'model-small_onnx/input_layer1': (HwWriteEl1model-small_onnx/input_layer1 | hw_frame_size: 196608) >> HW
+[2025-12-08 20:32:41.901] [8297] [HailoRT] [info] [edge_elements.cpp:287] [create] Created (HwReadEl0model-small_onnx/conv73 | hw_frame_size: 65536)
+[2025-12-08 20:32:41.901] [8297] [HailoRT] [info] [queue_elements.cpp:800] [create] Created (UserBuffQEl0model-small_onnx/conv73 | timeout: 10s)
+[2025-12-08 20:32:41.901] [8297] [HailoRT] [info] [vstream.cpp:1114] [OutputVStreamImpl] Creating model-small_onnx/conv73...
+[2025-12-08 20:32:41.901] [8297] [HailoRT] [info] [vstream_builder.cpp:220] [create_outputs] Output pipeline 'model-small_onnx/conv73': HW >> (HwReadEl0model-small_onnx/conv73 | hw_frame_size: 65536) >> (UserBuffQEl0model-small_onnx/conv73 | timeout: 10s)
+[2025-12-08 20:33:04.913] [8313] [HailoRT] [info] [queue_elements.cpp:855] [run_in_thread] Shutdown event was signaled in dequeue of UserBuffQEl0model-small_onnx/conv73!
+[2025-12-08 20:33:04.913] [8313] [HailoRT] [info] [queue_elements.cpp:68] [operator()] Thread in element UserBuffQEl0model-small_onnx/conv73 is not running anymore, exiting..
+[2025-12-08 20:33:04.913] [8297] [HailoRT] [info] [queue_elements.cpp:46] [~BaseQueueElement] Queue element UserBuffQEl0model-small_onnx/conv73 has 0 frames in his Queue on destruction

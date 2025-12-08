@@ -22,16 +22,16 @@
 
 #include "hailo/hailort.hpp"
 #include "hailo/hailort_common.hpp" 
+#include "hailoinfer.hpp"
 
-const std::string HEF_FILE = "./hefs/Midas_v2_small_model.hef";
-constexpr size_t FRAMES_COUNT = 1;
 constexpr hailo_format_type_t FORMAT_TYPE = HAILO_FORMAT_TYPE_AUTO;
 
 using namespace hailort;
 
 
-Expected<std::shared_ptr<ConfiguredNetworkGroup>> configure_network_group(VDevice &vdevice, std::string hef_file)
+Expected<std::shared_ptr<ConfiguredNetworkGroup>> configure_network_group(VDevice &vdevice, std::string hef_file,Config config)
 {
+    std::string hef_file = config.hef_path
     //hailo model load
     auto hef = Hef::create(hef_file);
     if (!hef) {
@@ -76,14 +76,14 @@ Expected<std::shared_ptr<ConfiguredNetworkGroup>> configure_network_group(VDevic
 
 
 
-cv::Mat infer(InferVStreams &pipeline, cv::Mat input_img){
+cv::Mat infer(InferVStreams &pipeline, cv::Mat input_img,Config config){
     // 1. CPU: input_data 생성 (Rasp RAM)
     // 2. CPU → NPU: PCIe write (데이터 복사)
     // 3. NPU: 연산 실행
     // 4. CPU ← NPU: PCIe read (결과 복사)
     // 5. CPU: output_data에 저장 (Rasp RAM)
     //load image file
-    const size_t frames_count = FRAMES_COUNT;
+    const size_t frames_count = config.encode_speed;
     //Creates input virtual stream params.
     auto input_vstreams = pipeline.get_input_vstreams();
     
@@ -164,7 +164,7 @@ cv::Mat infer(InferVStreams &pipeline, cv::Mat input_img){
     std::cout << "Frame size: " << output_vstreams[0].get().get_frame_size() << " bytes" << std::endl;
     std::cout << "Data type: int8_t" << std::endl;   
 
-    cv::Mat depth_map(256, 256, CV_8SC1, result_buffer.data());
+    cv::Mat depth_map(config.model_height, config.model_width, CV_8SC1, result_buffer.data());
     cv::Mat depth_uint8;
     depth_map.convertTo(depth_uint8, CV_8U, 1.0, 128);  // value * 1.0 + 128
         

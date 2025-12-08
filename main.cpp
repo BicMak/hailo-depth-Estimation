@@ -17,24 +17,50 @@
 
 #include <fstream>
 
-struct Config {
-    std::string device;
-    std::string hef_path;
-    int model_width, model_height;
-
-    int video_inWidth, video_inHeight;
-    int video_outWidth, video_outHeight;
-
-    std::string output_name; 
-    int frame_rate;
-    int encode_speed;
-    int tune;
-    std::string timing_log; 
-} g_config; 
+static Config load(const std::string& yaml_path) {
+        YAML::Node config = YAML::LoadFile(yaml_path);
+        Config cfg;
+        
+        // 카메라
+        cfg.device = config["device"].as<std::string>();
+        
+        // 모델
+        cfg.hef_path = config["model"]["hef_path"].as<std::string>();
+        cfg.model_width = config["model"]["input_size"]["width"].as<int>();
+        cfg.model_height = config["model"]["input_size"]["height"].as<int>();
+        
+        // 비디오 입력
+        cfg.video_inWidth = config["video"]["input"]["width"].as<int>();
+        cfg.video_inHeight = config["video"]["input"]["height"].as<int>();
+        
+        // 비디오 출력
+        cfg.video_outWidth = config["video"]["output"]["width"].as<int>();
+        cfg.video_outHeight = config["video"]["output"]["height"].as<int>();
+        cfg.output_name = config["video"]["output"]["file"].as<std::string>();
+        cfg.frame_rate = config["video"]["framerate"].as<int>();
+        
+        // 인코더
+        cfg.encode_speed = config["encoder"]["speed_preset"].as<int>();
+        cfg.tune = config["encoder"]["tune"].as<int>();
+        
+        // 로그
+        cfg.timing_log = config["logging"]["timing_log"].as<std::string>();
+        
+        return cfg;
+}
 
 int main(int argc, char *argv[]){
+    Config g_config = load("config.yaml");
+
+    // ========== 1. 로그 파일 열기 (추가!) ==========
+    log_file.open(g_config.timing_log, std::ios::app);
+    if (!log_file.is_open()) {
+        std::cerr << "로그 파일 열기 실패: " << g_config.timing_log << std::endl;
+        return -1;
+    }
+
     //infer 초기화
-    const std::string HEF_FILE = "./hefs/Midas_v2_small_model.hef";
+    const std::string HEF_FILE = g_config.hef_path;
     auto vdevice = VDevice::create();
     if (!vdevice) {
         std::cerr << "Failed to create vdevice, status = " << vdevice.status() << std::endl;
@@ -70,8 +96,9 @@ int main(int argc, char *argv[]){
     GstElement *sink_pipeline = gst_pipeline_new("hailo-infersink");
     GstElement *src_pipeline = gst_pipeline_new("source_view");
 
-    makeSinkpipeline(sink_pipeline);
-    GstElement *appsrc = makeSrcPipeline(src_pipeline);  // ← 한 번만!
+    // ========== 2. config 전달 (수정!) ==========
+    makeSinkpipeline(sink_pipeline, g_config);
+    GstElement *appsrc = makeSrcPipeline(src_pipeline, g_config);
 
     // appsink 생성 및 링크
     GstElement *appsink = gst_element_factory_make("appsink", "app_sink");
@@ -87,15 +114,16 @@ int main(int argc, char *argv[]){
     gst_element_link(queue1, appsink);
     gst_object_unref(queue1);
 
-    // CallbackData 초기화
+    // ========== 3. CallbackData에 config 추가 (수정!) ==========
     CallbackData cb_data;
     cb_data.infer_pipeline = &pipeline.value();
     cb_data.appsrc = appsrc;
+    cb_data.config = &g_config;  // ← 추가!
     
-    // callback 연결 (한 번만!)
+    // callback 연결
     g_signal_connect(appsink, "new-sample", G_CALLBACK(new_sample_callback), &cb_data);
 
-    // 버스 설정 (두 파이프라인 모두)
+    // 버스 설정
     GstBus *sink_bus = gst_pipeline_get_bus(GST_PIPELINE(sink_pipeline));
     GstBus *src_bus = gst_pipeline_get_bus(GST_PIPELINE(src_pipeline));
     GMainLoop *loop = g_main_loop_new(NULL, FALSE);
@@ -105,13 +133,13 @@ int main(int argc, char *argv[]){
     g_signal_connect(sink_bus, "message", G_CALLBACK(on_message), loop);
     g_signal_connect(src_bus, "message", G_CALLBACK(on_message), loop);
 
-    // 파이프라인 시작 (둘 다!)
+    // 파이프라인 시작
     gst_element_set_state(sink_pipeline, GST_STATE_PLAYING);
     gst_element_set_state(src_pipeline, GST_STATE_PLAYING);
     
     g_main_loop_run(loop);
     
-    // 정리 (둘 다!)
+    // 정리
     gst_element_set_state(sink_pipeline, GST_STATE_NULL);
     gst_element_set_state(src_pipeline, GST_STATE_NULL);
     gst_object_unref(sink_bus);
@@ -120,4 +148,8 @@ int main(int argc, char *argv[]){
     gst_object_unref(src_pipeline);
     g_main_loop_unref(loop);
     
+    // ========== 4. 로그 파일 닫기 (추가!) ==========
+    log_file.close();
+    
+    return 0;
 }

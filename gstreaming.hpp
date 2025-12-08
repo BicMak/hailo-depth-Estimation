@@ -1,8 +1,8 @@
 #pragma once
 #include <gst/gst.h>
 #include <glib.h>
-#include <gst/app/gstappsink.h>  // 추가
-#include <gst/app/gstappsrc.h>   // 추가
+#include <gst/app/gstappsink.h>
+#include <gst/app/gstappsrc.h>
 
 #include <iostream>
 #include <string>
@@ -22,6 +22,7 @@ using namespace hailort;
 struct CallbackData {
     InferVStreams* infer_pipeline;
     GstElement* appsrc;
+    const Config* config;
 };
 
 // 선언만 (초기화 없음!)
@@ -30,6 +31,6 @@ extern bool header_written;
 
 // 버스 메시지 콜백
 gboolean on_message(GstBus *bus, GstMessage *message, gpointer data);
-void makeSinkpipeline(GstElement* pipeline);
-GstElement* makeSrcPipeline(GstElement* pipeline);
+void makeSinkpipeline(GstElement* pipeline, const Config& config);
+GstElement* makeSrcPipeline(GstElement* pipeline, const Config& config);
 GstFlowReturn new_sample_callback(GstElement *sink, gpointer user_data);
