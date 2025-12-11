@@ -1830,3 +1830,74 @@
 [2025-12-08 20:33:04.913] [8313] [HailoRT] [info] [queue_elements.cpp:855] [run_in_thread] Shutdown event was signaled in dequeue of UserBuffQEl0model-small_onnx/conv73!
 [2025-12-08 20:33:04.913] [8313] [HailoRT] [info] [queue_elements.cpp:68] [operator()] Thread in element UserBuffQEl0model-small_onnx/conv73 is not running anymore, exiting..
 [2025-12-08 20:33:04.913] [8297] [HailoRT] [info] [queue_elements.cpp:46] [~BaseQueueElement] Queue element UserBuffQEl0model-small_onnx/conv73 has 0 frames in his Queue on destruction
+[2025-12-11 16:23:16.429] [5843] [HailoRT] [info] [vdevice.cpp:535] [create] Creating vdevice with params: device_count: 1, scheduling_algorithm: ROUND_ROBIN, multi_process_service: false
+[2025-12-11 16:23:16.436] [5843] [HailoRT] [error] [vdevice.cpp:863] [create_devices] CHECK failed - Failed to create vdevice. there are not enough free devices. requested: 1, found: 0
+[2025-12-11 16:23:16.438] [5843] [HailoRT] [error] [vdevice.cpp:662] [create] CHECK_SUCCESS failed with status=HAILO_OUT_OF_PHYSICAL_DEVICES(74)
+[2025-12-11 16:23:16.439] [5843] [HailoRT] [error] [shared_resource_manager.hpp:81] [register_resource] CHECK_SUCCESS failed with status=HAILO_OUT_OF_PHYSICAL_DEVICES(74)
+[2025-12-11 16:23:16.439] [5843] [HailoRT] [error] [vdevice.cpp:133] [create] CHECK_SUCCESS failed with status=HAILO_OUT_OF_PHYSICAL_DEVICES(74)
+[2025-12-11 16:23:16.439] [5843] [HailoRT] [error] [vdevice.cpp:567] [create] CHECK_SUCCESS failed with status=HAILO_OUT_OF_PHYSICAL_DEVICES(74)
+[2025-12-11 16:23:20.011] [5878] [HailoRT] [info] [vdevice.cpp:535] [create] Creating vdevice with params: device_count: 1, scheduling_algorithm: ROUND_ROBIN, multi_process_service: false
+[2025-12-11 16:23:20.011] [5878] [HailoRT] [error] [vdevice.cpp:863] [create_devices] CHECK failed - Failed to create vdevice. there are not enough free devices. requested: 1, found: 0
+[2025-12-11 16:23:20.011] [5878] [HailoRT] [error] [vdevice.cpp:662] [create] CHECK_SUCCESS failed with status=HAILO_OUT_OF_PHYSICAL_DEVICES(74)
+[2025-12-11 16:23:20.011] [5878] [HailoRT] [error] [shared_resource_manager.hpp:81] [register_resource] CHECK_SUCCESS failed with status=HAILO_OUT_OF_PHYSICAL_DEVICES(74)
+[2025-12-11 16:23:20.011] [5878] [HailoRT] [error] [vdevice.cpp:133] [create] CHECK_SUCCESS failed with status=HAILO_OUT_OF_PHYSICAL_DEVICES(74)
+[2025-12-11 16:23:20.011] [5878] [HailoRT] [error] [vdevice.cpp:567] [create] CHECK_SUCCESS failed with status=HAILO_OUT_OF_PHYSICAL_DEVICES(74)
+[2025-12-11 16:23:23.150] [5909] [HailoRT] [info] [vdevice.cpp:535] [create] Creating vdevice with params: device_count: 1, scheduling_algorithm: ROUND_ROBIN, multi_process_service: false
+[2025-12-11 16:23:23.150] [5909] [HailoRT] [error] [vdevice.cpp:863] [create_devices] CHECK failed - Failed to create vdevice. there are not enough free devices. requested: 1, found: 0
+[2025-12-11 16:23:23.150] [5909] [HailoRT] [error] [vdevice.cpp:662] [create] CHECK_SUCCESS failed with status=HAILO_OUT_OF_PHYSICAL_DEVICES(74)
+[2025-12-11 16:23:23.151] [5909] [HailoRT] [error] [shared_resource_manager.hpp:81] [register_resource] CHECK_SUCCESS failed with status=HAILO_OUT_OF_PHYSICAL_DEVICES(74)
+[2025-12-11 16:23:23.151] [5909] [HailoRT] [error] [vdevice.cpp:133] [create] CHECK_SUCCESS failed with status=HAILO_OUT_OF_PHYSICAL_DEVICES(74)
+[2025-12-11 16:23:23.151] [5909] [HailoRT] [error] [vdevice.cpp:567] [create] CHECK_SUCCESS failed with status=HAILO_OUT_OF_PHYSICAL_DEVICES(74)
+[2025-12-11 16:23:55.776] [5976] [HailoRT] [info] [vdevice.cpp:535] [create] Creating vdevice with params: device_count: 1, scheduling_algorithm: ROUND_ROBIN, multi_process_service: false
+[2025-12-11 16:23:55.776] [5976] [HailoRT] [error] [vdevice.cpp:863] [create_devices] CHECK failed - Failed to create vdevice. there are not enough free devices. requested: 1, found: 0
+[2025-12-11 16:23:55.776] [5976] [HailoRT] [error] [vdevice.cpp:662] [create] CHECK_SUCCESS failed with status=HAILO_OUT_OF_PHYSICAL_DEVICES(74)
+[2025-12-11 16:23:55.776] [5976] [HailoRT] [error] [shared_resource_manager.hpp:81] [register_resource] CHECK_SUCCESS failed with status=HAILO_OUT_OF_PHYSICAL_DEVICES(74)
+[2025-12-11 16:23:55.776] [5976] [HailoRT] [error] [vdevice.cpp:133] [create] CHECK_SUCCESS failed with status=HAILO_OUT_OF_PHYSICAL_DEVICES(74)
+[2025-12-11 16:23:55.776] [5976] [HailoRT] [error] [vdevice.cpp:567] [create] CHECK_SUCCESS failed with status=HAILO_OUT_OF_PHYSICAL_DEVICES(74)
+[2025-12-11 16:23:58.594] [6007] [HailoRT] [info] [vdevice.cpp:535] [create] Creating vdevice with params: device_count: 1, scheduling_algorithm: ROUND_ROBIN, multi_process_service: false
+[2025-12-11 16:23:58.594] [6007] [HailoRT] [error] [vdevice.cpp:863] [create_devices] CHECK failed - Failed to create vdevice. there are not enough free devices. requested: 1, found: 0
+[2025-12-11 16:23:58.596] [6007] [HailoRT] [error] [vdevice.cpp:662] [create] CHECK_SUCCESS failed with status=HAILO_OUT_OF_PHYSICAL_DEVICES(74)
+[2025-12-11 16:23:58.596] [6007] [HailoRT] [error] [shared_resource_manager.hpp:81] [register_resource] CHECK_SUCCESS failed with status=HAILO_OUT_OF_PHYSICAL_DEVICES(74)
+[2025-12-11 16:23:58.596] [6007] [HailoRT] [error] [vdevice.cpp:133] [create] CHECK_SUCCESS failed with status=HAILO_OUT_OF_PHYSICAL_DEVICES(74)
+[2025-12-11 16:23:58.596] [6007] [HailoRT] [error] [vdevice.cpp:567] [create] CHECK_SUCCESS failed with status=HAILO_OUT_OF_PHYSICAL_DEVICES(74)
+[2025-12-11 16:24:29.087] [6254] [HailoRT] [info] [vdevice.cpp:535] [create] Creating vdevice with params: device_count: 1, scheduling_algorithm: ROUND_ROBIN, multi_process_service: false
+[2025-12-11 16:24:29.087] [6254] [HailoRT] [error] [vdevice.cpp:863] [create_devices] CHECK failed - Failed to create vdevice. there are not enough free devices. requested: 1, found: 0
+[2025-12-11 16:24:29.087] [6254] [HailoRT] [error] [vdevice.cpp:662] [create] CHECK_SUCCESS failed with status=HAILO_OUT_OF_PHYSICAL_DEVICES(74)
+[2025-12-11 16:24:29.088] [6254] [HailoRT] [error] [shared_resource_manager.hpp:81] [register_resource] CHECK_SUCCESS failed with status=HAILO_OUT_OF_PHYSICAL_DEVICES(74)
+[2025-12-11 16:24:29.088] [6254] [HailoRT] [error] [vdevice.cpp:133] [create] CHECK_SUCCESS failed with status=HAILO_OUT_OF_PHYSICAL_DEVICES(74)
+[2025-12-11 16:24:29.088] [6254] [HailoRT] [error] [vdevice.cpp:567] [create] CHECK_SUCCESS failed with status=HAILO_OUT_OF_PHYSICAL_DEVICES(74)
+[2025-12-11 16:59:46.248] [6983] [HailoRT] [info] [vdevice.cpp:535] [create] Creating vdevice with params: device_count: 1, scheduling_algorithm: ROUND_ROBIN, multi_process_service: false
+[2025-12-11 16:59:46.259] [6983] [HailoRT] [info] [device.cpp:51] [Device] OS Version: Linux 6.12.47+rpt-rpi-2712 #1 SMP PREEMPT Debian 1:6.12.47-1+rpt1~bookworm (2025-09-16) aarch64
+[2025-12-11 16:59:46.261] [6983] [HailoRT] [info] [control.cpp:113] [control__parse_identify_results] firmware_version is: 4.23.0
+[2025-12-11 16:59:46.261] [6983] [HailoRT] [info] [vdevice.cpp:682] [create] VDevice Infos: 0001:01:00.0
+[2025-12-11 16:59:46.272] [6983] [HailoRT] [info] [hef.cpp:1994] [get_network_group_and_network_name] No name was given. Addressing all networks of default network_group: model-small_onnx
+[2025-12-11 16:59:46.284] [6983] [HailoRT] [info] [internal_buffer_manager.cpp:77] [print_execution_results] Planned internal buffer memory: CMA=0 CMA-Desc=458752 Pinned=698112. memory to edge layer usage factor is 1
+[2025-12-11 16:59:46.284] [6983] [HailoRT] [info] [internal_buffer_manager.cpp:86] [print_execution_results] Default Internal buffer planner executed successfully
+[2025-12-11 16:59:46.342] [6983] [HailoRT] [info] [device_internal.cpp:57] [configure] Configuring HEF took 69.720541 milliseconds
+[2025-12-11 16:59:46.359] [6983] [HailoRT] [info] [vdevice.cpp:780] [configure] Configuring HEF on VDevice took 86.607497 milliseconds
+[2025-12-11 16:59:46.359] [6983] [HailoRT] [info] [edge_elements.cpp:52] [create] Created (HwWriteEl1model-small_onnx/input_layer1 | hw_frame_size: 196608)
+[2025-12-11 16:59:46.359] [6983] [HailoRT] [info] [vstream.cpp:754] [InputVStreamImpl] Creating model-small_onnx/input_layer1...
+[2025-12-11 16:59:46.359] [6983] [HailoRT] [info] [vstream_builder.cpp:102] [create_inputs] Input pipeline 'model-small_onnx/input_layer1': (HwWriteEl1model-small_onnx/input_layer1 | hw_frame_size: 196608) >> HW
+[2025-12-11 16:59:46.359] [6983] [HailoRT] [info] [edge_elements.cpp:287] [create] Created (HwReadEl0model-small_onnx/conv73 | hw_frame_size: 65536)
+[2025-12-11 16:59:46.360] [6983] [HailoRT] [info] [queue_elements.cpp:800] [create] Created (UserBuffQEl0model-small_onnx/conv73 | timeout: 10s)
+[2025-12-11 16:59:46.360] [6983] [HailoRT] [info] [vstream.cpp:1114] [OutputVStreamImpl] Creating model-small_onnx/conv73...
+[2025-12-11 16:59:46.360] [6983] [HailoRT] [info] [vstream_builder.cpp:220] [create_outputs] Output pipeline 'model-small_onnx/conv73': HW >> (HwReadEl0model-small_onnx/conv73 | hw_frame_size: 65536) >> (UserBuffQEl0model-small_onnx/conv73 | timeout: 10s)
+[2025-12-11 17:02:48.410] [6990] [HailoRT] [info] [queue_elements.cpp:855] [run_in_thread] Shutdown event was signaled in dequeue of UserBuffQEl0model-small_onnx/conv73!
+[2025-12-11 17:02:48.410] [6990] [HailoRT] [info] [queue_elements.cpp:68] [operator()] Thread in element UserBuffQEl0model-small_onnx/conv73 is not running anymore, exiting..
+[2025-12-11 17:02:48.410] [6983] [HailoRT] [info] [queue_elements.cpp:46] [~BaseQueueElement] Queue element UserBuffQEl0model-small_onnx/conv73 has 0 frames in his Queue on destruction
+[2025-12-11 17:07:18.818] [16208] [HailoRT] [info] [vdevice.cpp:535] [create] Creating vdevice with params: device_count: 1, scheduling_algorithm: ROUND_ROBIN, multi_process_service: false
+[2025-12-11 17:07:18.831] [16208] [HailoRT] [info] [device.cpp:51] [Device] OS Version: Linux 6.12.47+rpt-rpi-2712 #1 SMP PREEMPT Debian 1:6.12.47-1+rpt1~bookworm (2025-09-16) aarch64
+[2025-12-11 17:07:18.831] [16208] [HailoRT] [info] [control.cpp:113] [control__parse_identify_results] firmware_version is: 4.23.0
+[2025-12-11 17:07:18.831] [16208] [HailoRT] [info] [vdevice.cpp:682] [create] VDevice Infos: 0001:01:00.0
+[2025-12-11 17:07:18.841] [16208] [HailoRT] [info] [hef.cpp:1994] [get_network_group_and_network_name] No name was given. Addressing all networks of default network_group: model-small_onnx
+[2025-12-11 17:07:18.850] [16208] [HailoRT] [info] [internal_buffer_manager.cpp:77] [print_execution_results] Planned internal buffer memory: CMA=0 CMA-Desc=458752 Pinned=698112. memory to edge layer usage factor is 1
+[2025-12-11 17:07:18.850] [16208] [HailoRT] [info] [internal_buffer_manager.cpp:86] [print_execution_results] Default Internal buffer planner executed successfully
+[2025-12-11 17:07:18.902] [16208] [HailoRT] [info] [device_internal.cpp:57] [configure] Configuring HEF took 60.634545 milliseconds
+[2025-12-11 17:07:18.919] [16208] [HailoRT] [info] [vdevice.cpp:780] [configure] Configuring HEF on VDevice took 77.621597 milliseconds
+[2025-12-11 17:07:18.919] [16208] [HailoRT] [info] [edge_elements.cpp:52] [create] Created (HwWriteEl1model-small_onnx/input_layer1 | hw_frame_size: 196608)
+[2025-12-11 17:07:18.919] [16208] [HailoRT] [info] [vstream.cpp:754] [InputVStreamImpl] Creating model-small_onnx/input_layer1...
+[2025-12-11 17:07:18.919] [16208] [HailoRT] [info] [vstream_builder.cpp:102] [create_inputs] Input pipeline 'model-small_onnx/input_layer1': (HwWriteEl1model-small_onnx/input_layer1 | hw_frame_size: 196608) >> HW
+[2025-12-11 17:07:18.919] [16208] [HailoRT] [info] [edge_elements.cpp:287] [create] Created (HwReadEl0model-small_onnx/conv73 | hw_frame_size: 65536)
+[2025-12-11 17:07:18.920] [16208] [HailoRT] [info] [queue_elements.cpp:800] [create] Created (UserBuffQEl0model-small_onnx/conv73 | timeout: 10s)
+[2025-12-11 17:07:18.920] [16208] [HailoRT] [info] [vstream.cpp:1114] [OutputVStreamImpl] Creating model-small_onnx/conv73...
+[2025-12-11 17:07:18.920] [16208] [HailoRT] [info] [vstream_builder.cpp:220] [create_outputs] Output pipeline 'model-small_onnx/conv73': HW >> (HwReadEl0model-small_onnx/conv73 | hw_frame_size: 65536) >> (UserBuffQEl0model-small_onnx/conv73 | timeout: 10s)

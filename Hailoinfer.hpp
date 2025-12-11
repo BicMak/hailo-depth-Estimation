@@ -23,6 +23,6 @@ struct Config {
 
 
 
-Expected<std::shared_ptr<ConfiguredNetworkGroup>> configure_network_group(VDevice &vdevice, std::string hef_file);
-cv::Mat infer(InferVStreams &pipeline, cv::Mat input_img);
+Expected<std::shared_ptr<ConfiguredNetworkGroup>> configure_network_group(VDevice &vdevice, Config config);
+cv::Mat infer(InferVStreams &pipeline, cv::Mat input_img,Config config);
 

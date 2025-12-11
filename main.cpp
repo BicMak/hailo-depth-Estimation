@@ -52,24 +52,25 @@ static Config load(const std::string& yaml_path) {
 int main(int argc, char *argv[]){
     Config g_config = load("config.yaml");
 
-    // ========== 1. 로그 파일 열기 (추가!) ==========
-    log_file.open(g_config.timing_log, std::ios::app);
+    // ========== 1. 지역 변수로 로그 파일 열기 ==========
+    std::ofstream log_file(g_config.timing_log, std::ios::app);  // 지역 변수!
+    bool header_written = false;  // 지역 변수!
+    
     if (!log_file.is_open()) {
         std::cerr << "로그 파일 열기 실패: " << g_config.timing_log << std::endl;
         return -1;
     }
 
     //infer 초기화
-    const std::string HEF_FILE = g_config.hef_path;
     auto vdevice = VDevice::create();
     if (!vdevice) {
         std::cerr << "Failed to create vdevice, status = " << vdevice.status() << std::endl;
         return vdevice.status();
     }
 
-    auto network_group = configure_network_group(*vdevice.value(),HEF_FILE);
+    auto network_group = configure_network_group(*vdevice.value(),g_config);
     if (!network_group) {
-        std::cerr << "Failed to configure network group " << HEF_FILE << std::endl;
+        std::cerr << "Failed to configure network group " << g_config.hef_path << std::endl;
         return network_group.status();
     }
 
@@ -119,6 +120,9 @@ int main(int argc, char *argv[]){
     cb_data.infer_pipeline = &pipeline.value();
     cb_data.appsrc = appsrc;
     cb_data.config = &g_config;  // ← 추가!
+    cb_data.log_file = &log_file;              // ← 추가!
+    cb_data.header_written = &header_written;  // ← 추가!
+
     
     // callback 연결
     g_signal_connect(appsink, "new-sample", G_CALLBACK(new_sample_callback), &cb_data);
