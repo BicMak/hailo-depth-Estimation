@@ -24,6 +24,7 @@
 #include "hailo/hailort_common.hpp" 
 
 constexpr hailo_format_type_t FORMAT_TYPE = HAILO_FORMAT_TYPE_AUTO;
+static const bool MONITORING = FALSE;
 
 using namespace hailort;
 
@@ -102,18 +103,22 @@ cv::Mat infer(InferVStreams &pipeline, cv::Mat input_img, Config config){
     std::string stream_name = input_vstreams[0].get().name();
     auto input_vstream_info = input_vstreams[0].get().get_info();
     
-    std::cout << "\n========== INPUT INFO ==========" << std::endl;
-    std::cout << "Input shape: " 
-              << input_vstream_info.shape.height << "x"
-              << input_vstream_info.shape.width << "x"
-              << input_vstream_info.shape.features << std::endl;    
-    std::cout << "Input stream name: " << stream_name << std::endl;
-    std::cout << "Expected size: " << input_data[stream_name].size() << std::endl;
-    std::cout << "Normalized size: " << input_img.total() * input_img.channels() << std::endl;
-    
+    if(MONITORING){
+        std::cout << "\n========== INPUT INFO ==========" << std::endl;
+        std::cout << "Input shape: " 
+                << input_vstream_info.shape.height << "x"
+                << input_vstream_info.shape.width << "x"
+                << input_vstream_info.shape.features << std::endl;    
+        std::cout << "Input stream name: " << stream_name << std::endl;
+        std::cout << "Expected size: " << input_data[stream_name].size() << std::endl;
+        std::cout << "Normalized size: " << input_img.total() * input_img.channels() << std::endl;
+    }
+
     auto input_info = input_vstreams[0].get().get_info();
-    std::cout << "Format type: " << input_info.format.type << std::endl;
-    std::cout << "Format order: " << input_info.format.order << std::endl;
+    if(MONITORING){
+        std::cout << "Format type: " << input_info.format.type << std::endl;
+        std::cout << "Format order: " << input_info.format.order << std::endl;
+    }
 
     // 크기 검증
     if (input_data[stream_name].size() != input_img.total() * input_img.channels()) {
@@ -175,69 +180,77 @@ cv::Mat infer(InferVStreams &pipeline, cv::Mat input_img, Config config){
         return cv::Mat();
     }
 
+    if(MONITORING){
     std::cout << "\n========== OUTPUT INFO ==========" << std::endl;
-    std::cout << "Output stream: " << out_name << std::endl;
-    std::cout << "Buffer size: " << result_buffer.size() << " bytes" << std::endl;
-    std::cout << "Frame size: " << output_vstreams[0].get().get_frame_size() << " bytes" << std::endl;
-    std::cout << "Expected size: " << config.model_height * config.model_width << " bytes" << std::endl;
+        std::cout << "Output stream: " << out_name << std::endl;
+        std::cout << "Buffer size: " << result_buffer.size() << " bytes" << std::endl;
+        std::cout << "Frame size: " << output_vstreams[0].get().get_frame_size() << " bytes" << std::endl;
+        std::cout << "Expected size: " << config.model_height * config.model_width << " bytes" << std::endl;
+    }
 
     // ==================== DEBUG CHECKS ====================
-    std::cout << "\n========== DEBUG CHECKS ==========" << std::endl;
-    
-    // 1. 버퍼 포인터 유효성
-    std::cout << "[1] Buffer pointer: " << (void*)result_buffer.data() << std::endl;
-    std::cout << "[1] Pointer valid: " << std::boolalpha 
-              << (result_buffer.data() != nullptr) << std::endl;
-    
-    // 2. 첫 10바이트 값 확인
-    std::cout << "[2] First 10 bytes (int8): ";
-    for(int i = 0; i < std::min(10, (int)result_buffer.size()); i++) {
-        std::cout << (int)(int8_t)result_buffer[i] << " ";
-    }
-    std::cout << std::endl;
-    
-    // 3. 크기 검증
-    size_t expected_size = config.model_height * config.model_width;
-    std::cout << "[3] Size check - Buffer: " << result_buffer.size() 
-              << ", Expected: " << expected_size << std::endl;
-    
-    if (result_buffer.size() != expected_size) {
-        std::cerr << "[ERROR] Output buffer size mismatch!" << std::endl;
-        return cv::Mat();
+    if(MONITORING){
+        std::cout << "\n========== DEBUG CHECKS ==========" << std::endl;
+        
+        // 1. 버퍼 포인터 유효성
+        std::cout << "[1] Buffer pointer: " << (void*)result_buffer.data() << std::endl;
+        std::cout << "[1] Pointer valid: " << std::boolalpha 
+                << (result_buffer.data() != nullptr) << std::endl;
+        
+        // 2. 첫 10바이트 값 확인
+        std::cout << "[2] First 10 bytes (int8): ";
+        for(int i = 0; i < std::min(10, (int)result_buffer.size()); i++) {
+            std::cout << (int)(int8_t)result_buffer[i] << " ";
+        }
+        std::cout << std::endl;
+        
+        // 3. 크기 검증
+        size_t expected_size = config.model_height * config.model_width;
+        std::cout << "[3] Size check - Buffer: " << result_buffer.size() 
+                << ", Expected: " << expected_size << std::endl;
+        
+        if (result_buffer.size() != expected_size) {
+            std::cerr << "[ERROR] Output buffer size mismatch!" << std::endl;
+            return cv::Mat();
+        }
     }
     // ==================== MAT CONVERSION ====================
-    std::cout << "\n========== MAT CONVERSION ==========" << std::endl;
+    if(MONITORING){ std::cout << "\n========== MAT CONVERSION ==========" << std::endl; }
 
     try {
         // Step 1: cv::Mat 생성 (int8 타입)
-        std::cout << "[Step 1] Creating depth_map (CV_8SC1)..." << std::endl;
+        if(MONITORING){
+            std::cout << "[Step 1] Creating depth_map (CV_8SC1)..." << std::endl;
+        }
         cv::Mat depth_map(config.model_height, config.model_width, CV_8SC1, result_buffer.data());
         
         if (depth_map.empty()) {
             std::cerr << "[ERROR] depth_map is empty!" << std::endl;
             return cv::Mat();
         }
-        
-        std::cout << "  - Size: " << depth_map.size() << std::endl;
-        std::cout << "  - Type: " << depth_map.type() << std::endl;
-        
+        if(MONITORING){
+            std::cout << "  - Size: " << depth_map.size() << std::endl;
+            std::cout << "  - Type: " << depth_map.type() << std::endl;
+        }
+
         // Step 2: 메모리를 미리 할당하고 변환
-        std::cout << "[Step 2] Pre-allocating result memory..." << std::endl;
+        if(MONITORING){std::cout << "[Step 2] Pre-allocating result memory..." << std::endl;}
         cv::Mat result(config.model_height, config.model_width, CV_8U);
         
-        std::cout << "[Step 3] Converting to uint8 with copyTo..." << std::endl;
+        if(MONITORING){std::cout << "[Step 3] Converting to uint8 with copyTo..." << std::endl;}
         depth_map.convertTo(result, CV_8U, 1.0, 128);
         
         if (result.empty()) {
             std::cerr << "[ERROR] result is empty!" << std::endl;
             return cv::Mat();
         }
-        
-        std::cout << "  - Conversion successful" << std::endl;
-        std::cout << "  - Size: " << result.size() << std::endl;
-        std::cout << "  - Type: " << result.type() << std::endl;
-        std::cout << "========== CONVERSION COMPLETE ==========" << std::endl;
-        
+        if(MONITORING){
+            std::cout << "  - Conversion successful" << std::endl;
+            std::cout << "  - Size: " << result.size() << std::endl;
+            std::cout << "  - Type: " << result.type() << std::endl;
+            std::cout << "========== CONVERSION COMPLETE ==========" << std::endl;
+        }
+
         return result;
         
     } catch (const cv::Exception& e) {

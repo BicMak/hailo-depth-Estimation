@@ -15,6 +15,7 @@
 #include "gstreaming.hpp" 
 
 #include <fstream>
+static const bool MONITORING = FALSE;
 
 
 // 버스 메시지 콜백
@@ -202,7 +203,7 @@ GstFlowReturn new_sample_callback(GstElement *sink, gpointer user_data) {
     InferVStreams* infer_pipeline = cb_data->infer_pipeline;
     GstElement* appsrc = cb_data->appsrc;
     const Config* config = cb_data->config;
-    std::ofstream* log_file = cb_data->log_file;           // Config의 timing_log 사용
+    std::ofstream* log_file = cb_data->log_file;
     bool* header_written = cb_data->header_written;
     
     // 1. appsink에서 sample 가져오기
@@ -219,6 +220,7 @@ GstFlowReturn new_sample_callback(GstElement *sink, gpointer user_data) {
     auto t_preprocess_start = std::chrono::high_resolution_clock::now();
     
     cv::Mat raw_img(config->video_inHeight, config->video_inWidth, CV_8UC3, map.data);
+cv::GaussianBlur(raw_img, raw_img, cv::Size(3, 3), 0);
     cv::Mat input_img;
     cv::resize(raw_img, input_img, 
                cv::Size(config->model_width, config->model_height), 
@@ -229,10 +231,10 @@ GstFlowReturn new_sample_callback(GstElement *sink, gpointer user_data) {
     // ========== 추론 시작 ==========
     auto t_infer_start = std::chrono::high_resolution_clock::now();    
 
-    std::cout << ">>> BEFORE infer() call" << std::endl;
+    if (MONITORING) std::cout << ">>> BEFORE infer() call" << std::endl;
     cv::Mat output_img;
     output_img = infer(*infer_pipeline, input_img, *config);
-    std::cout << ">>> AFTER infer() call" << std::endl;
+    if (MONITORING) std::cout << ">>> AFTER infer() call" << std::endl;
 
     // 반환값 검증
     if (output_img.empty()) {
@@ -241,77 +243,86 @@ GstFlowReturn new_sample_callback(GstElement *sink, gpointer user_data) {
         gst_sample_unref(sample);
         return GST_FLOW_ERROR;
     }
-    std::cout << "✅ infer() returned valid Mat: " << output_img.size() << std::endl;
+    if (MONITORING) std::cout << "✅ infer() returned valid Mat: " << output_img.size() << std::endl;
 
     auto t_infer_end = std::chrono::high_resolution_clock::now();
     
     // ========== 후처리 시작 ==========
     auto t_postprocess_start = std::chrono::high_resolution_clock::now();
 
-    std::cout << ">>> [POST-1] Starting normalize..." << std::endl;
+    if (MONITORING) std::cout << ">>> [POST-1] Starting normalize..." << std::endl;
     cv::Mat depth_normalized;
     cv::normalize(output_img, depth_normalized, 0, 255, cv::NORM_MINMAX);
-    std::cout << "    ✓ normalize done: " << depth_normalized.size() << std::endl;
+    if (MONITORING) std::cout << "    ✓ normalize done: " << depth_normalized.size() << std::endl;
 
-    std::cout << ">>> [POST-2] Starting applyColorMap..." << std::endl;
+    if (MONITORING) std::cout << ">>> [POST-2] Starting applyColorMap..." << std::endl;
     cv::Mat depth_colormap;
     cv::applyColorMap(depth_normalized, depth_colormap, cv::COLORMAP_MAGMA);
-    std::cout << "    ✓ colormap done: " << depth_colormap.size() << std::endl;
+    if (MONITORING) std::cout << "    ✓ colormap done: " << depth_colormap.size() << std::endl;
 
-    std::cout << ">>> [POST-3] Starting cvtColor..." << std::endl;
+    if (MONITORING) std::cout << ">>> [POST-3] Starting cvtColor..." << std::endl;
     cv::cvtColor(depth_colormap, depth_colormap, cv::COLOR_RGB2BGR);
-    std::cout << "    ✓ cvtColor done" << std::endl;
+    if (MONITORING) std::cout << "    ✓ cvtColor done" << std::endl;
 
-    std::cout << ">>> [POST-4] Starting resize to " 
-            << config->video_inWidth << "x" << config->video_inHeight << "..." << std::endl;
+    if (MONITORING) {
+        std::cout << ">>> [POST-4] Starting resize to " 
+                  << config->video_inWidth << "x" << config->video_inHeight << "..." << std::endl;
+    }
     cv::Mat depth_resized;
     cv::resize(depth_colormap, depth_resized, 
-            cv::Size(config->video_inWidth, config->video_inHeight), 
-            0, 0, cv::INTER_LINEAR);
-    std::cout << "    ✓ resize done: " << depth_resized.size() << std::endl;
+               cv::Size(config->video_inWidth, config->video_inHeight), 
+               0, 0, cv::INTER_LINEAR);
+    if (MONITORING) std::cout << "    ✓ resize done: " << depth_resized.size() << std::endl;
 
-    std::cout << ">>> [POST-5] Starting convertTo..." << std::endl;
+    if (MONITORING) std::cout << ">>> [POST-5] Starting convertTo..." << std::endl;
     depth_resized.convertTo(depth_resized, CV_8UC3);
-    std::cout << "    ✓ convertTo done" << std::endl;
+    if (MONITORING) std::cout << "    ✓ convertTo done" << std::endl;
 
-    // hconcat 전에 이것들 확인:
-    std::cout << ">>> Checking raw_img..." << std::endl;
-    std::cout << "    - empty: " << raw_img.empty() << std::endl;
-    std::cout << "    - isContinuous: " << raw_img.isContinuous() << std::endl;
-    std::cout << "    - data ptr: " << (void*)raw_img.data << std::endl;
-    std::cout << "    - type: " << raw_img.type() << " (CV_8UC3=" << CV_8UC3 << ")" << std::endl;
+    if (MONITORING) {
+        // hconcat 전에 이것들 확인:
+        std::cout << ">>> Checking raw_img..." << std::endl;
+        std::cout << "    - empty: " << raw_img.empty() << std::endl;
+        std::cout << "    - isContinuous: " << raw_img.isContinuous() << std::endl;
+        std::cout << "    - data ptr: " << (void*)raw_img.data << std::endl;
+        std::cout << "    - type: " << raw_img.type() << " (CV_8UC3=" << CV_8UC3 << ")" << std::endl;
 
-    std::cout << ">>> Checking depth_resized..." << std::endl;
-    std::cout << "    - empty: " << depth_resized.empty() << std::endl;
-    std::cout << "    - isContinuous: " << depth_resized.isContinuous() << std::endl;
-    std::cout << "    - data ptr: " << (void*)depth_resized.data << std::endl;
-    std::cout << "    - type: " << depth_resized.type() << " (CV_8UC3=" << CV_8UC3 << ")" << std::endl;
+        std::cout << ">>> Checking depth_resized..." << std::endl;
+        std::cout << "    - empty: " << depth_resized.empty() << std::endl;
+        std::cout << "    - isContinuous: " << depth_resized.isContinuous() << std::endl;
+        std::cout << "    - data ptr: " << (void*)depth_resized.data << std::endl;
+        std::cout << "    - type: " << depth_resized.type() << " (CV_8UC3=" << CV_8UC3 << ")" << std::endl;
 
-    // 메모리 접근 테스트
-    try {
-        uchar test1 = raw_img.at<cv::Vec3b>(0, 0)[0];
-        uchar test2 = depth_resized.at<cv::Vec3b>(0, 0)[0];
-        std::cout << "    ✓ Memory access OK" << std::endl;
-    } catch (...) {
-        std::cerr << "    ✗ Memory access FAILED!" << std::endl;
+        // 메모리 접근 테스트
+        try {
+            uchar test1 = raw_img.at<cv::Vec3b>(0, 0)[0];
+            uchar test2 = depth_resized.at<cv::Vec3b>(0, 0)[0];
+            std::cout << "    ✓ Memory access OK" << std::endl;
+        } catch (...) {
+            std::cerr << "    ✗ Memory access FAILED!" << std::endl;
+        }
     }
 
-
-    std::cout << ">>> [POST-6] Starting hconcat (raw_img: " 
-            << raw_img.size() << ", depth_resized: " << depth_resized.size() << ")..." << std::endl;
+    if (MONITORING) {
+        std::cout << ">>> [POST-6] Starting hconcat (raw_img: " 
+                  << raw_img.size() << ", depth_resized: " << depth_resized.size() << ")..." << std::endl;
+    }
     cv::Mat result;
     cv::hconcat(raw_img, depth_resized, result);
-    std::cout << "    ✓ hconcat done: " << result.size() << std::endl;
+    if (MONITORING) std::cout << "    ✓ hconcat done: " << result.size() << std::endl;
     auto t_postprocess_end = std::chrono::high_resolution_clock::now();
 
     // ===== appsrc로 push =====
-    std::cout << ">>> [GST-1] Calculating buffer size..." << std::endl;
+    if (MONITORING) {
+        std::cout << ">>> [GST-1] Calculating buffer size..." << std::endl;
+    }
     gsize size = result.total() * result.elemSize();
-    std::cout << "    - Size: " << size << " bytes (" << size/1024/1024.0 << " MB)" << std::endl;
-    std::cout << "    - result.data: " << (void*)result.data << std::endl;
-    std::cout << "    - result.isContinuous: " << result.isContinuous() << std::endl;
+    if (MONITORING) {
+        std::cout << "    - Size: " << size << " bytes (" << size/1024/1024.0 << " MB)" << std::endl;
+        std::cout << "    - result.data: " << (void*)result.data << std::endl;
+        std::cout << "    - result.isContinuous: " << result.isContinuous() << std::endl;
+    }
 
-    std::cout << ">>> [GST-2] Allocating GstBuffer..." << std::endl;
+    if (MONITORING) std::cout << ">>> [GST-2] Allocating GstBuffer..." << std::endl;
     GstBuffer *out_buffer = gst_buffer_new_allocate(NULL, size, NULL);
     if (!out_buffer) {
         std::cerr << "    ✗ gst_buffer_new_allocate FAILED!" << std::endl;
@@ -319,9 +330,9 @@ GstFlowReturn new_sample_callback(GstElement *sink, gpointer user_data) {
         gst_sample_unref(sample);
         return GST_FLOW_ERROR;
     }
-    std::cout << "    ✓ GstBuffer allocated" << std::endl;
+    if (MONITORING) std::cout << "    ✓ GstBuffer allocated" << std::endl;
 
-    std::cout << ">>> [GST-3] Mapping GstBuffer..." << std::endl;
+    if (MONITORING) std::cout << ">>> [GST-3] Mapping GstBuffer..." << std::endl;
     GstMapInfo out_map;
     if (!gst_buffer_map(out_buffer, &out_map, GST_MAP_WRITE)) {
         std::cerr << "    ✗ gst_buffer_map FAILED!" << std::endl;
@@ -330,19 +341,19 @@ GstFlowReturn new_sample_callback(GstElement *sink, gpointer user_data) {
         gst_sample_unref(sample);
         return GST_FLOW_ERROR;
     }
-    std::cout << "    ✓ GstBuffer mapped, out_map.data: " << (void*)out_map.data << std::endl;
+    if (MONITORING) std::cout << "    ✓ GstBuffer mapped, out_map.data: " << (void*)out_map.data << std::endl;
 
-    std::cout << ">>> [GST-4] Copying data (memcpy " << size << " bytes)..." << std::endl;
+    if (MONITORING) std::cout << ">>> [GST-4] Copying data (memcpy " << size << " bytes)..." << std::endl;
     memcpy(out_map.data, result.data, size);
-    std::cout << "    ✓ memcpy done" << std::endl;
+    if (MONITORING) std::cout << "    ✓ memcpy done" << std::endl;
 
-    std::cout << ">>> [GST-5] Unmapping buffer..." << std::endl;
+    if (MONITORING) std::cout << ">>> [GST-5] Unmapping buffer..." << std::endl;
     gst_buffer_unmap(out_buffer, &out_map);
-    std::cout << "    ✓ Unmapped" << std::endl;
+    if (MONITORING) std::cout << "    ✓ Unmapped" << std::endl;
 
-    std::cout << ">>> [GST-6] Pushing to appsrc..." << std::endl;
+    if (MONITORING) std::cout << ">>> [GST-6] Pushing to appsrc..." << std::endl;
     GstFlowReturn ret = gst_app_src_push_buffer(GST_APP_SRC(appsrc), out_buffer);
-    std::cout << "    ✓ Push complete, return: " << ret << std::endl;
+    if (MONITORING) std::cout << "    ✓ Push complete, return: " << ret << std::endl;
     auto t_end = std::chrono::high_resolution_clock::now();
 
     // ========== 시간 계산 및 출력 ==========
@@ -366,6 +377,7 @@ GstFlowReturn new_sample_callback(GstElement *sink, gpointer user_data) {
                 << postprocess_time << ","
                 << total_time << "\n";
     
+    // 성능 측정 결과는 항상 출력
     std::cout << "⏱️  전처리: " << preprocess_time << "ms | "
               << "추론: " << infer_time << "ms | "
               << "후처리: " << postprocess_time << "ms | "
