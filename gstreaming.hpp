@@ -19,16 +19,18 @@
 constexpr hailo_format_type_t FORMAT_TYPE = HAILO_FORMAT_TYPE_AUTO;
 using namespace hailort;
 
-// CallbackData 구조체 수정 필요
+/**
+ * @brief parameter sturct to send callback function
+ * 
+ * Contains infer_pipeline, appsrc, config, log_file and header_written
+ */
 struct CallbackData {
-    InferVStreams* infer_pipeline;
-    GstElement* appsrc;
-    const Config* config;
-    std::ofstream* log_file;      // 추가
-    bool* header_written;          // 추가
+    InferVStreams* infer_pipeline; //NPU inference VStreams
+    GstElement* appsrc; //appsrc element for output
+    const Config* config; //configuration (dimensions, paths, etc.)
+    std::ofstream* log_file; // stream for performance logging
+    bool* header_written; // Flag for CSV header initialization
 };
-
-
 
 // 버스 메시지 콜백
 gboolean on_message(GstBus *bus, GstMessage *message, gpointer data);

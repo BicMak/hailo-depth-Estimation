@@ -28,7 +28,14 @@ static const bool MONITORING = FALSE;
 
 using namespace hailort;
 
-
+/**
+ * @brief Loads HEF file and configures network group on VDevice
+ *
+ * @param[in] vdevice Hailo VDevice object (bundle of physical devices)
+ * @param[in] config Configuration struct containing HEF file path
+ * @return On success, returns shared_ptr to ConfiguredNetworkGroup
+ *         On failure, returns hailo_status error code
+ */
 Expected<std::shared_ptr<ConfiguredNetworkGroup>> configure_network_group(
     VDevice &vdevice, Config config)
 {
@@ -74,6 +81,16 @@ Expected<std::shared_ptr<ConfiguredNetworkGroup>> configure_network_group(
 
     return std::move(network_groups->at(0));
 }
+
+/**
+ * @brief Performs depth estimation inference on NPU and converts result to uint8 grayscale
+ * 
+ * @param[in] pipeline Inference pipeline containing input/output VStreams
+ * @param[in] input_img Input image from GStreamer (RGB/BGR format)
+ * @param[in] config Configuration containing model dimensions (height, width) and batch size
+ * @return Grayscale depth map as uint8 (CV_8U, range 0~255)
+ *         Returns empty cv::Mat on failure
+ */
 cv::Mat infer(InferVStreams &pipeline, cv::Mat input_img, Config config){
     // 1. CPU: input_data 생성 (Rasp RAM)
     // 2. CPU → NPU: PCIe write (데이터 복사)
@@ -238,8 +255,8 @@ cv::Mat infer(InferVStreams &pipeline, cv::Mat input_img, Config config){
         cv::Mat result(config.model_height, config.model_width, CV_8U);
         
         if(MONITORING){std::cout << "[Step 3] Converting to uint8 with copyTo..." << std::endl;}
-        depth_map.convertTo(result, CV_8U, 1.0, 128);
-        
+        depth_map.convertTo(result, CV_8U, 1.0, 128); // saturate_cast<CV_8U>(1.0 * depth_map(x,y) + 128)
+
         if (result.empty()) {
             std::cerr << "[ERROR] result is empty!" << std::endl;
             return cv::Mat();

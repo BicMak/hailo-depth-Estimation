@@ -18,8 +18,19 @@
 static const bool MONITORING = FALSE;
 
 
-// 버스 메시지 콜백
-// 버스 메시지 콜백
+/**
+ * @brief GStreamer bus message handler callback
+ * 
+ * Processes pipeline messages including errors, warnings, and EOS (End of Stream).
+ * Terminates the main loop on error or stream completion.
+ * 
+ * @param[in] bus GStreamer message bus that delivers messages from pipeline elements
+ * @param[in] message GStreamer message object containing event type and details
+ * @param[in] data User data pointer, cast to GMainLoop* for loop control
+ * 
+ * @return gboolean Always returns TRUE to keep the callback active
+ *                  (Returning FALSE would remove the callback from the bus)
+ */
 gboolean on_message(GstBus *bus, GstMessage *message, gpointer data) {
     GMainLoop *loop = (GMainLoop*)data;
     
@@ -55,8 +66,14 @@ gboolean on_message(GstBus *bus, GstMessage *message, gpointer data) {
     return TRUE;
 }
 
+/**
+ * @brief create videoInput to appSink stream Gstreamer pipeline 
+ * 
+ * @param[out] pipeline Gsteamer inputpipe line 
+ * @param[in] config Configuration containing videoInput stream
+ */
 void makeSinkpipeline(GstElement* pipeline, const Config& config){
-    
+   
     if (!gst_is_initialized()) {
         std::cerr << "GStreamer 초기화 실패" << std::endl;
     }
@@ -104,6 +121,12 @@ void makeSinkpipeline(GstElement* pipeline, const Config& config){
     gst_caps_unref(caps1);
 }
 
+/**
+ * @brief create appSrc to VideoOut stream Gstreamer pipeline 
+ * 
+ * @param[out] pipeline Gsteamer output pipeline 
+ * @param[in] config Configuration containing videoOut stream
+ */
 GstElement* makeSrcPipeline(GstElement* pipeline, const Config& config) {
     // 엘리먼트 생성
     GstElement *appsrc = gst_element_factory_make("appsrc", "app_src");
@@ -195,6 +218,34 @@ GstElement* makeSrcPipeline(GstElement* pipeline, const Config& config) {
     return appsrc;
 }
 
+
+/**
+ * @brief GStreamer callback function for processing video frames through NPU inference pipeline
+ * 
+ * This callback is triggered when a new frame arrives at the appsink. It performs the complete
+ * inference pipeline: preprocessing → NPU inference → postprocessing, then pushes the result
+ * to appsrc for display.
+ * 
+ * Processing steps:
+ * 1. Pull frame from appsink
+ * 2. Preprocessing: Gaussian blur and resize to model input dimensions
+ * 3. NPU inference: Depth estimation using Hailo-8
+ * 4. Postprocessing: Normalize, apply colormap, resize back, concatenate with original frame
+ * 5. Push processed frame to appsrc
+ * 6. Log timing metrics (preprocessing, inference, postprocessing, total)
+ * 
+ * @param[in] sink GStreamer appsink element providing input frames
+ * @param[in] user_data Pointer to CallbackData struct containing:
+ *                      - infer_pipeline: NPU inference VStreams
+ *                      - appsrc: GStreamer appsrc element for output
+ *                      - config: Pipeline configuration (dimensions, paths, etc.)
+ *                      - log_file: Output stream for performance logging
+ *                      - header_written: Flag for CSV header initialization
+ * 
+ * @return GstFlowReturn status code
+ *         - GST_FLOW_OK: Frame processed and pushed successfully
+ *         - GST_FLOW_ERROR: Processing failed (empty inference result, buffer allocation error, etc.)
+ */
 GstFlowReturn new_sample_callback(GstElement *sink, gpointer user_data) {
     auto t_start = std::chrono::high_resolution_clock::now();
     
@@ -220,7 +271,7 @@ GstFlowReturn new_sample_callback(GstElement *sink, gpointer user_data) {
     auto t_preprocess_start = std::chrono::high_resolution_clock::now();
     
     cv::Mat raw_img(config->video_inHeight, config->video_inWidth, CV_8UC3, map.data);
-cv::GaussianBlur(raw_img, raw_img, cv::Size(3, 3), 0);
+    cv::GaussianBlur(raw_img, raw_img, cv::Size(3, 3), 0);
     cv::Mat input_img;
     cv::resize(raw_img, input_img, 
                cv::Size(config->model_width, config->model_height), 

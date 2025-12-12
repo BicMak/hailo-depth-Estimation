@@ -17,33 +17,39 @@
 
 #include <fstream>
 
+/**
+ * @brief Loads YAML configuration file and creates Config object
+ *
+ * @param[in] yaml_path Path to the YAML configuration file
+ * @return Config object populated with loaded settings
+ */
 static Config load(const std::string& yaml_path) {
         YAML::Node config = YAML::LoadFile(yaml_path);
         Config cfg;
         
-        // 카메라
+        // camera
         cfg.device = config["device"].as<std::string>();
         
-        // 모델
+        // model
         cfg.hef_path = config["model"]["hef_path"].as<std::string>();
         cfg.model_width = config["model"]["input_size"]["width"].as<int>();
         cfg.model_height = config["model"]["input_size"]["height"].as<int>();
         
-        // 비디오 입력
+        // video input size
         cfg.video_inWidth = config["video"]["input"]["width"].as<int>();
         cfg.video_inHeight = config["video"]["input"]["height"].as<int>();
         
-        // 비디오 출력
+        // video output size
         cfg.video_outWidth = config["video"]["output"]["width"].as<int>();
         cfg.video_outHeight = config["video"]["output"]["height"].as<int>();
         cfg.output_name = config["video"]["output"]["file"].as<std::string>();
         cfg.frame_rate = config["video"]["framerate"].as<int>();
         
-        // 인코더
+        // encoder config
         cfg.encode_speed = config["encoder"]["speed_preset"].as<int>();
         cfg.tune = config["encoder"]["tune"].as<int>();
         
-        // 로그
+        // long file name
         cfg.timing_log = config["logging"]["timing_log"].as<std::string>();
         
         return cfg;
