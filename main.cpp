@@ -165,11 +165,44 @@ int main(int argc, char *argv[]){
     g_main_loop_run(loop);
  
 
-    // ========== EOS 처리 (mp4 파일 저장 완료를 위해) ==========
-    gst_element_send_event(src_pipeline, gst_event_new_eos());
-    gst_bus_timed_pop_filtered(src_bus, GST_CLOCK_TIME_NONE, 
-                            (GstMessageType)(GST_MESSAGE_EOS | GST_MESSAGE_ERROR));
+    std::cout << "\n========== 종료 시작 ==========" << std::endl;
 
+    // 1. sink_pipeline 먼저 멈추기
+    std::cout << "1. 카메라 입력 중지 중..." << std::endl;
+    gst_element_set_state(sink_pipeline, GST_STATE_PAUSED);
+    g_usleep(200000);  // 0.2초 대기
+
+    // 2. appsrc에 EOS 신호 (이 부분 변경!)
+    std::cout << "2. appsrc EOS 전송..." << std::endl;
+    GstFlowReturn ret = gst_app_src_end_of_stream(GST_APP_SRC(appsrc));
+    std::cout << "   EOS 전송 결과: " << (ret == GST_FLOW_OK ? "성공" : "실패") << std::endl;
+
+    // 3. EOS 메시지 대기
+    std::cout << "3. EOS 메시지 대기 중... (최대 10초)" << std::endl;
+    GstMessage *msg = gst_bus_timed_pop_filtered(src_bus, 10 * GST_SECOND,
+                                (GstMessageType)(GST_MESSAGE_EOS | GST_MESSAGE_ERROR));
+
+    if (msg) {
+        if (GST_MESSAGE_TYPE(msg) == GST_MESSAGE_EOS) {
+            std::cout << "   ✓ EOS 완료 - 파일 저장됨!" << std::endl;
+        } else {
+            GError *err;
+            gchar *debug;
+            gst_message_parse_error(msg, &err, &debug);
+            std::cout << "   ✗ 에러: " << err->message << std::endl;
+            g_error_free(err);
+            g_free(debug);
+        }
+        gst_message_unref(msg);
+    } else {
+        std::cout << "   ✗ 타임아웃!" << std::endl;
+    }
+
+    std::cout << "4. 파이프라인 정리..." << std::endl;
+
+    // 먼저 PAUSED로
+    gst_element_set_state(src_pipeline, GST_STATE_PAUSED);
+    g_usleep(500000);  // 0.5초 대기
 
     // 정리
     gst_element_set_state(sink_pipeline, GST_STATE_NULL);

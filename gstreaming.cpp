@@ -162,22 +162,23 @@ GstElement* makeSrcPipeline(GstElement* pipeline, const Config& config) {
     
     // 파일 저장 브랜치
     GstElement *queue2 = gst_element_factory_make("queue", "queue_file");
+    GstElement *convert2 = gst_element_factory_make("videoconvert", "convert_encoder");  // ← 추가!
     GstElement *encoder = gst_element_factory_make("x264enc", "encoder");
     GstElement *muxer = gst_element_factory_make("mp4mux", "muxer");
     GstElement *filesink = gst_element_factory_make("filesink", "file_sink");
     
     // NULL 체크
     if (!appsrc || !videoconvert || !tee || !queue1 || !sink || 
-        !queue2 || !encoder || !muxer || !filesink) {
-        std::cerr << "Src 파이프라인 엘리먼트 생성 실패!" << std::endl;
-        return nullptr;
-    }
+        !queue2 || !convert2 || !encoder || !muxer || !filesink) { 
+            std::cerr << "Src 파이프라인 엘리먼트 생성 실패!" << std::endl;
+            return nullptr;
+        }
     
     // 파이프라인에 추가
     gst_bin_add_many(GST_BIN(pipeline), 
                      appsrc, videoconvert, tee,
                      queue1, sink,
-                     queue2, encoder, muxer, filesink,
+                     queue2, convert2, encoder, muxer, filesink,
                      NULL);
     
     // appsrc 설정
@@ -218,11 +219,11 @@ GstElement* makeSrcPipeline(GstElement* pipeline, const Config& config) {
     }
     
     // 파일 저장 브랜치 링크
-    if (!gst_element_link_many(queue2, encoder, muxer, filesink, NULL)) {
+    if (!gst_element_link_many(queue2, convert2, encoder, muxer, filesink, NULL)) {  // ← convert2 추가
         std::cerr << "파일 저장 브랜치 링크 실패" << std::endl;
         return nullptr;
     }
-    
+        
     // tee 패드 연결
     GstPad *tee_src1 = gst_element_request_pad_simple(tee, "src_%u");
     GstPad *queue1_sink = gst_element_get_static_pad(queue1, "sink");

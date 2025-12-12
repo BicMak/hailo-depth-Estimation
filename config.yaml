@@ -16,7 +16,7 @@ video:
   output:
     width: 1280
     height: 480
-    file: output.mp4
+    file: ./output.mp4
   framerate: 30
 
 # 인코더 설정
