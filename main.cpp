@@ -8,6 +8,7 @@
 #include <opencv2/opencv.hpp>
 
 #include <yaml-cpp/yaml.h>
+#include <signal.h>  // ← 이거 추가!
 
 #include "Hailoinfer.hpp"
 #include "gstreaming.hpp"
@@ -16,6 +17,16 @@
 
 
 #include <fstream>
+
+static GMainLoop *g_loop = NULL;
+
+// 시그널 핸들러
+void signal_handler(int signum) {
+    if (g_loop) {
+        g_main_loop_quit(g_loop);
+    }
+}
+
 
 /**
  * @brief Loads YAML configuration file and creates Config object
@@ -137,6 +148,10 @@ int main(int argc, char *argv[]){
     GstBus *sink_bus = gst_pipeline_get_bus(GST_PIPELINE(sink_pipeline));
     GstBus *src_bus = gst_pipeline_get_bus(GST_PIPELINE(src_pipeline));
     GMainLoop *loop = g_main_loop_new(NULL, FALSE);
+    g_loop = loop;  // 전역 변수에 저장
+    // 시그널 핸들러 등록
+    signal(SIGINT, signal_handler);   // ← Ctrl+C
+    signal(SIGTERM, signal_handler);  // ← kill 명령
 
     gst_bus_add_signal_watch(sink_bus);
     gst_bus_add_signal_watch(src_bus);
@@ -148,7 +163,14 @@ int main(int argc, char *argv[]){
     gst_element_set_state(src_pipeline, GST_STATE_PLAYING);
     
     g_main_loop_run(loop);
-    
+ 
+
+    // ========== EOS 처리 (mp4 파일 저장 완료를 위해) ==========
+    gst_element_send_event(src_pipeline, gst_event_new_eos());
+    gst_bus_timed_pop_filtered(src_bus, GST_CLOCK_TIME_NONE, 
+                            (GstMessageType)(GST_MESSAGE_EOS | GST_MESSAGE_ERROR));
+
+
     // 정리
     gst_element_set_state(sink_pipeline, GST_STATE_NULL);
     gst_element_set_state(src_pipeline, GST_STATE_NULL);

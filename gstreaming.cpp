@@ -39,8 +39,14 @@ gboolean on_message(GstBus *bus, GstMessage *message, gpointer data) {
             GError *err;
             gchar *debug;
             gst_message_parse_error(message, &err, &debug);
-            std::cerr << "에러: " << err->message << std::endl;
-            std::cerr << "디버그: " << debug << std::endl;
+            // 창 닫힘은 정상 종료로 처리
+            if (strstr(err->message, "Output window was closed")) {
+                std::cout << "영상 창 닫힘. 파일 저장 중..." << std::endl;
+            } else {
+                std::cerr << "에러: " << err->message << std::endl;
+                std::cerr << "디버그: " << debug << std::endl;
+            }
+            
             g_error_free(err);
             g_free(debug);
             g_main_loop_quit(loop);
@@ -57,6 +63,23 @@ gboolean on_message(GstBus *bus, GstMessage *message, gpointer data) {
             std::cerr << "경고: " << warn->message << std::endl;
             g_error_free(warn);
             g_free(debug);
+            break;
+        }
+        case GST_MESSAGE_ELEMENT: {
+            const GstStructure *s = gst_message_get_structure(message);
+            
+            // navigation 이벤트 처리 (키보드 입력)
+            if (gst_structure_has_name(s, "application/x-gst-navigation")) {
+                const gchar *event = gst_structure_get_string(s, "event");
+                const gchar *key = gst_structure_get_string(s, "key");
+                
+                if (event && key && strcmp(event, "key-press") == 0) {
+                    if (strcmp(key, "q") == 0 || strcmp(key, "Q") == 0) {
+                        std::cout << "q 키 눌림. 종료 중..." << std::endl;
+                        g_main_loop_quit(loop);
+                    }
+                }
+            }
             break;
         }
         default:
